@@ -266,3 +266,176 @@
   transform: rotate(-90deg);
   transform-origin: right bottom;
 }
+/* --- SECTION BARU: ABOUT / CORE SYSTEM --- */
+.about-section {
+  position: relative;
+  min-height: 100vh;
+  background-color: #050a10; /* Latar lebih gelap dari hero */
+  padding: 8rem 4rem;
+  overflow: hidden;
+  z-index: 20; /* Di atas video background */
+
+  /* Pattern Background Halus */
+  background-image: radial-gradient(
+      circle at 10% 20%,
+      rgba(0, 210, 255, 0.05) 0%,
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(0, 210, 255, 0.05) 0%,
+      transparent 20%
+    );
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Typography Header */
+.section-title {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 4rem;
+  color: #fff;
+  margin: 0;
+  line-height: 1;
+}
+
+.section-line {
+  width: 100px;
+  height: 4px;
+  background: #00d2ff;
+  margin: 1.5rem 0;
+}
+
+.section-desc {
+  font-size: 1.2rem;
+  color: #a0aab5;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.highlight {
+  color: #00d2ff;
+  font-weight: 700;
+}
+
+/* --- GRID LAYOUT KARTU --- */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 5rem;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3rem 2rem;
+  position: relative;
+  /* Transisi diubah lebih 'bouncy' sedikit */
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  cursor: pointer; /* Menunjukkan ini bisa diklik */
+}
+
+/* State HOVER: Ini kuncinya */
+.feature-card:hover {
+  /* Background jadi sedikit lebih terang */
+  background: rgba(0, 210, 255, 0.08);
+
+  /* Naik ke atas + Membesar sedikit */
+  transform: translateY(-15px) scale(1.02);
+
+  /* Border menyala */
+  border-color: #00d2ff;
+
+  /* Efek GLOW NEON di luar dan di dalam */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+    /* Bayangan kedalaman */ 0 0 20px rgba(0, 210, 255, 0.2),
+    /* Glow luar halus */ inset 0 0 20px rgba(0, 210, 255, 0.05); /* Glow dalam */
+}
+
+.card-number {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.05);
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  line-height: 1;
+  transition: all 0.5s ease;
+}
+
+/* Angka ikut menyala sedikit saat hover */
+.feature-card:hover .card-number {
+  color: rgba(0, 210, 255, 0.2);
+  transform: scale(1.1); /* Angka membesar */
+}
+
+.feature-card h3 {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+/* Judul berubah jadi Neon saat hover */
+.feature-card:hover h3 {
+  color: #00d2ff;
+  text-shadow: 0 0 10px rgba(0, 210, 255, 0.6);
+}
+
+.feature-card p {
+  color: #8fa3b0;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+/* Teks deskripsi jadi lebih putih/jelas */
+.feature-card:hover p {
+  color: #e0f7fa;
+}
+
+.card-decoration {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 4px; /* Sedikit lebih tebal */
+  background: #00d2ff;
+  transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 0 10px #00d2ff; /* Garisnya juga glowing */
+}
+
+.feature-card:hover .card-decoration {
+  width: 100%;
+}
+
+/* --- ANIMASI SCROLL (MAGIC HAPPENS HERE) --- */
+
+/* State awal: Tersembunyi */
+.animate-hidden {
+  opacity: 0;
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); /* Efek smooth */
+}
+
+.slide-up {
+  transform: translateY(50px);
+}
+.slide-left {
+  transform: translateX(-50px);
+}
+.slide-right {
+  transform: translateX(50px);
+}
+
+/* State akhir: Muncul (ditambahkan oleh JS) */
+.animate-active {
+  opacity: 1;
+  transform: translate(0, 0);
+}

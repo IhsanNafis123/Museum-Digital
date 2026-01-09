@@ -13,3 +13,21 @@ body {
   background-color: #f0f2f5; /* Abu-abu muda */
   color: #1a1a1a;
 }
+
+/* Sembunyikan Scrollbar untuk Chrome, Safari, dan Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Sembunyikan Scrollbar untuk Firefox, IE, dan Edge */
+html,
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Pastikan tidak ada scroll horizontal yang tidak diinginkan */
+body {
+  overflow-x: hidden;
+  width: 100%;
+}

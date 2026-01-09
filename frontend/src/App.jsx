@@ -1,19 +1,45 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./App.css";
 
 function App() {
+  // Logic untuk animasi scroll (Intersection Observer)
+  const observerRef = useRef(null);
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-active");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    ); // Animasi mulai saat 10% elemen terlihat
+
+    const hiddenElements = document.querySelectorAll(".animate-hidden");
+    hiddenElements.forEach((el) => observerRef.current.observe(el));
+
+    return () => {
+      if (observerRef.current) observerRef.current.disconnect();
+    };
+  }, []);
+
   return (
     <div className="app-container">
       {/* 3. MENU BAR LENGKAP */}
       <nav className="navbar">
         <div className="logo-section">
           <div className="logo-symbol">N</div>
-          <span className="logo-text">NEXUS MUSEUM</span>
+          <span className="logo-text">SHOW MUSEUM</span>
         </div>
 
         <div className="nav-links">
           <a href="#home" className="nav-link active">
             HOME
+          </a>
+          <a href="#about" className="nav-link">
+            ABOUT SYSTEM
           </a>
           <a href="#gallery" className="nav-link">
             GALLERY
@@ -21,39 +47,25 @@ function App() {
           <a href="#virtual-tour" className="nav-link">
             VIRTUAL TOUR
           </a>
-          <a href="#history" className="nav-link">
-            ARCHIVE
-          </a>
-        </div>
-
-        <div className="nav-actions">
-          <button className="ticket-btn">GET TICKETS</button>
         </div>
       </nav>
 
       {/* 2. VIDEO BRAND & HERO SECTION */}
-      <main className="hero-section">
+      <main id="home" className="hero-section">
         <div className="video-wrapper">
-          {/* Video Placeholder Futuristik */}
           <video autoPlay loop muted playsInline className="hero-video">
-            <source
-              src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-technological-interface-9831-large.mp4"
-              type="video/mp4"
-            />
+            <source src="/video-background-awal.mp4" type="video/mp4" />
             Browser Anda tidak mendukung video tag.
           </video>
-
-          {/* Overlay Gelap agar teks terbaca */}
           <div className="video-overlay"></div>
         </div>
 
-        {/* 1. ELEMEN DESAIN UNIK (Typography & Layout) */}
         <div className="hero-content">
-          <div className="floating-tag">/// EST. 2025 /// SYSTEM ONLINE</div>
+          <div className="floating-tag">/// SYSTEM READY</div>
 
           <h1 className="hero-title">
-            REDEFINING <br />
-            <span className="outline-text">HERITAGE</span>
+            SELAMAT <br />
+            <span className="outline-text">BERKUNJUNG</span>
           </h1>
 
           <p className="hero-desc">
@@ -71,10 +83,73 @@ function App() {
           </div>
         </div>
 
-        {/* Elemen Dekoratif Anti-Mainstream */}
         <div className="decorative-line"></div>
         <div className="coordinate-text">LAT -6.2088 // LONG 106.8456</div>
       </main>
+
+      {/* --- BAGIAN BARU: ABOUT SECTION DENGAN ANIMASI --- */}
+      <section id="about" className="about-section">
+        <div className="about-container">
+          {/* Header Section */}
+          <div className="about-header animate-hidden slide-up">
+            <h2 className="section-title">
+              THE <span className="accent">CORE</span> ARCHITECTURE
+            </h2>
+            <div className="section-line"></div>
+            <p className="section-desc">
+              Platform ini bukan sekadar museum. Ini adalah{" "}
+              <span className="highlight">Neural Archive</span> yang
+              menggabungkan data arkeologi presisi tinggi dengan visualisasi
+              imersif.
+            </p>
+          </div>
+
+          {/* Grid Cards Unik */}
+          <div className="features-grid">
+            {/* Card 1 */}
+            <div
+              className="feature-card animate-hidden slide-left"
+              style={{ transitionDelay: "100ms" }}
+            >
+              <div className="card-number">01</div>
+              <h3>DIGITAL ARTIFACTS</h3>
+              <p>
+                Objek sejarah di-scan menggunakan LIDAR resolusi tinggi untuk
+                detail tingkat mikroskopik.
+              </p>
+              <div className="card-decoration"></div>
+            </div>
+
+            {/* Card 2 */}
+            <div
+              className="feature-card animate-hidden slide-up"
+              style={{ transitionDelay: "300ms" }}
+            >
+              <div className="card-number">02</div>
+              <h3>IMMERSIVE TIME</h3>
+              <p>
+                Simulasi lingkungan yang merekonstruksi atmosfer masa lalu
+                secara real-time.
+              </p>
+              <div className="card-decoration"></div>
+            </div>
+
+            {/* Card 3 */}
+            <div
+              className="feature-card animate-hidden slide-right"
+              style={{ transitionDelay: "500ms" }}
+            >
+              <div className="card-number">03</div>
+              <h3>GLOBAL ACCESS</h3>
+              <p>
+                Akses tanpa batas ruang. Terhubung ke database sejarah dari
+                seluruh penjuru dunia.
+              </p>
+              <div className="card-decoration"></div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
