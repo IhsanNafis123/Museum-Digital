@@ -1,289 +1,565 @@
-/* --- ARTIFACT VIEW STYLES (DEFAULT DESKTOP) --- */
-
-.artifact-view-container {
-  display: flex;
-  height: 100vh;
+/* CONTAINER UTAMA */
+.artifact-container {
   width: 100vw;
-  background: #050a10;
+  height: 100vh;
+  background-color: #000;
+  color: #00ff88;
+  font-family: "Rajdhani", monospace;
   overflow: hidden;
   position: relative;
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.8s ease-out;
+/* Background Grid Bergerak */
+.grid-bg-anim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 255, 136, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 136, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform: perspective(500px) rotateX(60deg);
+  animation: gridScroll 10s linear infinite;
+  opacity: 0.2;
+  z-index: 0;
 }
-
-@keyframes fadeIn {
+@keyframes gridScroll {
   from {
-    opacity: 0;
-    transform: scale(0.98);
+    background-position: 0 0;
   }
   to {
-    opacity: 1;
-    transform: scale(1);
+    background-position: 0 100px;
   }
 }
 
-/* Tombol Kembali */
-.back-btn {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  z-index: 50;
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #fff;
-  padding: 0.8rem 1.5rem;
-  font-family: "Rajdhani", sans-serif;
-  letter-spacing: 2px;
-  cursor: pointer;
-  transition: all 0.3s;
-  backdrop-filter: blur(5px);
-}
-
-.back-btn:hover {
-  border-color: #00d2ff;
-  color: #00d2ff;
-  background: rgba(0, 210, 255, 0.1);
-}
-
-/* Area 3D Canvas */
-.canvas-wrapper {
-  flex: 1;
+/* UI LAYER (HUD) */
+.hud-layer {
   position: relative;
-  background: radial-gradient(circle at center, #0b1a26 0%, #000 100%);
-}
-
-.artifact-title-overlay {
-  position: absolute;
-  bottom: 3rem;
-  left: 3rem;
-  pointer-events: none;
   z-index: 10;
-}
-
-.item-id {
-  font-family: "Rajdhani", monospace;
-  color: #00d2ff;
-  letter-spacing: 2px;
-  margin-bottom: 0.5rem;
-}
-
-.artifact-title-overlay h1 {
-  font-family: "Rajdhani", sans-serif;
-  font-size: 4rem;
-  margin: 0;
-  line-height: 0.9;
-  color: #fff;
-}
-
-.outline-text {
-  color: transparent;
-  -webkit-text-stroke: 1px #fff;
-}
-
-/* Panel Informasi Kanan */
-.article-panel {
-  width: 450px; /* Lebar tetap di desktop */
-  background: rgba(5, 10, 16, 0.85);
-  backdrop-filter: blur(20px);
-  border-left: 1px solid rgba(0, 210, 255, 0.2);
   display: flex;
   flex-direction: column;
-  padding: 3rem;
-  box-shadow: -10px 0 50px rgba(0, 0, 0, 0.5);
-  z-index: 20;
+  height: 100%;
+  padding: 1rem;
+  background: radial-gradient(circle, transparent 60%, rgba(0, 0, 0, 0.8) 100%);
 }
 
-.panel-header {
+/* HEADER */
+.hud-header {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.tab-btn {
-  background: none;
-  border: none;
-  color: #8fa3b0;
-  font-family: "Rajdhani", sans-serif;
-  font-size: 1.1rem;
-  font-weight: 600;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #00ff88;
   padding-bottom: 1rem;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s;
-}
-
-.tab-btn.active {
-  color: #00d2ff;
-  border-bottom-color: #00d2ff;
-}
-
-.panel-content {
-  flex: 1;
-  overflow-y: auto;
-  padding-right: 1rem;
-}
-
-.content-title {
-  font-family: "Rajdhani", sans-serif;
-  font-size: 1.8rem;
-  color: #fff;
-  margin-top: 0;
   margin-bottom: 1rem;
 }
+.back-btn-hud {
+  background: transparent;
+  border: 1px solid #00ff88;
+  color: #00ff88;
+  padding: 0.5rem 1.5rem;
+  font-family: "Rajdhani";
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.back-btn-hud:hover {
+  background: #00ff88;
+  color: #000;
+}
+.header-info {
+  text-align: center;
+}
+.header-info h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+.blink-text {
+  color: red;
+  font-weight: bold;
+  animation: blink 1s infinite;
+  margin-right: 10px;
+}
 
-.content-text {
-  color: #a0aab5;
-  line-height: 1.8;
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-  text-align: justify;
+/* MAIN LAYOUT */
+.hud-main {
+  flex: 1;
+  display: flex;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+/* PANEL KIRI & KANAN */
+.hud-left-panel,
+.hud-right-panel {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.panel-box {
+  background: rgba(0, 50, 20, 0.3);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  padding: 1rem;
+  position: relative;
+}
+.panel-box::before {
+  /* Dekorasi Sudut */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #00ff88;
+  border-left: 2px solid #00ff88;
+}
+.panel-box h3 {
+  margin-top: 0;
+  border-bottom: 1px solid rgba(0, 255, 136, 0.3);
+  padding-bottom: 0.5rem;
+  color: #fff;
 }
 
 .data-row {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1rem 0;
-  font-family: "Rajdhani", monospace;
-  color: #00d2ff;
+  margin-bottom: 0.5rem;
   font-size: 0.9rem;
 }
-
-.tech-stat {
-  margin-bottom: 1.5rem;
+.data-row span {
+  color: #888;
+}
+.description-box p {
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.4;
+  text-align: justify;
 }
 
-.tech-stat label {
-  display: block;
-  font-family: "Rajdhani", sans-serif;
-  font-size: 0.8rem;
-  color: #8fa3b0;
-  margin-bottom: 0.5rem;
+/* CENTER VIEW (MODEL) */
+.hud-center-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
-
-.bar-container {
+.model-frame {
   width: 100%;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.1);
-  margin-bottom: 0.5rem;
-}
-
-.bar-fill {
   height: 100%;
-  background: #00d2ff;
-  box-shadow: 0 0 10px #00d2ff;
+  border: 1px solid rgba(0, 255, 136, 0.5);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5);
 }
 
-.loading-text {
-  color: #00d2ff;
-  font-family: "Rajdhani", monospace;
-  animation: blink 1s infinite;
+/* Simulasi 3D menggunakan Gambar */
+.model-proxy-img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.2));
+  animation: floatAnim 6s ease-in-out infinite;
 }
-
-@keyframes blink {
+@keyframes floatAnim {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
   50% {
-    opacity: 0.5;
+    transform: translateY(-20px);
   }
 }
 
-/* ==========================================================================
-   MOBILE RESPONSIVE (HP) - FIX JARAK BEZEL & KERAPIAN
-   ========================================================================== */
-@media screen and (max-width: 768px) {
-  .artifact-view-container {
-    flex-direction: column; /* Susun Atas-Bawah */
-    height: 100vh;
-    height: 100dvh; /* Tinggi dinamis mengikuti browser HP */
-  }
+.scanner-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #00ff88;
+  box-shadow: 0 0 10px #00ff88;
+  animation: scanDown 3s linear infinite;
+  opacity: 0.5;
+}
 
-  /* 1. Area 3D (Atas) - 45% Tinggi Layar */
-  .canvas-wrapper {
+.model-controls {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.model-controls button {
+  background: transparent;
+  border: 1px solid #00ff88;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-family: "Rajdhani";
+  cursor: pointer;
+}
+.model-controls button:hover {
+  background: rgba(0, 255, 136, 0.2);
+}
+
+/* STAT BARS */
+.stat-bar {
+  margin-bottom: 1rem;
+}
+.stat-bar label {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+.progress {
+  width: 100%;
+  height: 5px;
+  background: #333;
+}
+.progress div {
+  height: 100%;
+  background: #00ff88;
+  box-shadow: 0 0 10px #00ff88;
+}
+
+.system-log p {
+  font-size: 0.8rem;
+  margin: 0.2rem 0;
+  color: #666;
+  font-family: monospace;
+}
+.system-log .success {
+  color: #00ff88;
+}
+
+/* FOOTER */
+.hud-footer {
+  margin-top: 1rem;
+  border-top: 1px solid #333;
+  padding-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hud-main {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .hud-left-panel,
+  .hud-right-panel {
     width: 100%;
-    height: 45%;
-    flex: none;
   }
-
-  /* Judul Overlay: Diperkecil & Digeser agar rapi */
-  .artifact-title-overlay {
-    bottom: 1rem;
-    left: 1.5rem;
-    width: 90%;
+  .model-frame {
+    min-height: 300px;
   }
+}
+/* CONTAINER UTAMA */
+.artifact-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+  font-family: "Rajdhani", monospace;
+  overflow: hidden;
+  position: relative;
+}
 
-  .item-id {
-    font-size: 0.7rem;
-    margin-bottom: 0.2rem;
+/* Background Grid Bergerak */
+.grid-bg-anim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 255, 136, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 136, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform: perspective(500px) rotateX(60deg);
+  animation: gridScroll 10s linear infinite;
+  opacity: 0.3;
+  z-index: 0;
+}
+@keyframes gridScroll {
+  from {
+    background-position: 0 0;
   }
-
-  .artifact-title-overlay h1 {
-    font-size: 2.2rem;
-    line-height: 1;
+  to {
+    background-position: 0 100px;
   }
+}
 
-  /* Tombol Back: Lebih ringkas */
-  .back-btn {
-    top: 1rem;
-    left: 1rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.75rem;
-    background: rgba(0, 0, 0, 0.6);
+/* UI LAYER (HUD) */
+.hud-layer {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem;
+  background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+/* HEADER */
+.hud-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.back-btn-hud {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  font-family: "Rajdhani";
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.back-btn-hud:hover {
+  background: #fff;
+  color: #000;
+}
+.header-info {
+  text-align: center;
+}
+.header-info h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px currentColor;
+}
+.blink-text {
+  color: #ff3333;
+  font-weight: bold;
+  animation: blink 1s infinite;
+  margin-right: 10px;
+  font-size: 0.8rem;
+}
+
+/* MAIN LAYOUT */
+.hud-main {
+  flex: 1;
+  display: flex;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+/* PANEL KIRI & KANAN */
+.hud-left-panel,
+.hud-right-panel {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.panel-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.2rem;
+  position: relative;
+  backdrop-filter: blur(5px);
+}
+.panel-box::before {
+  /* Dekorasi Sudut */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+}
+.panel-box h3 {
+  margin-top: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+  color: #aaa;
+  letter-spacing: 2px;
+  font-size: 1rem;
+}
+
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+.data-row span {
+  color: #666;
+  font-weight: bold;
+}
+.description-box p {
+  font-size: 0.95rem;
+  color: #ddd;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* CENTER VIEW (MODEL) */
+.hud-center-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.model-frame {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Simulasi 3D menggunakan Gambar */
+.model-proxy-img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.5));
+  animation: floatAnim 6s ease-in-out infinite;
+}
+@keyframes floatAnim {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
   }
+  50% {
+    transform: translateY(-20px) scale(1.02);
+  }
+}
 
-  /* 2. Panel Info (Bawah) - 55% Tinggi Layar (Lebih luas untuk teks) */
-  .article-panel {
+.scanner-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  box-shadow: 0 0 20px #fff;
+  animation: scanDown 3s linear infinite;
+  opacity: 0.5;
+  z-index: 5;
+}
+
+/* DEKORASI POJOK MODEL */
+.target-corner {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #fff;
+}
+.tl {
+  top: 20px;
+  left: 20px;
+  border-bottom: none;
+  border-right: none;
+}
+.tr {
+  top: 20px;
+  right: 20px;
+  border-bottom: none;
+  border-left: none;
+}
+.bl {
+  bottom: 20px;
+  left: 20px;
+  border-top: none;
+  border-right: none;
+}
+.br {
+  bottom: 20px;
+  right: 20px;
+  border-top: none;
+  border-left: none;
+}
+
+.model-controls {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.model-controls button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  font-family: "Rajdhani";
+  cursor: pointer;
+  transition: 0.3s;
+}
+.model-controls button:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* STAT BARS */
+.stat-bar {
+  margin-bottom: 1rem;
+}
+.stat-bar label {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+  color: #888;
+}
+.progress {
+  width: 100%;
+  height: 6px;
+  background: #222;
+}
+.progress div {
+  height: 100%;
+  box-shadow: 0 0 10px currentColor;
+  transition: width 1s ease-out;
+}
+
+.system-log p {
+  font-size: 0.8rem;
+  margin: 0.3rem 0;
+  color: #666;
+  font-family: monospace;
+}
+.system-log .success {
+  font-weight: bold;
+  text-shadow: 0 0 5px currentColor;
+}
+
+/* FOOTER */
+.hud-footer {
+  margin-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hud-main {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .hud-left-panel,
+  .hud-right-panel {
     width: 100%;
-    height: 55%;
-
-    border-left: none;
-    border-top: 2px solid var(--neon-blue);
-
-    /* FIX JARAK BEZEL DI SINI: Padding diperbesar */
-    padding: 2rem 2rem 1rem 2rem;
-
-    border-radius: 24px 24px 0 0; /* Lengkungan sudut atas lebih halus */
-    background: rgba(5, 10, 16, 0.98);
-    box-sizing: border-box; /* Pastikan padding tidak membuat layar jebol ke samping */
   }
-
-  .panel-header {
-    margin-bottom: 1.5rem;
-    gap: 1rem;
-    justify-content: center; /* Tombol tab di tengah */
-  }
-
-  .tab-btn {
-    flex: 1;
-    text-align: center;
-    font-size: 0.9rem;
-    padding-bottom: 0.8rem;
-  }
-
-  /* Konten Teks */
-  .panel-content {
-    /* Padding kanan dihilangkan karena sudah ada padding induk */
-    padding-right: 0;
-  }
-
-  .content-title {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    text-align: center; /* Judul Deskripsi di tengah agar simetris */
-  }
-
-  .content-text {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #b0c0d0;
-    margin-bottom: 2rem;
-    /* Rata kiri-kanan agar rapi tapi tetap berjarak dari pinggir */
-    text-align: justify;
-  }
-
-  .data-row {
-    padding: 1rem 0;
-    font-size: 0.9rem;
+  .model-frame {
+    min-height: 350px;
   }
 }

@@ -1,124 +1,145 @@
-import React, { Suspense, useState } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Stage, Html, useGLTF } from "@react-three/drei";
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import "../App.css";
 import "./ArtifactView.css";
 
-/* --- KOMPONEN PEMUAT MODEL 3D --- */
-function ArtifactModel({ path }) {
-  // Memuat file GLB/GLTF
-  // Gunakan suspense untuk menangani loading state
-  const { scene } = useGLTF(path);
+const ArtifactView = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // State untuk menyimpan data spesies yang dikirim
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // Cek apakah ada data yang dikirim lewat navigasi (state)
+    if (location.state && location.state.itemData) {
+      setData(location.state.itemData);
+    } else {
+      // Jika user membuka link langsung tanpa klik dari Hub, kembalikan ke Hub
+      navigate("/visual-3d");
+    }
+  }, [location, navigate]);
+
+  // Tampilan loading sementara
+  if (!data)
+    return <div className="loading-screen">INITIALIZING NEURAL LINK...</div>;
 
   return (
-    <primitive
-      object={scene}
-      scale={1} // Ubah angka ini jika model terlalu besar/kecil (misal: 0.5 atau 2)
-      position={[0, 0, 0]}
-    />
-  );
-}
+    <div className="artifact-container">
+      {/* Background Grid Animasi */}
+      <div className="grid-bg-anim"></div>
 
-const ArtifactView = ({ onBack }) => {
-  const [activeTab, setActiveTab] = useState("history");
-
-  // PATH MODEL (Pastikan file ini ada di folder public/models/hewan/vertebrata/)
-  // Sesuaikan path ini jika lokasi file berbeda
-  const MODEL_PATH = "/models/hewan/vertebrata/komodo_dragon_lizard-v2.glb";
-
-  return (
-    <div className="artifact-view-container animate-fade-in">
-      {/* Tombol Kembali */}
-      <button className="back-btn" onClick={onBack}>
-        ← MAIN MENU
-      </button>
-
-      {/* AREA 3D */}
-      <div className="canvas-wrapper">
-        <Canvas shadows dpr={[1, 2]} camera={{ fov: 45, position: [0, 0, 5] }}>
-          <Suspense
-            fallback={
-              <Html center>
-                <div className="loading-text">LOADING 3D ASSET...</div>
-              </Html>
-            }
-          >
-            {/* Stage memberikan pencahayaan studio otomatis yang bagus */}
-            <Stage environment="city" intensity={0.6} contactShadow={false}>
-              {/* Panggil Komponen Model di sini */}
-              <ArtifactModel path={MODEL_PATH} />
-            </Stage>
-          </Suspense>
-
-          <OrbitControls autoRotate autoRotateSpeed={0.5} enableZoom={true} />
-        </Canvas>
-
-        <div className="artifact-title-overlay">
-          <div className="item-id">/// ITEM_ID: ARTIFACT-01</div>
-          <h1>
-            DIGITAL <span className="outline-text">OBJECT</span>
-          </h1>
-        </div>
-      </div>
-
-      {/* PANEL KANAN (DATA) */}
-      <aside className="article-panel">
-        <div className="panel-header">
+      {/* --- UI LAYER (HUD) --- */}
+      <div className="hud-layer">
+        {/* HEADER */}
+        <header className="hud-header">
           <button
-            className={`tab-btn ${activeTab === "history" ? "active" : ""}`}
-            onClick={() => setActiveTab("history")}
+            onClick={() => navigate("/visual-3d")}
+            className="back-btn-hud"
           >
-            DATA LOG
+            &lt; TERMINATE SESSION
           </button>
-          <button
-            className={`tab-btn ${activeTab === "tech" ? "active" : ""}`}
-            onClick={() => setActiveTab("tech")}
-          >
-            METADATA
-          </button>
-        </div>
+          <div className="header-info">
+            <span className="blink-text">LIVE FEED</span>
+            <h1 style={{ color: data.color || "#fff" }}>{data.name}</h1>
+          </div>
+          <div className="system-time">
+            REC: {new Date().toLocaleTimeString()}
+          </div>
+        </header>
 
-        <div className="panel-content scroll-hidden">
-          {activeTab === "history" ? (
-            <>
-              <h2 className="content-title">DESKRIPSI ARTEFAK</h2>
-              <p className="content-text">
-                Ini adalah representasi digital presisi tinggi dari artefak
-                sejarah. Objek ini telah direkonstruksi menggunakan fotogrametri
-                dan pemindaian laser untuk melestarikan detail aslinya dalam
-                format digital abadi.
+        {/* MAIN CONTENT */}
+        <main className="hud-main">
+          {/* PANEL KIRI: DATA SPESIES */}
+          <aside className="hud-left-panel">
+            <div className="panel-box">
+              <h3>TAXONOMY DATA</h3>
+              <div className="data-row">
+                <span>CATEGORY:</span> {data.category || "UNKNOWN"}
+              </div>
+              <div className="data-row">
+                <span>SUB-TYPE:</span> {data.subCategory || "UNKNOWN"}
+              </div>
+              <div className="data-row">
+                <span>ERA:</span>{" "}
+                {data.categoryId === "ERA" ? data.name : "PREHISTORIC"}
+              </div>
+            </div>
+
+            <div className="panel-box description-box">
+              <h3>DESCRIPTION</h3>
+              <p>{data.desc}</p>
+            </div>
+          </aside>
+
+          {/* VISUAL CENTER (MODEL 3D SIMULATION) */}
+          <section className="hud-center-view">
+            <div className="model-frame" style={{ borderColor: data.color }}>
+              {/* Simulasi Model 3D menggunakan Gambar */}
+              <div className="scanner-line"></div>
+              <img
+                src={data.image}
+                alt={data.name}
+                className="model-proxy-img"
+              />
+
+              {/* Dekorasi Target */}
+              <div className="target-reticle"></div>
+              <div className="target-corner tr"></div>
+              <div className="target-corner tl"></div>
+              <div className="target-corner br"></div>
+              <div className="target-corner bl"></div>
+            </div>
+
+            <div className="model-controls">
+              <button>ROTATE X</button>
+              <button>ROTATE Y</button>
+              <button>ZOOM IN</button>
+            </div>
+          </section>
+
+          {/* PANEL KANAN: STATISTIK */}
+          <aside className="hud-right-panel">
+            <div className="panel-box">
+              <h3>STRUCTURAL ANALYSIS</h3>
+              <div className="stat-bar">
+                <label>INTEGRITY</label>
+                <div className="progress">
+                  <div style={{ width: "94%", background: data.color }}></div>
+                </div>
+              </div>
+              <div className="stat-bar">
+                <label>COMPLETENESS</label>
+                <div className="progress">
+                  <div style={{ width: "88%", background: data.color }}></div>
+                </div>
+              </div>
+              <div className="stat-bar">
+                <label>RARITY</label>
+                <div className="progress">
+                  <div style={{ width: "72%", background: data.color }}></div>
+                </div>
+              </div>
+            </div>
+            <div className="panel-box system-log">
+              <p>System &gt; Loading asset: {data.name}...</p>
+              <p>System &gt; Texture mapping... OK</p>
+              <p>System &gt; Physics engine... ACTIVE</p>
+              <p className="success" style={{ color: data.color }}>
+                System &gt; READY.
               </p>
-              <div className="data-row">
-                <span>TAHUN</span> <span>EST. 1400 AD</span>
-              </div>
-              <div className="data-row">
-                <span>ASAL</span> <span>JAWA TENGAH, ID</span>
-              </div>
-            </>
-          ) : (
-            <>
-              <h2 className="content-title">SCAN DATA</h2>
-              <div className="tech-stat">
-                <label>POLYGON COUNT</label>
-                <div className="bar-container">
-                  <div className="bar-fill" style={{ width: "92%" }}></div>
-                </div>
-              </div>
-              <div className="tech-stat">
-                <label>TEXTURE SIZE</label>
-                <div className="bar-container">
-                  <div className="bar-fill" style={{ width: "100%" }}></div>
-                </div>
-                <span>4096 x 4096 (4K)</span>
-              </div>
-            </>
-          )}
-        </div>
-      </aside>
+            </div>
+          </aside>
+        </main>
+
+        {/* FOOTER */}
+        <footer className="hud-footer">
+          <div className="coord">X: 45.291 Y: 11.002 Z: 0.05</div>
+          <div className="status-bar">RENDERING: VULKAN API // 120 FPS</div>
+        </footer>
+      </div>
     </div>
   );
 };
-
-// Pre-load model (Opsional, uncomment jika ingin load lebih awal untuk performa)
-// useGLTF.preload("/models/hewan/vertebrata/komodo_dragon_lizard-v2.glb");
 
 export default ArtifactView;

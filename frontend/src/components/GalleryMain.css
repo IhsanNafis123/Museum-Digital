@@ -1,0 +1,509 @@
+/* --- GLOBAL LAYOUT --- */
+.gallery-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #050505;
+  color: #fff;
+  font-family: "Rajdhani", sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent 40%, #000 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --- NAVBAR --- */
+.gallery-nav {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+.nav-back {
+  text-decoration: none;
+  color: #888;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+.nav-back:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
+}
+
+.nav-title {
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+  font-weight: 800;
+  color: #fff;
+}
+
+/* --- CONTENT AREA --- */
+.gallery-content {
+  position: relative;
+  z-index: 5;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- VIEW 1: KATEGORI UTAMA --- */
+.selection-grid {
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+}
+.main-heading {
+  font-size: 3rem;
+  letter-spacing: 10px;
+  margin-bottom: 3rem;
+}
+.blink {
+  animation: blink 1s infinite;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.compact-card {
+  width: 300px;
+  height: 400px;
+  background: rgba(20, 20, 20, 0.6);
+  border: 1px solid #333;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.compact-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--card-color);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.card-image-box {
+  width: 100%;
+  height: 60%;
+  position: relative;
+}
+.card-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: 0.5s;
+}
+.compact-card:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+.card-text {
+  padding: 1.5rem;
+  text-align: left;
+}
+.card-text h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  color: #fff;
+}
+.card-text p {
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.hover-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: var(--card-color);
+  transition: 0.4s;
+}
+.compact-card:hover .hover-border {
+  width: 100%;
+}
+
+/* --- VIEW 2: SUB-KATEGORI (LAYOUT VERTIKAL BARU) --- */
+.sub-selection-view {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.sub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 1rem;
+}
+.back-arrow-btn {
+  background: none;
+  border: 1px solid #444;
+  color: #888;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: "Rajdhani";
+}
+.back-arrow-btn:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+/* Wrapper List Vertikal */
+.sub-cards-wrapper {
+  display: flex;
+  flex-direction: column; /* Menyusun ke bawah */
+  gap: 20px;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+/* Kartu Horizontal (List Item) */
+.sub-card-visual {
+  display: flex;
+  flex-direction: row; /* Gambar kiri, Teks kanan */
+  height: 200px;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 4px solid var(--item-color);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  opacity: 0;
+  animation: slideInList 0.6s forwards;
+}
+
+.sub-card-visual:hover {
+  transform: translateX(10px);
+  background: rgba(20, 20, 20, 0.95);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.sub-visual-box {
+  width: 35%; /* Gambar 35% */
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%); /* Potongan miring */
+}
+.sub-visual-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+.sub-card-visual:hover img {
+  transform: scale(1.1);
+}
+
+.index-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--item-color);
+  color: #000;
+  font-weight: bold;
+  padding: 5px 15px;
+  font-size: 1.2rem;
+  z-index: 2;
+}
+
+.sub-content-box {
+  flex: 1;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.sub-content-box h3 {
+  font-size: 2rem;
+  margin: 0 0 10px 0;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.sub-content-box p {
+  color: #aaa;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  max-width: 90%;
+}
+
+.mini-inspect-btn {
+  background: transparent;
+  border: 1px solid var(--item-color);
+  color: var(--item-color);
+  padding: 10px 25px;
+  font-family: "Rajdhani";
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.mini-inspect-btn:hover {
+  background: var(--item-color);
+  color: #000;
+  box-shadow: 0 0 15px var(--item-color);
+}
+
+/* --- VIEW 3: SPLIT VIEW LAYOUT --- */
+.split-view-container {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  height: 80vh;
+  gap: 2rem;
+}
+
+/* PANEL KIRI (LIST) */
+.left-panel-list {
+  width: 30%;
+  background: rgba(0, 0, 0, 0.6);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+}
+.list-heading {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+}
+.list-scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+.list-scroll-area::-webkit-scrollbar {
+  width: 4px;
+}
+.list-scroll-area::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 2px;
+}
+
+.list-item-btn {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: left;
+  font-family: "Rajdhani";
+}
+.list-item-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  padding-left: 1.5rem;
+  color: #fff;
+}
+.list-item-btn.active {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent);
+  color: #fff;
+  border-left: 4px solid var(--accent);
+}
+.item-idx {
+  font-weight: bold;
+  opacity: 0.5;
+}
+.item-name {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+/* PANEL KANAN (DETAIL) */
+.right-panel-detail {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow-y: auto;
+}
+
+.detail-image-wrapper {
+  width: 100%;
+  height: 50%;
+  min-height: 300px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+.detail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.scan-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.5) 50%);
+  background-size: 100% 4px;
+  opacity: 0.2;
+  pointer-events: none;
+}
+.img-caption {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.detail-info-box {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex: 1;
+}
+.detail-info-box h1 {
+  font-size: 2.5rem;
+  margin: 0 0 1rem 0;
+  letter-spacing: 3px;
+}
+.detail-info-box p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 2rem;
+}
+
+.data-metrics {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+}
+.metric span {
+  color: #666;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.view-3d-btn {
+  background: var(--btn-color);
+  color: #000;
+  border: none;
+  padding: 1rem 2rem;
+  font-family: "Rajdhani";
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: 0.3s;
+}
+.view-3d-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px var(--btn-color);
+}
+
+/* ANIMASI & RESPONSIVE */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInList {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.5s ease-out;
+}
+
+@media screen and (max-width: 768px) {
+  .sub-card-visual {
+    flex-direction: column;
+    height: auto;
+  }
+  .sub-visual-box {
+    width: 100%;
+    height: 150px;
+    clip-path: none;
+    border-bottom: 1px solid #333;
+  }
+  .split-view-container {
+    flex-direction: column;
+    height: auto;
+  }
+  .left-panel-list,
+  .right-panel-detail {
+    width: 100%;
+  }
+}

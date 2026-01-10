@@ -1,0 +1,108 @@
+.intro-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  font-family: "Rajdhani", sans-serif;
+  color: #fff;
+}
+
+.intro-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, #111 0%, #000 70%);
+  z-index: 0;
+}
+
+.intro-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 800px;
+  padding: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.intro-content.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intro-logo {
+  color: #00ff88;
+  letter-spacing: 5px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.intro-title {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  /* Efek Teks Bercahaya */
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.intro-text-box {
+  border-left: 2px solid #00ff88;
+  padding-left: 30px;
+  text-align: left;
+  margin-bottom: 50px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 255, 136, 0.05) 0%,
+    transparent 100%
+  );
+}
+
+.intro-text-box p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.explore-btn {
+  background: #00ff88;
+  color: #000;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  cursor: pointer;
+  font-family: "Rajdhani";
+  transition: 0.3s;
+  clip-path: polygon(
+    10px 0,
+    100% 0,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    0 100%,
+    0 10px
+  );
+}
+
+.explore-btn:hover {
+  background: #fff;
+  box-shadow: 0 0 30px #00ff88;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .intro-title {
+    font-size: 2.5rem;
+  }
+  .intro-content {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,332 @@
+/* --- CONTAINER UTAMA --- */
+.hub-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #050505;
+  color: #fff;
+  font-family: "Rajdhani", sans-serif;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Background Grid Halus */
+.hub-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#222 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+/* --- NAVBAR --- */
+.hub-nav {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid #333;
+}
+
+.hub-back-btn {
+  text-decoration: none;
+  color: #aaa;
+  letter-spacing: 2px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.hub-back-btn:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
+}
+
+.hub-title {
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+  font-weight: 700;
+}
+.hub-status {
+  color: #00ff88;
+  font-size: 0.8rem;
+  animation: pulse 2s infinite;
+}
+
+/* --- CONTENT --- */
+.hub-content {
+  flex: 1;
+  position: relative;
+  z-index: 5;
+  overflow-y: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hub-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.hub-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 5px;
+}
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  background: transparent;
+  border: 1px solid #444;
+  color: #888;
+  padding: 0.8rem 2rem;
+  font-family: "Rajdhani";
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 40%);
+}
+.filter-btn:hover,
+.filter-btn.active {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* --- GRID LAYOUT --- */
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1400px;
+  padding-bottom: 4rem;
+}
+
+/* --- DATA CHIP (CARD) --- */
+.data-chip {
+  position: relative;
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid #333;
+  height: 300px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.data-chip:hover {
+  border-color: var(--accent);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.chip-img-box {
+  height: 60%;
+  width: 100%;
+  position: relative;
+}
+.chip-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(80%);
+  transition: 0.5s;
+}
+.data-chip:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+.chip-info {
+  padding: 1rem;
+  position: relative;
+}
+.chip-cat {
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+.chip-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+.chip-decor-line {
+  height: 2px;
+  width: 30px;
+  background: var(--accent);
+  margin-top: 1rem;
+  transition: width 0.3s;
+}
+.data-chip:hover .chip-decor-line {
+  width: 100%;
+}
+
+/* Sudut Dekorasi */
+.corner-decor {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 20px solid var(--accent);
+  border-left: 20px solid transparent;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+.data-chip:hover .corner-decor {
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+/* --- MODAL KONFIRMASI --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s;
+}
+
+.modal-box {
+  width: 90%;
+  max-width: 700px;
+  background: #111;
+  border: 1px solid #444;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  padding: 0.5rem 1rem;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+}
+
+.modal-body {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+}
+.modal-img {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  border: 1px solid #333;
+}
+.modal-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.scan-anim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: cyan;
+  box-shadow: 0 0 10px cyan;
+  animation: scanDown 2s infinite;
+}
+
+.modal-text {
+  flex: 1;
+}
+.modal-text h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+.modal-text h4 {
+  margin: 0.5rem 0 1.5rem 0;
+  color: #888;
+}
+.modal-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+  color: cyan;
+  font-size: 0.9rem;
+}
+
+.modal-actions {
+  display: flex;
+  border-top: 1px solid #333;
+}
+.modal-actions button {
+  flex: 1;
+  padding: 1.5rem;
+  font-family: "Rajdhani";
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+.cancel-btn {
+  background: #1a1a1a;
+  color: #fff;
+}
+.cancel-btn:hover {
+  background: #333;
+}
+.launch-btn {
+  background: rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+}
+.launch-btn:hover {
+  background: #fff;
+  color: #000 !important;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .modal-body {
+    flex-direction: column;
+  }
+  .modal-img {
+    width: 100%;
+    height: 150px;
+  }
+}

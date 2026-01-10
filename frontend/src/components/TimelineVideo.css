@@ -1,0 +1,196 @@
+/* --- 1. RESET & CONTAINER UTAMA --- */
+.video-page-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000; /* Hitam pekat */
+  color: #fff;
+  display: flex;
+  flex-direction: column; /* Susun atas-bawah */
+  justify-content: center; /* Tengah secara vertikal */
+  align-items: center; /* Tengah secara horizontal */
+  font-family: "Rajdhani", sans-serif;
+  position: relative;
+  overflow: hidden; /* Mencegah scrollbar */
+  margin: 0;
+  padding: 0;
+}
+
+/* --- 2. TOMBOL KEMBALI (POJOK KIRI ATAS) --- */
+.video-back-btn {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: 0.3s;
+  z-index: 100;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.video-back-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #00d2ff;
+  color: #00d2ff;
+}
+
+/* --- 3. WRAPPER KONTEN (TENGAH) --- */
+.timeline-wrapper {
+  width: 80%; /* Lebar ideal untuk layar desktop */
+  max-width: 1000px; /* Jangan terlalu lebar di layar besar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* --- 4. HEADER (JUDUL) --- */
+.video-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.video-header h1 {
+  font-size: 2.5rem;
+  margin: 0 0 5px 0;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.video-header p {
+  color: #00d2ff;
+  font-size: 0.85rem;
+  margin: 0;
+  letter-spacing: 3px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* --- 5. BINGKAI VIDEO (FRAME) --- */
+.video-frame {
+  position: relative;
+  width: 100%;
+  /* PENTING: Aspect Ratio 16:9 agar kotak video proporsional */
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 1px solid #333;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8); /* Shadow halus */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* VIDEO ASLI */
+.main-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Video tidak akan terpotong/zoom */
+  display: block;
+}
+
+/* --- 6. DEKORASI SUDUT (CYAN CORNERS) --- */
+.frame-corner {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #00d2ff;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.top-left {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+.top-right {
+  top: -2px;
+  right: -2px;
+  border-left: none;
+  border-bottom: none;
+}
+.bottom-left {
+  bottom: -2px;
+  left: -2px;
+  border-right: none;
+  border-top: none;
+}
+.bottom-right {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+}
+
+/* --- 7. EFEK SCAN LINE BERGERAK --- */
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #00d2ff;
+  box-shadow: 0 0 10px #00d2ff;
+  opacity: 0.5;
+  animation: scanAnim 4s linear infinite;
+  pointer-events: none;
+  z-index: 15;
+}
+
+@keyframes scanAnim {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* --- 8. FOOTER KECIL --- */
+.video-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 15px;
+  font-size: 0.75rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: monospace;
+}
+
+/* --- 9. RESPONSIVE (HP) --- */
+@media (max-width: 768px) {
+  .timeline-wrapper {
+    width: 95%;
+  }
+  .video-header h1 {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+  }
+  .video-back-btn {
+    top: 20px;
+    left: 20px;
+    padding: 8px 15px;
+    font-size: 0.7rem;
+  }
+}

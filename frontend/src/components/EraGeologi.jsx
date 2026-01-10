@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../App.css"; // Global styles
-import "./EraGeologi.css"; // Style khusus halaman ini
+import "../App.css";
+import "./EraGeologi.css";
 
 const EraGeologi = () => {
   const [activeEra, setActiveEra] = useState(0);
@@ -11,38 +11,53 @@ const EraGeologi = () => {
       id: 0,
       name: "PALEOZOIKUM",
       period: "541 - 252 Juta Tahun Lalu",
-      desc: "Era kehidupan purba (Ancient Life). Ini adalah masa di mana kehidupan meledak di lautan (Cambrian Explosion). Belum ada dinosaurus. Bumi didominasi oleh invertebrata laut bercangkang keras, ikan purba pertama, dan amfibi yang mulai naik ke darat. Tumbuhan paku raksasa mulai membentuk hutan pertama.",
-      creatures: [
-        "Trilobite",
-        "Anomalocaris",
-        "Dunkleosteus (Ikan Lapis Baja)",
-        "Dimetrodon",
+      desc: "Era kehidupan purba (Ancient Life). Ini adalah masa di mana kehidupan meledak di lautan (Cambrian Explosion). Belum ada dinosaurus. Bumi didominasi oleh invertebrata laut bercangkang keras, ikan purba pertama, dan amfibi yang mulai naik ke darat.",
+      creatures: ["Trilobite", "Anomalocaris", "Dunkleosteus", "Dimetrodon"],
+      image: "/ImageModels/EraGeologi/foto-paleozoikum.jpg", // Background utama
+      color: "#00d2ff",
+      // DATA GALERI BARU
+      gallery: [
+        {
+          title: "ANOMALOCARIS",
+          img: "/ImageModels/EraGeologi/anomalocaris.jpg",
+        },
+        {
+          title: "EARLY AMPHIBIAN",
+          img: "/ImageModels/EraGeologi/amphibian.jpg",
+        },
       ],
-      image: "/ImageModels/paleozoic_bg.jpg", // Ganti dengan foto ilustrasi laut purba/hutan paku
-      color: "#00d2ff", // Biru Laut
     },
     {
       id: 1,
       name: "MESOZOIKUM",
       period: "252 - 66 Juta Tahun Lalu",
-      desc: "Zaman Kejayaan Reptil (Age of Reptiles). Dinosaurus menguasai daratan, Pterosaurus menguasai langit, dan Reptil Laut raksasa menguasai samudra. Era ini terbagi menjadi Trias, Jura, dan Kapur (Cretaceous). Berakhir dengan kepunahan massal akibat hantaman asteroid.",
+      desc: "Zaman Kejayaan Reptil. Dinosaurus menguasai daratan, Pterosaurus di langit, dan Reptil Laut di samudra. Era ini terbagi menjadi Trias, Jura, dan Kapur. Berakhir dengan kepunahan massal akibat asteroid.",
       creatures: ["T-Rex", "Velociraptor", "Triceratops", "Pteranodon"],
-      image: "/ImageModels/mesozoic_bg.jpg", // Ganti dengan foto Dinosaurus
-      color: "#ff4d4d", // Merah Agresif
+      image: "/ImageModels/EraGeologi/foto-mesozoikum.jpg",
+      color: "#ff4d4d",
+      gallery: [
+        { title: "TYRANNOSAURUS REX", img: "/ImageModels/EraGeologi/trex.jpg" },
+        {
+          title: "VELOCIRAPTOR CLAW",
+          img: "/ImageModels/EraGeologi/velociraptor.webp",
+        },
+      ],
     },
     {
       id: 2,
       name: "KENOZOIKUM",
       period: "66 Juta Tahun Lalu - Sekarang",
-      desc: "Zaman Kehidupan Baru (New Life). Setelah dinosaurus punah, mamalia bangkit menjadi penguasa bumi. Munculnya Megafauna (mamalia raksasa) seperti Mammoth dan Smilodon. Era ini juga menjadi saksi evolusi primata yang akhirnya mengarah pada kemunculan manusia.",
-      creatures: [
-        "Woolly Mammoth",
-        "Smilodon (Saber-tooth)",
-        "Megalodon",
-        "Manusia Purba",
+      desc: "Zaman Kehidupan Baru. Setelah dinosaurus punah, mamalia bangkit menjadi penguasa bumi. Munculnya Megafauna seperti Mammoth dan Smilodon, serta evolusi primata menuju manusia.",
+      creatures: ["Woolly Mammoth", "Smilodon", "Megalodon", "Human"],
+      image: "/ImageModels/EraGeologi/foto-kenozoikum.jpg",
+      color: "#00ff88",
+      gallery: [
+        { title: "WOOLLY MAMMOTH", img: "/ImageModels/EraGeologi/mammoth.jpg" },
+        {
+          title: "SABER TOOTH TIGER",
+          img: "/ImageModels/EraGeologi/smilodon.webp",
+        },
       ],
-      image: "/ImageModels/cenozoic_bg.jpg", // Ganti dengan foto Mammoth/Es
-      color: "#00ff88", // Hijau/Putih
     },
   ];
 
@@ -50,25 +65,24 @@ const EraGeologi = () => {
 
   return (
     <div className="era-container fade-in">
-      {/* BACKGROUND DINAMIS */}
+      {/* BACKGROUND */}
       <div
         className="era-bg-overlay"
         style={{ backgroundImage: `url(${currentData.image})` }}
       ></div>
       <div className="era-overlay-gradient"></div>
 
-      {/* HEADER NAVIGASI */}
+      {/* NAVBAR */}
       <nav className="era-navbar">
         <Link to="/" className="back-link">
           ← KEMBALI KE BERANDA
         </Link>
-        <div className="system-status">MODE: EDUCATIONAL_ARCHIVE</div>
+        <div className="system-status"></div>
       </nav>
 
       <main className="era-content-wrapper">
-        {/* SIDEBAR PILIHAN ERA */}
+        {/* SIDEBAR */}
         <aside className="timeline-sidebar">
-          <div className="timeline-line"></div>
           {eras.map((era, index) => (
             <button
               key={era.id}
@@ -94,31 +108,40 @@ const EraGeologi = () => {
             <p>{currentData.desc}</p>
 
             <div className="species-list">
-              <span>DOMINANT SPECIES DETECTED:</span>
+              <span>DOMINANT SPECIES:</span>
               <div className="tags">
-                {currentData.creatures.map((creature, i) => (
+                {currentData.creatures.map((c, i) => (
                   <div
                     key={i}
                     className="creature-tag"
                     style={{ borderColor: currentData.color }}
                   >
-                    {creature}
+                    {c}
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* SLOT FOTO VISUALISASI */}
-          <div className="visual-preview-box">
-            <div className="scan-line"></div>
-            <img
-              src={currentData.image}
-              alt={currentData.name}
-              className="main-era-img"
-            />
-            <div className="img-caption">
-              VISUALISASI EKOSISTEM /// {currentData.name}
+          {/* --- BAGIAN GALERI FOTO GRID --- */}
+          <div className="era-gallery-section">
+            <h3 style={{ color: currentData.color }}>VISUALISASI EKOSISTEM</h3>
+
+            <div className="gallery-grid">
+              {/* Foto Utama (Besar) - Mengambil foto background/image utama */}
+              <div className="gallery-item main-item">
+                <div className="scan-line"></div>
+                <img src={currentData.image} alt="Main Visual" />
+                <div className="img-caption">SKETSA {currentData.name}</div>
+              </div>
+
+              {/* Foto-foto Detail dari Array Gallery */}
+              {currentData.gallery.map((item, idx) => (
+                <div key={idx} className="gallery-item sub-item">
+                  <img src={item.img} alt={item.title} />
+                  <div className="img-caption">{item.title}</div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

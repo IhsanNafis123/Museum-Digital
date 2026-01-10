@@ -1,14 +1,12 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import "../App.css";
 import "./LandingPage.css";
-import { Link } from "react-router-dom";
 
-const LandingPage = ({ onExplore }) => {
+// UBAH: Terima props onStart & onTimeline
+const LandingPage = ({ onStart, onTimeline }) => {
   const observerRef = useRef(null);
 
-  // --- DATA FOSIL & HEWAN PURBA ---
-  // Kategori: Vertebrata, Invertebrata, Mikrofosil
-  // Era: Paleozoikum, Mesozoikum, Kenozoikum
   const featuredFossils = [
     {
       id: 1,
@@ -16,8 +14,9 @@ const LandingPage = ({ onExplore }) => {
       desc: "Predator puncak era Mesozoikum (Kapur). Fosil tubuh yang menunjukkan struktur rahang mematikan.",
       type: "VERTEBRATA",
       era: "MESOZOIKUM",
-      image: "/ImageModels/trex.jpg", // Pastikan ada gambar ini
-      accentColor: "#ff4d4d", // Merah (Bahaya/Predator)
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrQ53hI5D7wMRZ4jkuZBqC-AXLvzDL39rnNQ&s",
+      accentColor: "#ff4d4d",
     },
     {
       id: 2,
@@ -25,8 +24,9 @@ const LandingPage = ({ onExplore }) => {
       desc: "Invertebrata laut ikonik dari era Paleozoikum. Salah satu bentuk kehidupan kompleks paling awal.",
       type: "INVERTEBRATA",
       era: "PALEOZOIKUM",
-      image: "/ImageModels/trilobite.jpg",
-      accentColor: "#00d2ff", // Biru (Laut)
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQljOpkz5Or31nutRIesJGJQ2ZB2uTjIOogDg&s",
+      accentColor: "#00d2ff",
     },
     {
       id: 3,
@@ -34,8 +34,9 @@ const LandingPage = ({ onExplore }) => {
       desc: "Mamalia raksasa era Kenozoikum. Sering ditemukan sebagai fosil terawetkan dalam es (Permafrost).",
       type: "MAMALIA",
       era: "KENOZOIKUM",
-      image: "/ImageModels/mammoth.jpg",
-      accentColor: "#ffffff", // Putih (Es/Salju)
+      image:
+        "https://media.sketchfab.com/models/58376e170c8b4507a636b5e45bcce999/thumbnails/ce3b02fdd7194d55b7afb8908312ad98/92491c00087e4d21aa7fb453582a759f.jpeg",
+      accentColor: "#ffffff",
     },
     {
       id: 4,
@@ -43,8 +44,9 @@ const LandingPage = ({ onExplore }) => {
       desc: "Moluska laut purba dengan cangkang spiral. Fosil indeks penting untuk penanggalan lapisan batuan.",
       type: "INVERTEBRATA",
       era: "MESOZOIKUM",
-      image: "/ImageModels/ammonite.jpg",
-      accentColor: "#FF8C00", // Oranye (Cangkang)
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpdaTwKETvJtqM8A-jfuCswx-cs-Z4QXx84w&s",
+      accentColor: "#FF8C00",
     },
     {
       id: 5,
@@ -52,8 +54,9 @@ const LandingPage = ({ onExplore }) => {
       desc: "Dinosaurus teropoda kecil namun cerdas. Fosil jejak (Trace Fossil) sering menunjukkan perilaku berburu.",
       type: "VERTEBRATA",
       era: "MESOZOIKUM",
-      image: "/ImageModels/velociraptor.jpg",
-      accentColor: "#00ff88", // Hijau (Lincah)
+      image:
+        "https://media.sketchfab.com/models/6de8fb7fb8ed4f26844a3556a491cd9c/thumbnails/ef2080f4692342d3aa0f7ef6d7cefd26/14354e2a4cb74e07b312891a5b66375c.jpeg",
+      accentColor: "#00ff88",
     },
     {
       id: 6,
@@ -61,8 +64,9 @@ const LandingPage = ({ onExplore }) => {
       desc: "Fosil transisi penting yang menghubungkan dinosaurus non-unggas dengan burung modern.",
       type: "TRANSISI",
       era: "JURA AKHIR",
-      image: "/ImageModels/archaeopteryx.jpg",
-      accentColor: "#A020F0", // Ungu (Misterius/Langka)
+      image:
+        "https://preview.free3d.com/img/2020/07/2408255575549805854/0a4346v6.jpg",
+      accentColor: "#A020F0",
     },
     {
       id: 7,
@@ -70,8 +74,9 @@ const LandingPage = ({ onExplore }) => {
       desc: "Gigi hiu raksasa prasejarah. Sisa fosil paling umum dari predator laut terbesar sepanjang masa.",
       type: "MIKRO/BAGIAN",
       era: "KENOZOIKUM",
-      image: "/ImageModels/megalodon.jpg",
-      accentColor: "#00CED1", // Cyan Gelap
+      image:
+        "https://media.sketchfab.com/models/6a36ac89561d44eb80e983bf2c213c50/thumbnails/ccb504b00fe54341ac36c1f361fb0028/ed63e9ebabec48b9a211982847318d49.jpeg",
+      accentColor: "#00CED1",
     },
   ];
 
@@ -97,7 +102,6 @@ const LandingPage = ({ onExplore }) => {
 
   return (
     <>
-      {/* NAVBAR */}
       <nav className="navbar">
         <div className="logo-section">
           <div className="logo-symbol">N</div>
@@ -107,32 +111,20 @@ const LandingPage = ({ onExplore }) => {
           <a href="#home" className="nav-link active">
             HOME
           </a>
-
-          {/* INI YANG DIUBAH: Menggunakan Link ke route /era-geologi */}
           <Link to="/era-geologi" className="nav-link">
             ERA GEOLOGI
           </Link>
-
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              onExplore();
-            }}
-            className="nav-link"
-          >
-            KOLEKSI FOSIL
-          </a>
-          <a href="#" className="nav-link">
-            LABORATORIUM
-          </a>
+          <Link to="/gallery" className="nav-link">
+            GALLERY
+          </Link>
+          <Link to="/visual-3d" className="nav-link">
+            VISUAL 3D
+          </Link>
         </div>
       </nav>
 
-      {/* HERO SECTION */}
       <main id="home" className="hero-section">
         <div className="video-wrapper">
-          {/* SAYA SARANKAN GANTI VIDEO BACKGROUND DENGAN TEMA ALAM/HUTAN PURBA/DNA */}
           <video autoPlay loop muted playsInline className="hero-video">
             <source src="/background-kedua.mp4" type="video/mp4" />
           </video>
@@ -140,7 +132,7 @@ const LandingPage = ({ onExplore }) => {
         </div>
 
         <div className="hero-content">
-          <div className="floating-tag">/// PALEO-ARCHIVE READY</div>
+          <div className="floating-tag"></div>
           <h1 className="hero-title">
             JEJAK <br />
             <span className="outline-text">PRASEJARAH</span>
@@ -150,11 +142,19 @@ const LandingPage = ({ onExplore }) => {
             era Paleozoikum hingga Kenozoikum melalui rekonstruksi digital
             presisi tinggi.
           </p>
+
           <div className="cta-container">
-            <button className="explore-btn" onClick={onExplore}>
+            {/* Tombol 1: Gunakan onClick={onStart} */}
+            <button className="explore-btn" onClick={onStart}>
               MULAI EKSKAVASI
             </button>
-            <div className="play-btn-wrapper">
+
+            {/* Tombol 2: Tetap pakai DIV agar tampilan tidak berubah, tambah onClick & cursor */}
+            <div
+              className="play-btn-wrapper"
+              onClick={onTimeline}
+              style={{ cursor: "pointer" }}
+            >
               <div className="play-icon">▶</div>
               <span>LIHAT TIMELINE BUMI</span>
             </div>
@@ -166,7 +166,6 @@ const LandingPage = ({ onExplore }) => {
         </div>
       </main>
 
-      {/* ABOUT SECTION (Penjelasan Klasifikasi) */}
       <section id="about" className="about-section">
         <div className="about-container">
           <div className="about-header animate-hidden slide-up">
@@ -182,7 +181,6 @@ const LandingPage = ({ onExplore }) => {
             </p>
           </div>
 
-          {/* GRID FITUR: Diganti dengan Klasifikasi Anda */}
           <div className="features-grid">
             <div className="feature-card animate-hidden slide-left">
               <div className="card-number">01</div>
@@ -191,8 +189,16 @@ const LandingPage = ({ onExplore }) => {
                 Vertebrata (Dinosaurus, Mamalia), Invertebrata (Trilobite), dan
                 Mikrofosil.
               </p>
+              <Link
+                to="/gallery"
+                state={{ targetCategory: "BIO" }}
+                className="read-more-link"
+              >
+                LIHAT SELENGKAPNYA →
+              </Link>
               <div className="card-decoration"></div>
             </div>
+
             <div className="feature-card animate-hidden slide-up">
               <div className="card-number">02</div>
               <h3>JENIS FOSIL</h3>
@@ -200,8 +206,16 @@ const LandingPage = ({ onExplore }) => {
                 Fosil Tubuh (Tulang/Gigi), Fosil Jejak (Tapak Kaki), dan Fosil
                 Terawetkan (Amber/Es).
               </p>
+              <Link
+                to="/gallery"
+                state={{ targetCategory: "FOSSIL" }}
+                className="read-more-link"
+              >
+                LIHAT SELENGKAPNYA →
+              </Link>
               <div className="card-decoration"></div>
             </div>
+
             <div className="feature-card animate-hidden slide-right">
               <div className="card-number">03</div>
               <h3>ERA GEOLOGI</h3>
@@ -209,11 +223,13 @@ const LandingPage = ({ onExplore }) => {
                 Paleozoikum (Awal), Mesozoikum (Dinosaurus), hingga Kenozoikum
                 (Mamalia).
               </p>
+              <Link to="/era-geologi" className="read-more-link">
+                LIHAT SELENGKAPNYA →
+              </Link>
               <div className="card-decoration"></div>
             </div>
           </div>
 
-          {/* --- COLLECTION PREVIEW --- */}
           <div
             className="collection-preview-section animate-hidden slide-up"
             style={{ marginTop: "8rem" }}
@@ -236,9 +252,7 @@ const LandingPage = ({ onExplore }) => {
                     className="preview-visual"
                     style={{ "--item-color": item.accentColor }}
                   >
-                    {/* Badge menampilkan ERA */}
                     <div className="item-type-badge">{item.era}</div>
-
                     <div
                       className="visual-bg"
                       style={{
@@ -246,19 +260,14 @@ const LandingPage = ({ onExplore }) => {
                         backgroundColor: item.accentColor,
                       }}
                     ></div>
-
                     <div className="pattern-overlay"></div>
                     <div className="visual-overlay-gradient"></div>
-
                     <div className="visual-center-icon">
-                      <span className="scan-line"></span>
-                      FSL {/* Singkatan Fosil */}
+                      <span className="scan-line"></span>FSL
                     </div>
                   </div>
-
                   <div className="preview-info">
                     <h4>{item.title}</h4>
-                    {/* Menampilkan Tipe Hewan kecil di atas deskripsi */}
                     <small
                       style={{
                         color: item.accentColor,
@@ -273,7 +282,7 @@ const LandingPage = ({ onExplore }) => {
                     <p>{item.desc}</p>
                     <button
                       className="view-detail-btn elegant-btn"
-                      onClick={onExplore}
+                      onClick={onStart} // Gunakan onStart di sini juga
                     >
                       ANALISIS DATA <span className="btn-arrow">→</span>
                     </button>
@@ -282,7 +291,6 @@ const LandingPage = ({ onExplore }) => {
               ))}
             </div>
           </div>
-          {/* --- END COLLECTION --- */}
         </div>
       </section>
     </>
