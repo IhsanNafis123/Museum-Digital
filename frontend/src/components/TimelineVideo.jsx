@@ -1,43 +1,45 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../App.css";
-import "./TimelineVideo.css"; // Kita buat CSS-nya di langkah 4
+import "./TimelineVideo.css";
 
 const TimelineVideo = () => {
   const navigate = useNavigate();
 
   return (
     <div className="video-page-container">
-      {/* Tombol Kembali (Pocok Kiri Atas) */}
+      {/* TOMBOL KEMBALI */}
       <button className="video-back-btn" onClick={() => navigate("/")}>
         ← KEMBALI KE MENU
       </button>
 
-      <div className="video-wrapper">
+      <div className="timeline-wrapper">
+        {/* HEADER */}
         <div className="video-header">
           <h1>TIMELINE EVOLUSI BUMI</h1>
-          <p>DURASI: 06:39 /// ARSIP VISUAL</p>
+          <p>SUMBER: KOMPAS.com /// ARSIP VISUAL</p>
         </div>
 
-        {/* SLOT VIDEO */}
+        {/* FRAME VIDEO */}
         <div className="video-frame">
-          <video controls autoPlay className="main-video">
-            {/* Pastikan nama file di folder public sesuai */}
+          <video className="main-video" controls autoPlay>
             <source src="/timeline-dinasaurus.mp4" type="video/mp4" />
-            Browser Anda tidak mendukung tag video.
+            Browser Anda tidak mendukung video.
           </video>
 
-          {/* Dekorasi Bingkai Futuristik */}
-          <div className="frame-corner top-left"></div>
-          <div className="frame-corner top-right"></div>
-          <div className="frame-corner bottom-left"></div>
-          <div className="frame-corner bottom-right"></div>
+          {/* GARIS SCAN */}
           <div className="scan-line"></div>
-        </div>
 
-        <div className="video-footer">
-          <div className="footer-item">SUMBER: DATA GEOLOGI GLOBAL</div>
-          <div className="footer-item">STATUS: MEMUTAR</div>
+          {/* CORNER HUD */}
+          <span className="frame-corner top-left"></span>
+          <span className="frame-corner top-right"></span>
+          <span className="frame-corner bottom-left"></span>
+          <span className="frame-corner bottom-right"></span>
+
+          {/* FOOTER DI DALAM FRAME */}
+          <div className="video-footer">
+            <span>SUMBER: KOMPAS.com</span>
+            <span>STATUS: MEMUTAR</span>
+          </div>
         </div>
       </div>
     </div>

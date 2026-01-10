@@ -104,8 +104,8 @@ const LandingPage = ({ onStart, onTimeline }) => {
     <>
       <nav className="navbar">
         <div className="logo-section">
-          <div className="logo-symbol">N</div>
-          <span className="logo-text">NEXUS PALEO</span>
+          <div className="logo-symbol">JP</div>
+          <span className="logo-text">JEJAK PURBA</span>
         </div>
         <div className="nav-links">
           <a href="#home" className="nav-link active">
@@ -174,10 +174,14 @@ const LandingPage = ({ onStart, onTimeline }) => {
             </h2>
             <div className="section-line"></div>
             <p className="section-desc">
-              Database kami mengkategorikan spesimen berdasarkan{" "}
-              <span className="highlight">Era Geologi</span>,
-              <span className="highlight">Jenis Fosil</span>, dan{" "}
-              <span className="highlight">Kelompok Biologis</span>.
+              Platform ini menyajikan pemetaan kehidupan purba berdasarkan
+              pendekatan ilmiah. Setiap spesimen diklasifikasikan menurut{" "}
+              <span className="highlight">
+                Era Geologi, jenis fosil, dan kelompok biologis
+              </span>
+              ,<span className="highlight"></span> sehingga memudahkan pemahaman
+              hubungan antara makhluk hidup, lingkungan, dan perubahan Bumi
+              sepanjang waktu. <span className="highlight"></span>.
             </p>
           </div>
 

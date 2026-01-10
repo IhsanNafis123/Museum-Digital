@@ -17,7 +17,7 @@ const IntroPage = () => {
       <div className="intro-bg"></div>
 
       <div className={`intro-content ${textVisible ? "fade-in" : ""}`}>
-        <div className="intro-logo">/// MUSEUM DIGITAL</div>
+        <div className="intro-logo">JEJAK PURBA</div>
 
         <h1 className="intro-title">
           SELAMAT DATANG DI
