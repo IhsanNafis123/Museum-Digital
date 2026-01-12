@@ -551,7 +551,7 @@ export const encyclopediaData = {
             modelPath:
               "/models/geologi/era_mesozoikum/brachiosaurus_altithorax.glb",
             image:
-              "https://upload.wikimedia.org/wikipedia/commons/1/10/Brachiosaurus_DB.jpg",
+              "https://awsimages.detik.net.id/community/media/visual/2023/12/22/brachiosaurus_169.jpeg?w=1200",
             description: {
               short:
                 "Dinosaurus leher panjang raksasa dengan kaki depan yang lebih tinggi dari kaki belakang, memungkinkannya memakan daun di puncak pohon.",
@@ -563,7 +563,7 @@ export const encyclopediaData = {
             name: "DILOPHOSAURUS",
             modelPath:
               "/models/geologi/era_mesozoikum/dilophosaurus_wetherilli.glb",
-            image: "",
+            image: "https://images.dinosaurpictures.org/127544_Dilophosaurus_Pose_2_000.jpg0c59dae3-f8e3-48a4-a5d4-da8ff572cef3Original_eb0a.jpg",
             description: {
               short:
                 "Dinosaurus karnivora lincah dari awal zaman Jura, memiliki ciri khas sepasang jambul tulang berbentuk setengah lingkaran di atas kepalanya.",
@@ -574,7 +574,7 @@ export const encyclopediaData = {
           {
             name: "ANKYLOSAURUS",
             modelPath: "/models/geologi/era_mesozoikum/dino_-_ankylosaurus.glb",
-            image: "",
+            image: "https://images.dinosaurpictures.org/Ankylosaurus/Ankylosaurus_775883a1.jpg",
             description: {
               short:
                 "Dinosaurus herbivora yang tubuhnya dilindungi baju zirah tulang anti peluru dan memiliki gada berat di ujung ekornya untuk pertahanan.",
@@ -586,7 +586,7 @@ export const encyclopediaData = {
             name: "HERRERASAURUS",
             modelPath:
               "/models/geologi/era_mesozoikum/dinorauls_herrerasaurus.glb",
-            image: "",
+            image: "https://image-service.zaonce.net/eyJidWNrZXQiOiJmcm9udGllci1jbXMiLCJrZXkiOiIyMDIxLTExL2hlcnJlcmFzYXVydXNfMjI2MDA0LnBuZyIsImVkaXRzIjp7IndlYnAiOnsicXVhbGl0eSI6ODV9LCJ0b0Zvcm1hdCI6IndlYnAiLCJyZXNpemUiOnsiZml0IjoiY29udGFpbiJ9fX0=",
             description: {
               short:
                 "Salah satu dinosaurus paling awal yang pernah ditemukan, predator lincah berkaki dua yang hidup pada zaman Trias.",
@@ -597,7 +597,7 @@ export const encyclopediaData = {
           {
             name: "ICHTHYOSAURUS",
             modelPath: "/models/geologi/era_mesozoikum/ichthyosaurus.glb",
-            image: "",
+            image: "https://www.harapanrakyat.com/wp-content/uploads/2022/03/Fosil-Reptil-Laut-Ichthyosaurus-Berusia-160-Tahun-Direknostruksi.jpg",
             description: {
               short:
                 "Reptil laut yang berevolusi memiliki bentuk tubuh menyerupai lumba-lumba modern, perenang cepat yang melahirkan anak di dalam air.",
@@ -609,7 +609,7 @@ export const encyclopediaData = {
             name: "QUETZALCOATLUS",
             modelPath:
               "/models/geologi/era_mesozoikum/jurassic_world_dominion_quetzalcoatlus.glb",
-            image: "",
+            image: "https://t3.ftcdn.net/jpg/16/05/05/46/360_F_1605054644_xdiTwD4wqv0SmPRmmJnenIj8xdYKhqEe.jpg",
             description: {
               short:
                 "Hewan terbang terbesar sepanjang sejarah bumi, reptil pterosaurus raksasa dengan tinggi setara jerapah saat berdiri di tanah.",
@@ -620,7 +620,7 @@ export const encyclopediaData = {
           {
             name: "COELOPHYSIS",
             modelPath: "/models/geologi/era_mesozoikum/jwe2_coelophysis.glb",
-            image: "",
+            image: "https://www.extinctanimals.org/wp-content/uploads/2018/11/Coelophysis-Images.jpg",
             description: {
               short:
                 "Dinosaurus karnivora kecil, ramping, dan lincah dari zaman Trias yang tulang-tulangnya berongga ringan, hidup dan berburu secara berkelompok.",
@@ -632,7 +632,7 @@ export const encyclopediaData = {
             name: "MOSASAURUS",
             modelPath: "/models/geologi/era_mesozoikum/mosasaurus.glb",
             image:
-              "https://upload.wikimedia.org/wikipedia/commons/a/a2/Mosasaurus_beaugei.jpg",
+              "https://www.extinctanimals.org/wp-content/uploads/2019/03/Mosasaurus.jpg",
             description: {
               short:
                 "Kadal laut raksasa penguasa lautan zaman Kapur, predator puncak dengan rahang kuat yang memangsa apa saja di laut.",
