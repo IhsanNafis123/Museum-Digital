@@ -138,6 +138,12 @@ export const encyclopediaData = {
             desc: "Cetakan kaki fosil Tyrannosaurus Rex yang masif.",
           },
           {
+            name: "JEJAK Anomoepus",
+            modelPath: "/models/fosil/fosil_jejak/footprint_anomoepus_isp..glb",
+            image: "",
+            desc: "Cetakan kaki fosil anomopeus yang masif.",
+          },
+          {
             name: "JEJAK SAUROPODA",
             modelPath: "/models/fosil/fosil_jejak/sauropod_footprint.glb",
             image: "",
@@ -167,12 +173,6 @@ export const encyclopediaData = {
             modelPath: "/models/fosil/fosil_terawetkan/lyuba_the_woolly_mammoth_calf.glb",
             image: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Lyuba_Mammoth_Museum.jpg",
             desc: "Mumi bayi Mammoth paling utuh dari permafrost Siberia.",
-          },
-          {
-            name: "MUMI MAMMOTH DIMA",
-            modelPath: "/models/fosil/fosil_terawetkan/mammoth_mummy_dima.glb",
-            image: "",
-            desc: "Spesimen mumi anak Mammoth jantan yang terawetkan es.",
           },
           {
             name: "NYAMUK AMBER",
@@ -389,12 +389,6 @@ export const encyclopediaData = {
             modelPath: "/models/geologi/era_mesozoikum/triceratop.glb",
             image: "https://upload.wikimedia.org/wikipedia/commons/0/00/Triceratops_horridus_12.jpg",
             desc: "Musuh bebuyutan T-Rex.",
-          },
-          {
-            name: "TYRANNOSAURUS KING",
-            modelPath: "/models/geologi/era_mesozoikum/tyrant_king_-_tyrannosaurus.glb",
-            image: "",
-            desc: "Varian model Tyrannosaurus Rex yang detail.",
           },
           {
             name: "VELOCIRAPTOR",
