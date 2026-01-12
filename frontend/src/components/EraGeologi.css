@@ -135,10 +135,14 @@
 /* PANEL KANAN (INFO) */
 .era-info-panel {
   flex: 1;
-  padding: 2rem 4rem 6rem 4rem;
+  /* Urutan: Atas Kanan Bawah Kiri 
+     Ubah angka ke-3 (6rem) menjadi 15rem agar lega sekali 
+  */
+  padding: 2rem 4rem 15rem 4rem;
+
   display: flex;
   flex-direction: column;
-  max-width: 1000px; /* Lebar max diperbesar agar grid lega */
+  max-width: 1000px;
 }
 
 .era-header-text h4 {
@@ -161,7 +165,9 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2rem;
   border-radius: 8px;
-  margin-bottom: 3rem;
+
+  /* UBAH DARI 3rem MENJADI 1.5rem atau 1rem */
+  margin-bottom: 1.5rem;
 }
 
 .glass-card h3 {
@@ -197,7 +203,13 @@
 /* --- BAGIAN GALERI GRID (BARU) --- */
 .era-gallery-section {
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 3rem;
+
+  /* KUNCI PERBAIKAN: */
+  /* Kita tambahkan padding di sini agar grid 'didorong' ke atas */
+  /* dan ada ruang kosong lega di bawahnya saat discroll */
+  padding-bottom: 15rem;
+  margin-bottom: 5rem; /* Tambahan margin untuk keamanan ekstra */
 }
 
 .era-gallery-section h3 {

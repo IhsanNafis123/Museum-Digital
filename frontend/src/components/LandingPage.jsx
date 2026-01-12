@@ -3,15 +3,18 @@ import { Link } from "react-router-dom";
 import "../App.css";
 import "./LandingPage.css";
 
-// UBAH: Terima props onStart & onTimeline
 const LandingPage = ({ onStart, onTimeline }) => {
   const observerRef = useRef(null);
+
+  // Link Gambar Dinosaurus
+  const dinoImageLink =
+    "https://i0.wp.com/genemil.com/wp-content/uploads/2020/07/zaman-paleozoikum.jpg?fit=800%2C600&ssl=1";
 
   const featuredFossils = [
     {
       id: 1,
       title: "TYRANNOSAURUS REX",
-      desc: "Predator puncak era Mesozoikum (Kapur). Fosil tubuh yang menunjukkan struktur rahang mematikan.",
+      desc: "Predator puncak era Mesozoikum (Kapur). Struktur rahang mematikan.",
       type: "VERTEBRATA",
       era: "MESOZOIKUM",
       image:
@@ -21,7 +24,7 @@ const LandingPage = ({ onStart, onTimeline }) => {
     {
       id: 2,
       title: "TRILOBITE",
-      desc: "Invertebrata laut ikonik dari era Paleozoikum. Salah satu bentuk kehidupan kompleks paling awal.",
+      desc: "Invertebrata laut ikonik. Kehidupan kompleks paling awal.",
       type: "INVERTEBRATA",
       era: "PALEOZOIKUM",
       image:
@@ -31,7 +34,7 @@ const LandingPage = ({ onStart, onTimeline }) => {
     {
       id: 3,
       title: "WOOLLY MAMMOTH",
-      desc: "Mamalia raksasa era Kenozoikum. Sering ditemukan sebagai fosil terawetkan dalam es (Permafrost).",
+      desc: "Mamalia raksasa era Kenozoikum. Spesimen terawetkan dalam es.",
       type: "MAMALIA",
       era: "KENOZOIKUM",
       image:
@@ -41,7 +44,7 @@ const LandingPage = ({ onStart, onTimeline }) => {
     {
       id: 4,
       title: "AMMONITE",
-      desc: "Moluska laut purba dengan cangkang spiral. Fosil indeks penting untuk penanggalan lapisan batuan.",
+      desc: "Moluska laut purba cangkang spiral. Fosil indeks penting.",
       type: "INVERTEBRATA",
       era: "MESOZOIKUM",
       image:
@@ -51,7 +54,7 @@ const LandingPage = ({ onStart, onTimeline }) => {
     {
       id: 5,
       title: "VELOCIRAPTOR",
-      desc: "Dinosaurus teropoda kecil namun cerdas. Fosil jejak (Trace Fossil) sering menunjukkan perilaku berburu.",
+      desc: "Dinosaurus cerdas. Fosil jejak menunjukkan perilaku berburu.",
       type: "VERTEBRATA",
       era: "MESOZOIKUM",
       image:
@@ -61,7 +64,7 @@ const LandingPage = ({ onStart, onTimeline }) => {
     {
       id: 6,
       title: "ARCHAEOPTERYX",
-      desc: "Fosil transisi penting yang menghubungkan dinosaurus non-unggas dengan burung modern.",
+      desc: "Fosil transisi penting penghubung dinosaurus dan burung.",
       type: "TRANSISI",
       era: "JURA AKHIR",
       image:
@@ -71,7 +74,7 @@ const LandingPage = ({ onStart, onTimeline }) => {
     {
       id: 7,
       title: "MEGALODON TOOTH",
-      desc: "Gigi hiu raksasa prasejarah. Sisa fosil paling umum dari predator laut terbesar sepanjang masa.",
+      desc: "Gigi hiu raksasa prasejarah. Predator laut terbesar.",
       type: "MIKRO/BAGIAN",
       era: "KENOZOIKUM",
       image:
@@ -144,12 +147,9 @@ const LandingPage = ({ onStart, onTimeline }) => {
           </p>
 
           <div className="cta-container">
-            {/* Tombol 1: Gunakan onClick={onStart} */}
             <button className="explore-btn" onClick={onStart}>
               MULAI EKSKAVASI
             </button>
-
-            {/* Tombol 2: Tetap pakai DIV agar tampilan tidak berubah, tambah onClick & cursor */}
             <div
               className="play-btn-wrapper"
               onClick={onTimeline}
@@ -167,22 +167,41 @@ const LandingPage = ({ onStart, onTimeline }) => {
       </main>
 
       <section id="about" className="about-section">
+        <div className="moving-lights">
+          <div className="light-blob blob-1"></div>
+          <div className="light-blob blob-2"></div>
+          <div className="light-blob blob-3"></div>
+        </div>
+
         <div className="about-container">
           <div className="about-header animate-hidden slide-up">
-            <h2 className="section-title">
-              Klasifikasi <span className="accent">Kehidupan Purba</span>
-            </h2>
-            <div className="section-line"></div>
-            <p className="section-desc">
-              Platform ini menyajikan pemetaan kehidupan purba berdasarkan
-              pendekatan ilmiah. Setiap spesimen diklasifikasikan menurut{" "}
-              <span className="highlight">
-                Era Geologi, jenis fosil, dan kelompok biologis
-              </span>
-              ,<span className="highlight"></span> sehingga memudahkan pemahaman
-              hubungan antara makhluk hidup, lingkungan, dan perubahan Bumi
-              sepanjang waktu. <span className="highlight"></span>.
-            </p>
+            <div className="about-text-content">
+              <h2 className="section-title">
+                Klasifikasi <span className="accent">Kehidupan Purba</span>
+              </h2>
+              <div className="section-line"></div>
+              <p className="section-desc">
+                Platform ini menyajikan pemetaan kehidupan purba berdasarkan
+                pendekatan ilmiah. Setiap spesimen diklasifikasikan menurut{" "}
+                <span className="highlight">
+                  Era Geologi, jenis fosil, dan kelompok biologis
+                </span>
+                ,<span className="highlight"></span> sehingga memudahkan
+                pemahaman hubungan antara makhluk hidup, lingkungan, dan
+                perubahan Bumi sepanjang waktu.
+              </p>
+            </div>
+            <div className="about-image-slot">
+              <div className="header-image-wrapper">
+                <img
+                  src={dinoImageLink}
+                  alt="Dinosaurus Ilustrasi"
+                  className="header-img"
+                />
+                <div className="img-overlay"></div>
+                <div className="img-border"></div>
+              </div>
+            </div>
           </div>
 
           <div className="features-grid">
@@ -202,7 +221,6 @@ const LandingPage = ({ onStart, onTimeline }) => {
               </Link>
               <div className="card-decoration"></div>
             </div>
-
             <div className="feature-card animate-hidden slide-up">
               <div className="card-number">02</div>
               <h3>JENIS FOSIL</h3>
@@ -219,7 +237,6 @@ const LandingPage = ({ onStart, onTimeline }) => {
               </Link>
               <div className="card-decoration"></div>
             </div>
-
             <div className="feature-card animate-hidden slide-right">
               <div className="card-number">03</div>
               <h3>ERA GEOLOGI</h3>
@@ -234,65 +251,44 @@ const LandingPage = ({ onStart, onTimeline }) => {
             </div>
           </div>
 
-          <div
-            className="collection-preview-section animate-hidden slide-up"
-            style={{ marginTop: "8rem" }}
-          >
+          <div className="collection-preview-section animate-hidden slide-up">
             <div className="preview-header">
-              <h3>
-                KOLEKSI <span className="accent">SPESIMEN</span>
-              </h3>
+              {/* --- PERUBAHAN DI SINI: TEXT GROUP --- */}
+              <div className="header-text-group">
+                <h3>
+                  KOLEKSI <span className="accent">SPESIMEN</span>
+                </h3>
+                <p className="preview-desc">
+                  Arsip digital makhluk purba pilihan yang direkonstruksi dengan
+                  detail ilmiah.
+                </p>
+              </div>
+              {/* ----------------------------------- */}
+
               <div className="scroll-indicator">
-                <span style={{ fontSize: "1.2rem" }}>←</span> GESER UNTUK
-                MELIHAT
-                <span style={{ fontSize: "1.2rem" }}>→</span>
+                <span style={{ fontSize: "0.8rem", letterSpacing: "2px" }}>
+                  AUTO SCROLLING ///
+                </span>
               </div>
             </div>
 
-            <div className="gallery-track manual-scroll">
-              {featuredFossils.map((item) => (
-                <div key={item.id} className="preview-card elegant-card">
-                  <div
-                    className="preview-visual"
-                    style={{ "--item-color": item.accentColor }}
-                  >
-                    <div className="item-type-badge">{item.era}</div>
-                    <div
-                      className="visual-bg"
-                      style={{
-                        backgroundImage: `url(${item.image})`,
-                        backgroundColor: item.accentColor,
-                      }}
-                    ></div>
-                    <div className="pattern-overlay"></div>
-                    <div className="visual-overlay-gradient"></div>
-                    <div className="visual-center-icon">
-                      <span className="scan-line"></span>FSL
-                    </div>
-                  </div>
-                  <div className="preview-info">
-                    <h4>{item.title}</h4>
-                    <small
-                      style={{
-                        color: item.accentColor,
-                        letterSpacing: "1px",
-                        marginBottom: "0.5rem",
-                        display: "block",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      {item.type}
-                    </small>
-                    <p>{item.desc}</p>
-                    <button
-                      className="view-detail-btn elegant-btn"
-                      onClick={onStart} // Gunakan onStart di sini juga
-                    >
-                      ANALISIS DATA <span className="btn-arrow">→</span>
-                    </button>
-                  </div>
-                </div>
-              ))}
+            <div className="gallery-track-wrapper">
+              <div className="gallery-track auto-scroll">
+                {featuredFossils.map((item, index) => (
+                  <FossilCard
+                    key={`set1-${index}`}
+                    item={item}
+                    onStart={onStart}
+                  />
+                ))}
+                {featuredFossils.map((item, index) => (
+                  <FossilCard
+                    key={`set2-${index}`}
+                    item={item}
+                    onStart={onStart}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -300,5 +296,46 @@ const LandingPage = ({ onStart, onTimeline }) => {
     </>
   );
 };
+
+const FossilCard = ({ item, onStart }) => (
+  <div className="preview-card elegant-card">
+    <div
+      className="preview-visual"
+      style={{ "--item-color": item.accentColor }}
+    >
+      <div className="item-type-badge">{item.era}</div>
+      <div
+        className="visual-bg"
+        style={{
+          backgroundImage: `url(${item.image})`,
+          backgroundColor: item.accentColor,
+        }}
+      ></div>
+      <div className="pattern-overlay"></div>
+      <div className="visual-overlay-gradient"></div>
+      <div className="visual-center-icon">
+        <span className="scan-line"></span>FSL
+      </div>
+    </div>
+    <div className="preview-info">
+      <h4>{item.title}</h4>
+      <small
+        style={{
+          color: item.accentColor,
+          letterSpacing: "1px",
+          marginBottom: "0.5rem",
+          display: "block",
+          fontWeight: "bold",
+        }}
+      >
+        {item.type}
+      </small>
+      <p>{item.desc}</p>
+      <button className="view-detail-btn elegant-btn" onClick={onStart}>
+        ANALISIS DATA <span className="btn-arrow">→</span>
+      </button>
+    </div>
+  </div>
+);
 
 export default LandingPage;
