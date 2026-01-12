@@ -112,7 +112,7 @@ export const encyclopediaData = {
             modelPath:
               "/models/hewan/mikrofosil/foraminifera_-_globigerinella_calida.glb",
             image:
-              "https://upload.wikimedia.org/wikipedia/commons/3/3f/Foraminifera_hg.jpg",
+              "https://www.mikrotax.org/images/pf_cenozoic/Globigerinidae/Globigerinella/Globigerinella%20calida/Lam%20&%20Leckie%202020%20pl04%2006-7.jpg",
             description: {
               short:
                 "Mikroorganisme laut dengan cangkang spiral longgar yang hidup di perairan tropis hangat, sering dijadikan penunjuk usia lapisan batuan muda di wilayah Indonesia.",
@@ -177,21 +177,10 @@ export const encyclopediaData = {
             },
           },
           {
-            name: "LATIMERIA",
-            modelPath: "/models/hewan/vertebrata/dinorauls_latimeria_2.glb",
-            image: "",
-            description: {
-              short:
-                "Satu-satunya genus Coelacanth modern yang masih bertahan hidup hingga saat ini, menghuni gua-gua bawah laut di kedalaman ratusan meter.",
-              full: "Latimeria adalah genus yang menaungi dua spesies coelacanth yang masih hidup: Latimeria chalumnae (Afrika) dan Latimeria menadoensis (Indonesia). Ikan ini adalah predator nokturnal yang bergerak lambat dan hemat energi. Mereka melahirkan anak (ovovivipar) dan memiliki masa hidup yang sangat panjang. Penemuan spesies kedua di perairan Manado pada tahun 1997 membuktikan penyebaran mereka lebih luas dari dugaan semula.",
-              key: "Merupakan bukti nyata ketangguhan spesies purba yang bertahan di celah lingkungan laut dalam yang stabil.",
-            },
-          },
-          {
             name: "KOMODO",
             modelPath: "/models/hewan/vertebrata/komodo_dragon_lizard-v2.glb",
             image:
-              "https://upload.wikimedia.org/wikipedia/commons/1/18/Komodo-dragon-3.jpg",
+              "https://samaraliveaboard.com/wp-content/uploads/2025/03/komodo-1-1024x683.jpg",
             description: {
               short:
                 "Kadal terbesar di dunia yang hanya hidup di beberapa pulau di Indonesia, predator puncak dengan gigitan berbisa dan air liur penuh bakteri mematikan.",
@@ -203,7 +192,7 @@ export const encyclopediaData = {
             name: "PTERANODON",
             modelPath: "/models/hewan/vertebrata/pteranodon.glb",
             image:
-              "https://upload.wikimedia.org/wikipedia/commons/1/1d/Pteranodon.jpg",
+              "https://cdn.mos.cms.futurecdn.net/6vA8wWskCkUgffN9dbQhvh-1200-80.jpg",
             description: {
               short:
                 "Reptil terbang raksasa dari zaman Kapur dengan bentang sayap lebar dan jambul kepala yang khas, hidup di pesisir pantai dan memakan ikan.",
@@ -215,7 +204,7 @@ export const encyclopediaData = {
             name: "SPINOSAURUS",
             modelPath: "/models/hewan/vertebrata/spinosaurus.glb",
             image:
-              "https://upload.wikimedia.org/wikipedia/commons/f/f0/Spinosaurus_aegyptiacus_recon.jpg",
+              "https://st2.depositphotos.com/1042659/6280/i/450/depositphotos_62803335-stock-photo-dinosaur-spinosaurus.jpg",
             description: {
               short:
                 "Dinosaurus karnivora terbesar yang pernah ada, hidup semi-akuatik di sungai purba dengan ciri khas layar besar di punggung dan moncong panjang mirip buaya.",
@@ -227,7 +216,7 @@ export const encyclopediaData = {
             name: "TRICERATOPS",
             modelPath: "/models/hewan/vertebrata/triceratop.glb",
             image:
-              "https://upload.wikimedia.org/wikipedia/commons/6/69/Tric1.JPG",
+              "https://cdn.grid.id/crop/0x127:1024x741/x/photo/2025/08/11/triceratops_-_jurapark_baltowjp-20250811114312.jpg",
             description: {
               short:
                 "Dinosaurus herbivora berbadan besar dengan tiga tanduk di wajah dan tameng leher lebar, hidup berkelompok dan sering bertarung melawan T-Rex.",
@@ -256,7 +245,7 @@ export const encyclopediaData = {
           {
             name: "JEJAK T-REX",
             modelPath: "/models/fosil/fosil_jejak/dinosaur_Trex_footprint.glb",
-            image: "",
+            image: "https://www.theprehistoricstore.com/cdn/shop/files/20250117-131441_683x700.jpg?v=1737288879",
             description: {
               short:
                 "Cetakan kaki raksasa berjarak tiga dari Tyrannosaurus Rex yang membatu, menunjukkan ukuran masif dan tekanan langkah predator puncak ini.",
@@ -267,7 +256,7 @@ export const encyclopediaData = {
           {
             name: "JEJAK Velociraptor",
             modelPath: "/models/fosil/fosil_jejak/footprint_raptor.glb",
-            image: "",
+            image: "https://media.sciencephoto.com/c0/59/74/79/c0597479-800px-wm.jpg",
             description: {
               short:
                 "Jejak kaki unik dinosaurus raptor yang hanya menampakkan dua jari menapak tanah, karena satu jari bercakar besar diangkat ke atas.",
@@ -278,7 +267,7 @@ export const encyclopediaData = {
           {
             name: "JEJAK SAUROPODA",
             modelPath: "/models/fosil/fosil_jejak/sauropod_footprint.glb",
-            image: "",
+            image: "https://cdn.mos.cms.futurecdn.net/G7CKGktH2mtEQbdo7qDsGE-1200-80.jpg",
             description: {
               short:
                 "Jejak kaki bulat berukuran sangat besar yang ditinggalkan kawanan dinosaurus leher panjang saat bermigrasi melintasi dataran lumpur purba.",
@@ -298,7 +287,7 @@ export const encyclopediaData = {
             name: "DAUN PAKIS",
             modelPath: "/models/fosil/fosil_terawetkan/eduf104_fern_leaves.glb",
             image:
-              "https://upload.wikimedia.org/wikipedia/commons/8/8d/Neuropteris_ovata.jpg",
+              "https://media.istockphoto.com/id/1449549945/id/foto/fosil-daun-pakis-membatu-dan-disorot-di-permukaan-batu.jpg?s=170667a&w=0&k=20&c=jZ_D3VaG8-J2TNJj9yORAvqj6u3BlCZahtxuh-qaNKQ=",
             description: {
               short:
                 "Cetakan karbon daun tumbuhan paku dari zaman Karbon, sisa hutan rawa purba yang kini menjadi sumber batu bara dunia.",
@@ -309,7 +298,7 @@ export const encyclopediaData = {
           {
             name: "KAYU MEMBATU",
             modelPath: "/models/fosil/fosil_terawetkan/eduf407_petrified_wood.glb",
-            image: "",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTatFnYn9XFV7fWOKtr62uj5FpKpRF3nXvU9A&s",
             description: {
               short:
                 "Batang pohon purba yang materi organiknya telah tergantikan sepenuhnya oleh mineral batu namun tetap mempertahankan struktur serat kayunya.",
@@ -322,7 +311,7 @@ export const encyclopediaData = {
             modelPath:
               "/models/fosil/fosil_terawetkan/lyuba_the_woolly_mammoth_calf.glb",
             image:
-              "https://upload.wikimedia.org/wikipedia/commons/b/b5/Lyuba_Mammoth_Museum.jpg",
+              "https://historyofinformation.com/images/Screen_Shot_2020-10-05_at_6.16.10_PM.png",
             description: {
               short:
                 "Mumi bayi Mammoth berbulu paling utuh yang pernah ditemukan, terawetkan sempurna di dalam es abadi Siberia selama 40.000 tahun.",
@@ -331,22 +320,11 @@ export const encyclopediaData = {
             },
           },
           {
-            name: "MUMI MAMMOTH DIMA",
-            modelPath: "/models/fosil/fosil_terawetkan/mammoth_mummy_dima.glb",
-            image: "",
-            description: {
-              short:
-                "Mumi anak Mammoth jantan yang ditemukan di Rusia, memberikan wawasan penting tentang adaptasi fisik terhadap lingkungan dingin ekstrem.",
-              full: "Dima adalah mumi bayi mammoth jantan yang ditemukan di daerah Magadan, Rusia, pada tahun 1977. Sebelum penemuan Lyuba, Dima adalah spesimen mammoth paling lengkap yang pernah ada. Tubuhnya yang kurus dan terawetkan dalam es memberikan petunjuk tentang kondisi lingkungan yang keras dan parasit yang mungkin menjangkiti populasi mammoth saat itu. Ia meninggal sekitar 40.000 tahun yang lalu, kemungkinan karena terjebak dalam lubang lumpur.",
-              key: "Spesimen kunci yang membantu ilmuwan memahami morfologi dan patologi hewan megafauna Zaman Es.",
-            },
-          },
-          {
             name: "NYAMUK AMBER",
             modelPath:
               "/models/fosil/fosil_terawetkan/real-time_refraction_demo_mosquito_in_amber.glb",
             image:
-              "https://upload.wikimedia.org/wikipedia/commons/0/02/Ancient_mosquito.jpg",
+              "https://img.freepik.com/foto-premium/amber-dengan-serangga-prasejarah-yang-diawetkan-nyamuk-dengan-darah-atau-dna-yang-diawetkan-dalam-amber_72932-3415.jpg?w=360",
             description: {
               short:
                 "Serangga kecil yang terperangkap dan mati di dalam getah pohon yang mengeras, tubuhnya terawetkan utuh dalam 'peti mati' emas transparan.",
@@ -367,7 +345,7 @@ export const encyclopediaData = {
             modelPath:
               "/models/fosil/fosil_tubuh/deinonychus_velociraptor_claw.glb",
             image:
-              "https://upload.wikimedia.org/wikipedia/commons/a/a8/Deinonychus_claw.jpg",
+              "https://c02.purpledshub.com/uploads/sites/41/2021/05/GettyImages-589152322-c7ec34e.jpg?webp=1&w=1200",
             description: {
               short:
                 "Fosil cakar kaki melengkung tajam berbentuk sabit, senjata utama dinosaurus raptor untuk menusuk dan mencengkeram mangsanya.",
@@ -378,7 +356,7 @@ export const encyclopediaData = {
           {
             name: "BELEMNITE",
             modelPath: "/models/fosil/fosil_tubuh/eduf32_belemnite_phragmacone.glb",
-            image: "",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT578NeCt-YGMQs3s-wKKmemcjs75ZXxMLM6g&s",
             description: {
               short:
                 "Bagian dalam cangkang keras berbentuk peluru dari hewan laut purba mirip cumi-cumi, sering ditemukan melimpah di batuan sedimen.",
@@ -390,7 +368,7 @@ export const encyclopediaData = {
             name: "GIGI RUSA RAKSASA",
             modelPath:
               "/models/fosil/fosil_tubuh/giant_deer_teeth_115000_years_old.glb",
-            image: "",
+            image: "https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/32/2024/09/25/News-20240919-Czech-Republic-Reindeer-Teeth-565674170.jpg",
             description: {
               short:
                 "Fosil gigi geraham besar dengan permukaan kasar dari Megaloceros, digunakan untuk mengunyah rumput dan vegetasi keras di padang es.",
@@ -402,7 +380,7 @@ export const encyclopediaData = {
             name: "GIGI MEGALODON",
             modelPath: "/models/fosil/fosil_tubuh/megalodon_teeth_fossil.glb",
             image:
-              "https://upload.wikimedia.org/wikipedia/commons/3/3b/Megalodon_tooth_with_great_white_sharks_teeth-3-2.jpg",
+              "https://images-cdn.ubuy.co.id/653fefa96b30650eee069979-genuine-megalodon-shark-tooth-66-8.jpg",
             description: {
               short:
                 "Gigi fosil berukuran raksasa, berbentuk segitiga dan bergerigi tajam, satu-satunya sisa yang tertinggal dari hiu terbesar sepanjang masa.",
@@ -415,7 +393,7 @@ export const encyclopediaData = {
             modelPath:
               "/models/fosil/fosil_tubuh/saber-toothed_tiger_cat_-_ice_age_smilodon.glb",
             image:
-              "https://upload.wikimedia.org/wikipedia/commons/5/53/Smilodon_fatalis.jpg",
+              "https://www.activewild.com/wp-content/uploads/2018/11/Smilodon_populator_skull.jpg",
             description: {
               short:
                 "Tengkorak macan purba dengan sepasang gigi taring atas yang sangat panjang seperti pedang, rahangnya bisa membuka sangat lebar.",
@@ -426,7 +404,7 @@ export const encyclopediaData = {
           {
             name: "TENGKORAK TRICERATOPS",
             modelPath: "/models/fosil/fosil_tubuh/triceratops_skull.glb",
-            image: "",
+            image: "https://media.istockphoto.com/id/501154807/id/foto/tengkorak-fosil-triceratops-di-atas-latar-belakang-terisolasi-putih.jpg?s=612x612&w=0&k=20&c=QsPjw2eXUU3bWdahhpITi7TY6dSpYgv7c0ZywCCZLaI=",
             description: {
               short:
                 "Salah satu tengkorak terbesar hewan darat, dilengkapi paruh keras, tiga tanduk tajam, dan tameng leher tulang yang kokoh.",
@@ -439,7 +417,7 @@ export const encyclopediaData = {
             modelPath:
               "/models/fosil/fosil_tubuh/vertebrate_tyrannosaurus_rex_skull_mote.glb",
             image:
-              "https://upload.wikimedia.org/wikipedia/commons/c/c2/Tyrannoskull.jpg",
+              "https://pict.sindonews.net/dyn/850/pena/news/2022/12/09/768/964301/tengkorak-kepala-trex-dilelang-harga-diperkirakan-tembus-rp311-miliar-zvi.jpg",
             description: {
               short:
                 "Tengkorak kokoh dengan rahang yang sangat kuat dan gigi berbentuk pisang yang tebal, didesain untuk meremukkan tulang mangsa.",
@@ -470,7 +448,7 @@ export const encyclopediaData = {
             modelPath:
               "/models/geologi/era_paleozoikum/anomalocaris_3d_model.glb",
             image:
-              "https://upload.wikimedia.org/wikipedia/commons/c/c3/Anomalocaris_canadensis.jpg",
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCKirad74kBrQZ5awp0RCliWJ2WObwA64JpA&s",
             description: {
               short:
                 "Predator laut raksasa pertama di bumi dari zaman Kambrium, memiliki mata majemuk besar dan sepasang lengan berduri di dekat mulut untuk menangkap mangsa.",
@@ -481,7 +459,7 @@ export const encyclopediaData = {
           {
             name: "DIMETRODON",
             modelPath: "/models/geologi/era_paleozoikum/dimetrodon.glb",
-            image: "",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Om1KbpIjtaEVrAfucbh-LepeHUcPK6i_Ng&s",
             description: {
               short:
                 "Reptil purba berkaki empat dengan layar besar di punggungnya, hidup jauh sebelum dinosaurus dan sebenarnya lebih berkerabat dekat dengan mamalia.",
@@ -494,7 +472,7 @@ export const encyclopediaData = {
             modelPath:
               "/models/geologi/era_paleozoikum/dinorauls_arthropleura.glb",
             image:
-              "https://upload.wikimedia.org/wikipedia/commons/e/ea/Arthropleura_armata_reconstruction.jpg",
+              "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Arthropleura_Reconstruction.jpg/250px-Arthropleura_Reconstruction.jpg",
             description: {
               short:
                 "Kelabang raksasa seukuran mobil yang hidup di hutan rawa zaman Karbon, invertebrata darat terbesar yang pernah merayap di bumi.",
@@ -507,7 +485,7 @@ export const encyclopediaData = {
             modelPath:
               "/models/geologi/era_paleozoikum/dinorauls_dunkleosteus_2.glb",
             image:
-              "https://upload.wikimedia.org/wikipedia/commons/5/5e/Dunkleosteus_terrelli_2.jpg",
+              "https://it.schleich-s.com/cdn/shop/files/14575_main_v16_TP.jpg?v=1707493289",
             description: {
               short:
                 "Ikan purba raksasa yang kepala dan dadanya dilindungi pelat tulang keras, memiliki rahang tajam pemotong tulang tanpa gigi sejati.",
@@ -518,7 +496,7 @@ export const encyclopediaData = {
           {
             name: "MEGANEURA",
             modelPath: "/models/geologi/era_paleozoikum/meganeura.glb",
-            image: "",
+            image: "https://cdn.rri.co.id/berita/Bengkulu/o/1761752463317-01/4wfu9532zwn2g8u.jpeg",
             description: {
               short:
                 "Serangga terbang mirip capung dengan bentang sayap selebar tangan manusia dewasa, predator udara yang menguasai langit zaman Karbon.",
@@ -527,9 +505,9 @@ export const encyclopediaData = {
             },
           },
           {
-            name: "MODEL TRILOBITE",
+            name: "TRILOBITE",
             modelPath: "/models/geologi/era_paleozoikum/model_of_a_trilobite.glb",
-            image: "",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRstc9xAVu7a6fljWVLAqaDeOHWyE2U6R88Gg&s",
             description: {
               short:
                 "Hewan laut purba yang sangat sukses dan beragam, memiliki tubuh bersegmen tiga lobus dan mata majemuk kristal, mendominasi lautan selama ratusan juta tahun.",
@@ -541,23 +519,12 @@ export const encyclopediaData = {
             name: "GORGONOPSID",
             modelPath:
               "/models/geologi/era_paleozoikum/primeval_-_gorgonopsid.glb",
-            image: "",
+            image: "https://images.steamusercontent.com/ugc/2057631029505964028/84558350C0569A59A53F5D4189B367D6199A0AC6/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
             description: {
               short:
                 "Predator darat utama pada akhir masa Paleozoikum, reptil mirip mamalia yang gesit dengan gigi taring besar untuk merobek mangsa.",
               full: "Gorgonopsid adalah kelompok Therapsida (reptil mirip mamalia) yang menjadi predator puncak pada periode Permian Akhir. Mereka menggabungkan ciri reptil dan mamalia; memiliki kaki yang tegak di bawah tubuh (bukan merayap samping) yang memungkinkan gerakan cepat. Ciri utamanya adalah gigi taring 'saber' yang besar, yang kemudian berevolusi konvergen pada macan gigi pedang. Mereka punah dalam kepunahan massal Permian-Trias.",
               key: "Monster darat pertama yang mengembangkan gigi taring khusus (heterodont) seperti mamalia.",
-            },
-          },
-          {
-            name: "SCUTOSAURUS",
-            modelPath: "/models/geologi/era_paleozoikum/scutosaurus.glb",
-            image: "",
-            description: {
-              short:
-                "Reptil herbivora bertubuh besar dan berat yang kulitnya dilindungi oleh lempengan tulang keras, hidup di iklim kering zaman Permian.",
-              full: "Scutosaurus ('Kadal Perisai') adalah parareptil anapsida besar yang hidup di gurun superbenua Pangaea pada periode Permian. Tubuhnya yang gempal dilindungi oleh osteoderm (lempeng tulang) di bawah kulitnya sebagai pertahanan dari predator seperti Gorgonopsid. Kakinya terletak di bawah tubuh untuk menopang beratnya yang masif. Sebagai herbivora, ia memiliki gigi rata untuk menggiling vegetasi kering dan keras.",
-              key: "Contoh adaptasi hewan purba terhadap lingkungan gurun yang ekstrem dan pertahanan pasif.",
             },
           },
         ],
@@ -571,7 +538,7 @@ export const encyclopediaData = {
           {
             name: "ALLOSAURUS",
             modelPath: "/models/geologi/era_mesozoikum/allosaurus.glb",
-            image: "",
+            image: "https://www.extinctanimals.org/wp-content/uploads/2015/12/Allosaurus-Images.jpg",
             description: {
               short:
                 "Predator puncak zaman Jura yang berburu mangsa besar dengan gigi tajam dan cakar tangan kuat, teror bagi dinosaurus herbivora.",
