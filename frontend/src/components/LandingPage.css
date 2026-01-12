@@ -1,14 +1,31 @@
-/* --- NAVBAR STYLES --- */
+/* ==========================================================================
+   GLOBAL VARIABLES & RESET
+   ========================================================================== */
+:root {
+  --neon-blue: #00d2ff;
+  --neon-green: #00ff88;
+  --bg-dark: #050505;
+  --text-main: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: "Rajdhani", sans-serif;
+}
+
+/* ==========================================================================
+   NAVBAR STYLES
+   ========================================================================== */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-
-  /* UPDATE DI SINI: Tambahkan box-sizing dan perbesar padding kanan-kiri */
-  padding: 1.5rem 5rem; /* Memberikan jarak 5rem dari kiri dan kanan */
-  box-sizing: border-box; /* KUNCI: Agar padding tidak menambah lebar total */
-
+  padding: 1.5rem 5rem;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,7 +41,6 @@
   align-items: center;
   gap: 1rem;
 }
-
 .logo-symbol {
   width: 40px;
   height: 40px;
@@ -38,20 +54,17 @@
   font-size: 1.5rem;
   clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
 }
-
 .logo-text {
   font-family: "Rajdhani", sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
   letter-spacing: 2px;
 }
-
 .nav-links {
   display: flex;
-  gap: 3rem; /* Jarak antar menu */
-  margin-right: 1rem; /* Tambahan sedikit margin kanan untuk keamanan */
+  gap: 3rem;
+  margin-right: 1rem;
 }
-
 .nav-link {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
@@ -61,16 +74,13 @@
   position: relative;
   cursor: pointer;
 }
-
 .nav-link:hover,
 .nav-link.active {
   color: var(--neon-blue);
 }
-
 .nav-link:hover::after {
   width: 100%;
 }
-
 .nav-link::after {
   content: "";
   position: absolute;
@@ -82,7 +92,9 @@
   transition: width 0.3s;
 }
 
-/* --- HERO SECTION --- */
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
 .hero-section {
   position: relative;
   height: 100vh;
@@ -92,7 +104,6 @@
   padding: 0 6rem;
   box-sizing: border-box;
 }
-
 .video-wrapper {
   position: absolute;
   top: 0;
@@ -102,7 +113,6 @@
   z-index: 0;
   overflow: hidden;
 }
-
 .hero-video {
   width: 105%;
   height: 105%;
@@ -112,27 +122,27 @@
   object-fit: cover;
   opacity: 0.5;
 }
-
 .video-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 2;
   background: linear-gradient(
     90deg,
     #050505 0%,
-    rgba(5, 5, 5, 0.8) 40%,
-    transparent 100%
+    rgba(5, 5, 5, 0.85) 30%,
+    rgba(5, 5, 5, 0.4) 60%,
+    rgba(5, 5, 5, 0.6) 100%
   );
+  mix-blend-mode: multiply;
 }
-
 .hero-content {
   position: relative;
   z-index: 10;
   max-width: 800px;
 }
-
 .floating-tag {
   color: var(--neon-blue);
   font-family: "Rajdhani", monospace;
@@ -140,7 +150,6 @@
   font-size: 1rem;
   letter-spacing: 2px;
 }
-
 .hero-title {
   font-family: "Rajdhani", sans-serif;
   font-size: 6rem;
@@ -149,13 +158,11 @@
   margin: 0;
   text-transform: uppercase;
 }
-
 .outline-text {
   color: transparent;
   -webkit-text-stroke: 2px #fff;
   opacity: 0.5;
 }
-
 .hero-desc {
   margin-top: 2rem;
   font-size: 1.1rem;
@@ -165,14 +172,12 @@
   border-left: 3px solid var(--neon-blue);
   padding-left: 1.5rem;
 }
-
 .cta-container {
   margin-top: 3rem;
   display: flex;
   align-items: center;
   gap: 2rem;
 }
-
 .explore-btn {
   background: #fff;
   color: #000;
@@ -185,12 +190,10 @@
   clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
   transition: transform 0.2s;
 }
-
 .explore-btn:hover {
   transform: scale(1.05);
   background: var(--neon-blue);
 }
-
 .play-btn-wrapper {
   display: flex;
   align-items: center;
@@ -199,11 +202,9 @@
   color: rgba(255, 255, 255, 0.8);
   transition: color 0.3s;
 }
-
 .play-btn-wrapper:hover {
   color: var(--neon-blue);
 }
-
 .play-icon {
   width: 40px;
   height: 40px;
@@ -214,7 +215,6 @@
   align-items: center;
   font-size: 0.8rem;
 }
-
 .decorative-line {
   position: absolute;
   bottom: 0;
@@ -224,7 +224,6 @@
   background: linear-gradient(90deg, var(--neon-blue), transparent);
   z-index: 10;
 }
-
 .coordinate-text {
   position: absolute;
   bottom: 2rem;
@@ -237,7 +236,9 @@
   transform-origin: right bottom;
 }
 
-/* --- ABOUT SECTION --- */
+/* ==========================================================================
+   ABOUT SECTION & LIGHTS
+   ========================================================================== */
 .about-section {
   position: relative;
   min-height: 100vh;
@@ -257,9 +258,128 @@
     );
 }
 
+/* EFEK CAHAYA BERGERAK */
+.moving-lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.7;
+}
+.light-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.6;
+  animation: floatLights 10s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+}
+.blob-1 {
+  top: 10%;
+  left: 10%;
+  width: 500px;
+  height: 500px;
+  background: var(--neon-blue);
+  animation-delay: 0s;
+  opacity: 0.4;
+}
+.blob-2 {
+  bottom: 10%;
+  right: 10%;
+  width: 400px;
+  height: 400px;
+  background: #00ff88;
+  animation-delay: -5s;
+  opacity: 0.3;
+}
+.blob-3 {
+  top: 40%;
+  left: 40%;
+  width: 600px;
+  height: 600px;
+  background: #5e00ff;
+  animation-delay: -2s;
+  opacity: 0.2;
+  mix-blend-mode: screen;
+}
+@keyframes floatLights {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
 .about-container {
+  position: relative;
+  z-index: 10;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* ABOUT HEADER LAYOUT 2 KOLOM */
+.about-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 5rem;
+}
+.about-text-content {
+  flex: 1;
+  text-align: left;
+}
+.about-image-slot {
+  flex: 0.8;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* GAMBAR FUTURISTIK */
+.header-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%);
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 210, 255, 0.1);
+}
+.header-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.header-image-wrapper:hover .header-img {
+  transform: scale(1.1);
+}
+.img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 210, 255, 0.1) 100%
+  );
+  pointer-events: none;
+}
+.header-image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
 }
 
 .section-title {
@@ -269,35 +389,32 @@
   margin: 0;
   line-height: 1;
 }
-
 .section-line {
   width: 100px;
   height: 4px;
   background: var(--neon-blue);
   margin: 1.5rem 0;
 }
-
 .section-desc {
   font-size: 1.2rem;
   color: #a0aab5;
-  max-width: 600px;
   line-height: 1.6;
 }
-
 .highlight {
   color: var(--neon-blue);
   font-weight: 700;
 }
-
 .accent {
   color: var(--neon-blue);
 }
 
+/* FEATURES GRID (JARAK DIPERBAIKI) */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-top: 5rem;
+  margin-top: 4rem; /* Jarak dari header */
+  margin-bottom: 2rem; /* Memberikan sedikit jarak sebelum garis pemisah */
 }
 
 .feature-card {
@@ -310,15 +427,12 @@
   overflow: hidden;
   cursor: pointer;
 }
-
 .feature-card:hover {
   background: rgba(0, 210, 255, 0.08);
   transform: translateY(-15px) scale(1.02);
   border-color: var(--neon-blue);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 210, 255, 0.2),
-    inset 0 0 20px rgba(0, 210, 255, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 210, 255, 0.2);
 }
-
 .card-number {
   font-family: "Rajdhani", sans-serif;
   font-size: 5rem;
@@ -330,12 +444,10 @@
   line-height: 1;
   transition: all 0.5s ease;
 }
-
 .feature-card:hover .card-number {
   color: rgba(0, 210, 255, 0.2);
   transform: scale(1.1);
 }
-
 .feature-card h3 {
   font-family: "Rajdhani", sans-serif;
   font-size: 2rem;
@@ -343,22 +455,18 @@
   color: #fff;
   transition: color 0.3s ease;
 }
-
 .feature-card:hover h3 {
   color: var(--neon-blue);
   text-shadow: 0 0 10px rgba(0, 210, 255, 0.6);
 }
-
 .feature-card p {
   color: #8fa3b0;
   line-height: 1.5;
   transition: color 0.3s ease;
 }
-
 .feature-card:hover p {
   color: #e0f7fa;
 }
-
 .card-decoration {
   position: absolute;
   bottom: 0;
@@ -369,27 +477,26 @@
   transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   box-shadow: 0 0 10px var(--neon-blue);
 }
-
 .feature-card:hover .card-decoration {
   width: 100%;
 }
 
-/* --- COLLECTION PREVIEW --- */
+/* --- PERBAIKAN JEDA LEBAR DI SINI --- */
 .collection-preview-section {
   position: relative;
   width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding-top: 5rem;
+  padding-top: 3rem;
+  margin-top: 4rem;
 }
 
 .preview-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-end; /* Pastikan indikator scroll sejajar bawah */
   margin-bottom: 3rem;
   padding-right: 4rem;
 }
-
 .preview-header h3 {
   font-family: "Rajdhani", sans-serif;
   font-size: 3rem;
@@ -398,7 +505,6 @@
   line-height: 0.9;
   letter-spacing: 2px;
 }
-
 .scroll-indicator {
   font-family: "Rajdhani", monospace;
   font-size: 0.8rem;
@@ -409,24 +515,54 @@
   gap: 1rem;
   opacity: 0.7;
 }
+.preview-desc {
+  font-size: 1rem;
+  color: #8fa3b0; /* Warna abu-abu kebiruan agar elegan */
+  margin: 0;
+  max-width: 500px;
+  line-height: 1.5;
+}
 
-/* --- TRACK SCROLL MANUAL --- */
-.gallery-track.manual-scroll {
+/* AUTO SCROLL WRAPPER */
+.gallery-track-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+.gallery-track.auto-scroll {
   display: flex;
   gap: 2.5rem;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 1rem 4rem 4rem 0;
-  animation: none;
-  width: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  width: max-content;
+  animation: scrollLeft 40s linear infinite;
+  padding: 1rem 0 4rem 0;
 }
-.gallery-track.manual-scroll::-webkit-scrollbar {
-  display: none;
+.gallery-track.auto-scroll:hover {
+  animation-play-state: paused;
+}
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  } /* Karena kita duplikat konten, geser 50% untuk loop */
 }
 
-/* --- DESAIN KARTU: POLIGON FUTURISTIK --- */
+/* KARTU PREVIEW */
 .preview-card.elegant-card {
   min-width: 320px;
   max-width: 320px;
@@ -434,25 +570,15 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  /* Hapus radius, ganti dengan clip-path untuk sudut terpotong */
   border-radius: 0;
-  clip-path: polygon(
-    0 0,
-    /* Kiri atas */ 100% 0,
-    /* Kanan atas */ 100% 85%,
-    /* Kanan bawah (mulai cut) */ 85% 100%,
-    /* Kanan bawah (akhir cut) */ 0 100% /* Kiri bawah */
-  );
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   cursor: grab;
-  /* Background transparan agar pseudo-element terlihat */
   background: transparent;
   border: none;
-  padding: 1px; /* Jarak untuk border */
+  padding: 1px;
 }
-
-/* Pseudo-element: Border Gradien */
 .preview-card.elegant-card::before {
   content: "";
   position: absolute;
@@ -466,39 +592,31 @@
   clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
   transition: all 0.4s ease;
 }
-
-/* Pseudo-element: Background Kartu (Dalam) */
 .preview-card.elegant-card::after {
   content: "";
   position: absolute;
-  inset: 1px; /* Membuat border setebal 1px */
+  inset: 1px;
   z-index: -1;
   background: rgba(20, 20, 25, 0.85);
   backdrop-filter: blur(10px);
   clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
 }
-
 .preview-card.elegant-card:hover {
   transform: translateY(-10px);
-  filter: drop-shadow(0 10px 20px rgba(0, 210, 255, 0.2)); /* Glow effect */
+  filter: drop-shadow(0 10px 20px rgba(0, 210, 255, 0.2));
 }
-
 .preview-card.elegant-card:hover::before {
   background: linear-gradient(135deg, var(--neon-blue), #5e00ff);
 }
 
-/* --- BAGIAN VISUAL (ATAS) --- */
 .preview-visual {
   width: 100%;
   height: 200px;
   position: relative;
   overflow: hidden;
-  border-bottom: none;
-  /* Potongan sudut berlawanan di visual */
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
   margin-bottom: -1px;
 }
-
 .visual-bg {
   position: absolute;
   top: 0;
@@ -507,18 +625,15 @@
   height: 100%;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   opacity: 0.7;
   filter: grayscale(40%) contrast(1.1);
-  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.5s;
 }
-
 .preview-card.elegant-card:hover .visual-bg {
   opacity: 1;
   filter: grayscale(0%) contrast(1.2);
   transform: scale(1.05);
 }
-
 .pattern-overlay {
   position: absolute;
   top: 0;
@@ -533,7 +648,6 @@
   background-size: 20px 20px;
   z-index: 1;
 }
-
 .visual-overlay-gradient {
   position: absolute;
   top: 0;
@@ -543,24 +657,19 @@
   background: linear-gradient(0deg, rgba(20, 20, 25, 1) 10%, transparent 100%);
   z-index: 2;
 }
-
 .item-type-badge {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  left: auto;
-  transform: none;
   background: rgba(0, 0, 0, 0.7);
   color: #fff;
   font-family: "Rajdhani", monospace;
   font-size: 0.7rem;
-  letter-spacing: 1px;
   padding: 4px 10px;
   border-radius: 4px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   z-index: 5;
 }
-
 .visual-center-icon {
   width: 60px;
   height: 60px;
@@ -581,13 +690,11 @@
   overflow: hidden;
   transition: all 0.4s;
 }
-
 .preview-card.elegant-card:hover .visual-center-icon {
   color: #fff;
   border-color: var(--neon-blue);
   box-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
 }
-
 .scan-line {
   position: absolute;
   top: 0;
@@ -599,11 +706,9 @@
   animation: scanDown 2s linear infinite;
   opacity: 0;
 }
-
 .preview-card.elegant-card:hover .scan-line {
   opacity: 1;
 }
-
 @keyframes scanDown {
   0% {
     top: -10%;
@@ -613,29 +718,24 @@
   }
 }
 
-/* --- BAGIAN INFO --- */
 .preview-info {
-  padding: 2rem 2rem 3rem 2rem; /* Padding bawah extra untuk sudut cut */
+  padding: 2rem 2rem 3rem 2rem;
   flex: 1;
   display: flex;
   flex-direction: column;
   background: transparent;
   text-align: left;
-  align-items: flex-start;
   position: relative;
   z-index: 1;
 }
-
 .preview-info h4 {
   font-family: "Rajdhani", sans-serif;
   font-size: 1.5rem;
   margin: 0 0 0.8rem 0;
   color: #fff;
-  letter-spacing: 1px;
   font-weight: 700;
   text-transform: uppercase;
 }
-
 .preview-info p {
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.7);
@@ -643,7 +743,6 @@
   margin-bottom: 1.5rem;
   font-weight: 300;
 }
-
 .view-detail-btn.elegant-btn {
   background: transparent;
   color: #fff;
@@ -662,21 +761,27 @@
   gap: 10px;
   border-radius: 2px;
 }
-
 .view-detail-btn.elegant-btn:hover {
   background: var(--neon-blue);
   color: #000;
   border-color: var(--neon-blue);
   box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
 }
-
 .btn-arrow {
   transition: transform 0.3s;
   font-size: 1.1rem;
 }
-
 .view-detail-btn.elegant-btn:hover .btn-arrow {
   transform: translateX(8px);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(30%);
+  transition: filter 0.3s;
 }
 
 /* ==========================================================================
@@ -700,16 +805,28 @@
   .section-title {
     font-size: 3rem;
   }
-
   .preview-card.elegant-card {
     min-width: 280px;
     max-width: 280px;
+  }
+
+  /* Update Header Responsif */
+  .about-header {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .about-image-slot {
+    width: 100%;
+    justify-content: center;
+  }
+  .header-image-wrapper {
+    max-width: 100%;
+    height: 250px;
   }
 }
 
 /* Mobile Devices (Max Width 768px) */
 @media screen and (max-width: 768px) {
-  /* Navbar Mobile */
   .navbar {
     flex-direction: column;
     padding: 1rem;
@@ -735,7 +852,6 @@
     font-size: 1.2rem;
   }
 
-  /* Hero Mobile */
   .hero-section {
     padding: 8rem 1.5rem 2rem 1.5rem;
     flex-direction: column;
@@ -775,7 +891,6 @@
     display: none;
   }
 
-  /* About Mobile */
   .about-section {
     padding: 4rem 1.5rem;
   }
@@ -788,7 +903,6 @@
     margin-top: 3rem;
   }
 
-  /* Gallery Mobile Fix */
   .collection-preview-section {
     padding-top: 3rem;
   }
@@ -813,12 +927,10 @@
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
   }
-
   .preview-card.elegant-card {
-    min-width: 85vw; /* 85% lebar layar HP */
+    min-width: 85vw;
     max-width: 85vw;
     scroll-snap-align: center;
-    scroll-snap-stop: always;
   }
   .preview-visual {
     height: 180px;
@@ -829,16 +941,4 @@
   .preview-info h4 {
     font-size: 1.4rem;
   }
-}
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-
-  /* --- TAMBAHAN BARU --- */
-  object-position: top center; /* Memaksa gambar fokus ke atas (kepala) */
-  /* --------------------- */
-
-  filter: grayscale(30%);
-  transition: filter 0.3s;
 }
