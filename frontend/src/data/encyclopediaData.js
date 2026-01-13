@@ -605,7 +605,7 @@ export const encyclopediaData = {
               short:
                 "Fosil gigi geraham besar dengan permukaan kasar dari Megaloceros, digunakan untuk mengunyah rumput dan vegetasi keras di padang es.",
               full: "Gigi ini milik Megaloceros giganteus (Rusa Raksasa Irlandia), rusa terbesar yang pernah hidup. Struktur giginya yang tinggi dan bergelombang (hypsodont) menunjukkan adaptasi khusus untuk memakan rumput yang keras dan abrasif di lingkungan stepa terbuka Zaman Es. Gigi ini harus sangat kuat untuk memproses volume makanan yang besar guna menopang tubuh raksasa dan pertumbuhan tanduk masif mereka setiap tahunnya.",
-              key: "Memberikan petunjuk tentang pola makan dan lingkungan hidup megafauna Pleistosen.",
+              key: "Gigi rusa raksasa dapat emberikan petunjuk tentang pola makan dan lingkungan hidup megafauna Pleistosen",
             },
             details: {
               diet: "Herbivora",
