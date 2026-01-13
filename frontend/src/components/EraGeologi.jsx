@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
 import "./EraGeologi.css";
 
 const EraGeologi = () => {
   const [activeEra, setActiveEra] = useState(0);
+  const navigate = useNavigate();
 
   const eras = [
     {
@@ -13,9 +14,9 @@ const EraGeologi = () => {
       period: "541 - 252 Juta Tahun Lalu",
       desc: "Zaman Paleozoikum dikenal sebagai era kehidupan purba (Ancient Life) yang berlangsung sekitar 541 hingga 252 juta tahun lalu. Pada masa ini terjadi peristiwa besar Ledakan Kambrium, ketika kehidupan laut berkembang sangat pesat. Belum ada dinosaurus pada era ini. Bumi didominasi oleh invertebrata laut bercangkang keras, predator laut purba seperti Anomalocaris, kemunculan ikan bertulang pertama, serta amfibi awal yang mulai beradaptasi dan naik ke daratan.",
       creatures: ["Trilobite", "Anomalocaris", "Dunkleosteus", "Dimetrodon"],
-      image: "/ImageModels/EraGeologi/foto-paleozoikum.jpg", // Background utama
+      image: "/ImageModels/EraGeologi/foto-paleozoikum.jpg",
       color: "#00d2ff",
-      // DATA GALERI BARU
+      video: "/paleozoikum.mp4", // Pastikan file ini ada atau ganti nama
       gallery: [
         {
           title: "ANOMALOCARIS",
@@ -35,6 +36,7 @@ const EraGeologi = () => {
       creatures: ["T-Rex", "Velociraptor", "Triceratops", "Pteranodon"],
       image: "/ImageModels/EraGeologi/foto-mesozoikum.jpg",
       color: "#ff4d4d",
+      video: "/mesozoikum.mp4", // Pastikan file ini ada atau ganti nama
       gallery: [
         { title: "TYRANNOSAURUS REX", img: "/ImageModels/EraGeologi/trex.jpg" },
         {
@@ -51,6 +53,7 @@ const EraGeologi = () => {
       creatures: ["Woolly Mammoth", "Smilodon", "Megalodon", "Human"],
       image: "/ImageModels/EraGeologi/foto-kenozoikum.jpg",
       color: "#00ff88",
+      video: "/neozoikum.mp4", // INI FILE PERMINTAAN ANDA
       gallery: [
         { title: "WOOLLY MAMMOTH", img: "/ImageModels/EraGeologi/mammoth.jpg" },
         {
@@ -62,6 +65,11 @@ const EraGeologi = () => {
   ];
 
   const currentData = eras[activeEra];
+
+  // Fungsi navigasi membawa data video
+  const handleWatchVideo = () => {
+    navigate("/timeline", { state: { videoSrc: currentData.video } });
+  };
 
   return (
     <div className="era-container fade-in">
@@ -77,7 +85,7 @@ const EraGeologi = () => {
         <Link to="/" className="back-link">
           ← KEMBALI KE BERANDA
         </Link>
-        <div className="system-status"></div>
+        <div className="system-status">SYSTEM ONLINE</div>
       </nav>
 
       <main className="era-content-wrapper">
@@ -98,11 +106,39 @@ const EraGeologi = () => {
 
         {/* KONTEN UTAMA */}
         <section className="era-info-panel">
+          {/* JUDUL */}
           <div className="era-header-text">
             <h4 style={{ color: currentData.color }}>{currentData.period}</h4>
             <h1>{currentData.name}</h1>
           </div>
 
+          {/* 1. BAGIAN GALERI (DIPINDAH KE ATAS) */}
+          <div
+            className="era-gallery-section"
+            style={{ marginBottom: "2rem", marginTop: "1rem" }}
+          >
+            <h3 style={{ color: currentData.color, marginBottom: "1rem" }}>
+              VISUALISASI EKOSISTEM
+            </h3>
+            <div className="gallery-grid">
+              {/* Foto Utama */}
+              <div className="gallery-item main-item">
+                <div className="scan-line"></div>
+                <img src={currentData.image} alt="Main Visual" />
+                <div className="img-caption">SKETSA {currentData.name}</div>
+              </div>
+
+              {/* Foto Detail */}
+              {currentData.gallery.map((item, idx) => (
+                <div key={idx} className="gallery-item sub-item">
+                  <img src={item.img} alt={item.title} />
+                  <div className="img-caption">{item.title}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 2. BAGIAN DESKRIPSI (DIPINDAH KE BAWAH) */}
           <div className="glass-card">
             <h3>DESKRIPSI ERA</h3>
             <p>{currentData.desc}</p>
@@ -121,27 +157,19 @@ const EraGeologi = () => {
                 ))}
               </div>
             </div>
-          </div>
 
-          {/* --- BAGIAN GALERI FOTO GRID --- */}
-          <div className="era-gallery-section">
-            <h3 style={{ color: currentData.color }}>VISUALISASI EKOSISTEM</h3>
-
-            <div className="gallery-grid">
-              {/* Foto Utama (Besar) - Mengambil foto background/image utama */}
-              <div className="gallery-item main-item">
-                <div className="scan-line"></div>
-                <img src={currentData.image} alt="Main Visual" />
-                <div className="img-caption">SKETSA {currentData.name}</div>
-              </div>
-
-              {/* Foto-foto Detail dari Array Gallery */}
-              {currentData.gallery.map((item, idx) => (
-                <div key={idx} className="gallery-item sub-item">
-                  <img src={item.img} alt={item.title} />
-                  <div className="img-caption">{item.title}</div>
-                </div>
-              ))}
+            {/* TOMBOL VIDEO (POJOK KANAN BAWAH DALAM KOTAK) */}
+            <div className="card-footer-action">
+              <button
+                className="btn-watch-era"
+                onClick={handleWatchVideo}
+                style={{
+                  borderColor: currentData.color,
+                  color: currentData.color,
+                }}
+              >
+                ▶ LIHAT ERA ZAMAN INI
+              </button>
             </div>
           </div>
         </section>

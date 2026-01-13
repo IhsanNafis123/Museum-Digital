@@ -24,6 +24,15 @@ export const encyclopediaData = {
               full: "Amonit (Ammonite) adalah kelompok moluska laut predator dari kelas Cephalopoda yang telah punah. Mereka memiliki cangkang eksternal berpilin (spiral) yang terbagi menjadi bilik-bilik udara, memungkinkan mereka mengatur daya apung di dalam air. Hewan ini sangat sukses dan beragam selama era Mesozoikum, namun punah bersamaan dengan dinosaurus non-unggas pada peristiwa kepunahan massal Kapur-Paleogen.",
               key: "Amonit merupakan fosil indeks (penunjuk) yang sangat penting bagi geolog untuk menentukan usia relatif lapisan batuan laut.",
             },
+            details: {
+              diet: "Karnivora (Plankton/Krustasea)",
+              lifespan: "1 - 2 Tahun",
+              weight: "10g - 100kg (Bervariasi)",
+              size: "Diameter 1cm - 2m",
+              discoveryYear: "Zaman Kuno (Pliny the Elder)",
+              taxonomy: "Mollusca > Cephalopoda",
+              stats: { completeness: 95, rarity: 30, value: 80 },
+            },
           },
           {
             name: "TURRITELLA",
@@ -36,6 +45,15 @@ export const encyclopediaData = {
                 "Siput laut dengan cangkang berbentuk menara runcing yang hidup berkelompok di dasar laut berlumpur, menyaring makanan dari air, dan fosilnya sering ditemukan melimpah membentuk batuan.",
               full: "Turritella adalah genus siput laut (gastropoda) berukuran sedang yang memiliki cangkang sangat khas berbentuk kerucut memanjang (seperti menara bor) dengan banyak putaran spiral yang rapat. Hewan ini hidup dengan membenamkan diri di substrat lunak dan mencari makan dengan cara filter feeding (menyaring partikel organik). Kelimpahan cangkang mereka di masa lampau sering kali membentuk lapisan batuan sedimen yang dikenal sebagai 'Batu Turritella'.",
               key: "Cangkangnya yang keras dan jumlahnya yang masif membuat Turritella menjadi salah satu fosil yang paling mudah dikenali dan ditemukan.",
+            },
+            details: {
+              diet: "Detritivora (Filter Feeder)",
+              lifespan: "5 - 10 Tahun",
+              weight: "< 100 gram",
+              size: "Panjang 3 - 15 cm",
+              discoveryYear: "1799 (Lamarck)",
+              taxonomy: "Mollusca > Gastropoda",
+              stats: { completeness: 100, rarity: 20, value: 60 },
             },
           },
           {
@@ -50,6 +68,15 @@ export const encyclopediaData = {
               full: "Brakiopoda adalah filum hewan laut yang memiliki cangkang keras terdiri dari dua katup (atas dan bawah), berbeda dengan kerang (bivalvia) yang cangkangnya kiri dan kanan. Di dalam cangkangnya, terdapat organ khusus bernama lofofor, yaitu struktur berbentuk tentakel melingkar yang digunakan untuk menyaring makanan dari arus air. Meskipun sangat melimpah pada Era Paleozoikum, jenis mereka menurun drastis setelah kepunahan massal Permian.",
               key: "Merupakan salah satu hewan penyaring paling dominan di lautan purba sebelum digantikan oleh moluska bivalvia modern.",
             },
+            details: {
+              diet: "Filter Feeder (Plankton)",
+              lifespan: "3 - 30 Tahun",
+              weight: "< 50 gram",
+              size: "2 - 10 cm",
+              discoveryYear: "1806 (Duméril)",
+              taxonomy: "Brachiopoda",
+              stats: { completeness: 90, rarity: 20, value: 70 },
+            },
           },
           {
             name: "PORIFERA",
@@ -61,6 +88,15 @@ export const encyclopediaData = {
                 "Hewan multiseluler paling sederhana yang dikenal sebagai spons laut, tubuhnya penuh pori-pori untuk menyaring air guna mendapatkan oksigen dan makanan, serta tidak memiliki organ sejati.",
               full: "Porifera (hewan berpori) adalah filum hewan invertebrata yang hidup menetap (sesil) di dasar perairan. Tubuh mereka terdiri dari jaringan saluran air yang kompleks namun tidak memiliki sistem saraf, pencernaan, atau peredaran darah sejati. Mereka bertahan hidup dengan memompa air melalui tubuh mereka untuk menyaring partikel makanan mikroskopis. Struktur tubuhnya ditopang oleh spikula (duri mikroskopis) yang terbuat dari kapur atau silika.",
               key: "Dianggap sebagai salah satu garis keturunan hewan paling purba yang masih bertahan hingga saat ini.",
+            },
+            details: {
+              diet: "Filter Feeder",
+              lifespan: "100 - 1000+ Tahun",
+              weight: "Bervariasi",
+              size: "1 cm - 2 meter",
+              discoveryYear: "1836 (Grant)",
+              taxonomy: "Porifera",
+              stats: { completeness: 60, rarity: 40, value: 75 },
             },
           },
           {
@@ -74,6 +110,15 @@ export const encyclopediaData = {
               full: "Bintang laut adalah echinodermata yang memiliki tubuh simetri radial, umumnya dengan lima lengan yang memancar dari pusat tubuh. Mereka bergerak menggunakan sistem vaskular air yang menggerakkan ratusan kaki tabung kecil di bawah lengannya. Bintang laut adalah predator penting di ekosistem laut yang memangsa moluska, terumbu karang, atau detritus. Kemampuan regenerasinya memungkinkan mereka menumbuhkan kembali lengan yang putus akibat serangan predator.",
               key: "Mereka tidak memiliki otak maupun darah, melainkan menggunakan air laut untuk mengedarkan nutrisi ke seluruh tubuh.",
             },
+            details: {
+              diet: "Karnivora/Detritivora",
+              lifespan: "Hingga 35 Tahun",
+              weight: "0.1 - 5 kg",
+              size: "10 - 25 cm (Umum)",
+              discoveryYear: "1758 (Linnaeus)",
+              taxonomy: "Echinodermata > Asteroidea",
+              stats: { completeness: 85, rarity: 25, value: 65 },
+            },
           },
           {
             name: "TRILOBITE PROETIDA",
@@ -85,6 +130,15 @@ export const encyclopediaData = {
                 "Kelompok artropoda laut purba terakhir yang bertahan hidup, memiliki tubuh bersegmen tiga lobus dan cangkang keras, hidup di dasar laut sebelum punah pada akhir masa Paleozoikum.",
               full: "Proetida adalah ordo dari kelas Trilobita yang memiliki rentang hidup paling panjang secara geologis, muncul dari periode Ordovisium hingga akhirnya punah di periode Permian. Mereka memiliki eksoskeleton kalsit yang keras, mata majemuk yang canggih, dan kemampuan menggulung tubuh untuk pertahanan diri. Sebagai pemakan bangkai atau predator kecil di dasar laut, mereka adalah komponen vital ekosistem laut purba.",
               key: "Menjadi satu-satunya ordo trilobita yang selamat dari kepunahan massal Devon, membuktikan ketangguhan adaptasi mereka.",
+            },
+            details: {
+              diet: "Detritivora (Pemakan sisa)",
+              lifespan: "3 - 5 Tahun",
+              weight: "< 50 gram",
+              size: "2 - 5 cm",
+              discoveryYear: "1843",
+              taxonomy: "Arthropoda > Trilobita",
+              stats: { completeness: 98, rarity: 40, value: 85 },
             },
           },
         ],
@@ -106,6 +160,15 @@ export const encyclopediaData = {
               full: "Globigerina bulloides adalah spesies foraminifera planktonik yang hidup di zona fotik lautan dunia. Organisme bersel tunggal ini membangun cangkang (test) dari kalsium karbonat yang memiliki duri-duri halus semasa hidupnya. Kelimpahannya sangat tinggi di perairan dingin atau area upwelling yang kaya nutrisi. Analisis kimiawi pada cangkang fosilnya memberikan data akurat mengenai suhu permukaan laut ribuan tahun lalu.",
               key: "Berperan krusial dalam paleoklimatologi untuk merekonstruksi perubahan iklim bumi di masa lampau.",
             },
+            details: {
+              diet: "Fotosintesis/Heterotrof",
+              lifespan: "Beberapa minggu",
+              weight: "Mikroskopis",
+              size: "< 1 mm",
+              discoveryYear: "1826 (d'Orbigny)",
+              taxonomy: "Foraminifera",
+              stats: { completeness: 100, rarity: 10, value: 90 },
+            },
           },
           {
             name: "GLOBIGERINELLA CALIDA",
@@ -119,6 +182,15 @@ export const encyclopediaData = {
               full: "Globigerinella calida adalah spesies foraminifera planktonik dengan cangkang yang tersusun secara trochospiral rendah hingga planar. Spesies ini hidup di perairan laut tropis dan subtropis yang hangat. Kehadiran fosilnya dalam sedimen laut sangat berguna bagi ahli biostratigrafi untuk menentukan umur batuan sedimen, khususnya dari periode Pleistosen hingga Holosen (zaman Kuarter).",
               key: "Merupakan fosil indeks penting di Indonesia untuk eksplorasi minyak bumi pada lapisan batuan geologi muda.",
             },
+            details: {
+              diet: "Heterotrof (Plankton)",
+              lifespan: "Beberapa hari/minggu",
+              weight: "Mikroskopis",
+              size: "< 1 mm",
+              discoveryYear: "1962 (Parker)",
+              taxonomy: "Foraminifera",
+              stats: { completeness: 100, rarity: 15, value: 85 },
+            },
           },
           {
             name: "RADIOLARIA",
@@ -131,6 +203,15 @@ export const encyclopediaData = {
               full: "Radiolaria adalah kelompok protozoa (zooplankton) yang memproduksi kerangka mineral rumit yang terbuat dari silika (seperti kaca). Mereka memiliki struktur tubuh simetris radial yang sangat artistik dan bervariasi. Karena kerangkanya tidak larut di kedalaman laut ekstrem (di bawah CCD), sisa-sisa mereka menumpuk membentuk 'lumpur radiolaria' di dasar samudra yang dalam.",
               key: "Sering disebut sebagai 'permata mikroskopis' karena keindahan dan kerumitan struktur kerangkanya.",
             },
+            details: {
+              diet: "Heterotrof",
+              lifespan: "2 - 4 Minggu",
+              weight: "Mikroskopis",
+              size: "0.1 - 0.2 mm",
+              discoveryYear: "1834 (Meyen)",
+              taxonomy: "Rhizaria > Radiolaria",
+              stats: { completeness: 95, rarity: 20, value: 80 },
+            },
           },
           {
             name: "COCCOLITHOPHORE",
@@ -142,6 +223,15 @@ export const encyclopediaData = {
                 "Ganggang mikroskopis penghasil kapur yang menutupi tubuhnya dengan lempengan bulat, berperan besar menghasilkan oksigen dan membentuk endapan kapur putih raksasa.",
               full: "Coccolithophore adalah fitoplankton uniseluler yang mengelilingi dirinya dengan pelat-pelat kalsium karbonat mikroskopis yang disebut coccolith. Meskipun ukurannya sangat kecil, mereka hidup dalam jumlah triliunan dan mekar (blooming) hingga terlihat dari luar angkasa, mengubah warna lautan menjadi biru kehijauan. Mereka adalah produsen utama oksigen dan penyerap karbon dioksida di lautan.",
               key: "Tumpukan cangkang mati mereka selama jutaan tahun membentuk tebing kapur putih ikonik seperti White Cliffs of Dover.",
+            },
+            details: {
+              diet: "Fotosintesis (Autotrof)",
+              lifespan: "Beberapa hari",
+              weight: "Mikroskopis",
+              size: "< 0.02 mm",
+              discoveryYear: "Abad ke-19",
+              taxonomy: "Haptophyta",
+              stats: { completeness: 100, rarity: 5, value: 90 },
             },
           },
         ],
@@ -163,6 +253,15 @@ export const encyclopediaData = {
               full: "Allosaurus ('Kadal Berbeda') adalah predator theropoda dominan di Amerika Utara selama periode Jura Akhir (sekitar 155-150 juta tahun lalu). Memiliki panjang tubuh rata-rata 8,5 meter, ia dilengkapi dengan rahang kuat yang bisa membuka lebar dan gigi bergerigi melengkung ke belakang untuk mengiris daging. Penelitian menunjukkan Allosaurus mungkin berburu sauropoda raksasa atau stegosaurus secara berkelompok atau menyerang bagian lunak mangsanya.",
               key: "Sering disebut sebagai 'Singa Zaman Jura' karena posisinya di puncak rantai makanan ekosistem Morrison.",
             },
+            details: {
+              diet: "Karnivora (Daging)",
+              lifespan: "25 - 30 Tahun",
+              weight: "1.5 - 2 Ton",
+              size: "Panjang 8.5 Meter",
+              discoveryYear: "1877 (O.C. Marsh)",
+              taxonomy: "Dinosauria > Theropoda",
+              stats: { completeness: 60, rarity: 70, value: 85 },
+            },
           },
           {
             name: "COELACANTH",
@@ -174,6 +273,15 @@ export const encyclopediaData = {
                 "Ikan purba legendaris yang memiliki sirip berdaging mirip kaki, sempat dianggap punah jutaan tahun lalu sebelum ditemukan masih hidup di laut dalam Afrika dan Indonesia.",
               full: "Coelacanth adalah ordo ikan purba yang termasuk dalam kelompok Sarcopterygii (ikan bersirip lobus). Mereka memiliki ciri fisik unik yang tidak berubah selama ratusan juta tahun, termasuk sirip berpasangan yang bergerak seperti kaki hewan darat, sisik tebal tipe kosmoid, dan organ pendeteksi listrik di moncongnya. Penemuan kembali ikan ini pada tahun 1938 menggemparkan dunia sains karena sebelumnya hanya diketahui dari catatan fosil.",
               key: "Dianggap sebagai 'fosil hidup' yang memberikan petunjuk evolusi transisi hewan dari air ke darat.",
+            },
+            details: {
+              diet: "Karnivora (Piscivora)",
+              lifespan: "60 - 100 Tahun",
+              weight: "Mencapai 90 kg",
+              size: "Panjang hingga 2 m",
+              discoveryYear: "1839 (Fosil), 1938 (Hidup)",
+              taxonomy: "Sarcopterygii",
+              stats: { completeness: 90, rarity: 95, value: 100 },
             },
           },
           {
@@ -187,6 +295,15 @@ export const encyclopediaData = {
               full: "Komodo (Varanus komodoensis) adalah spesies biawak raksasa endemik Indonesia yang merupakan sisa fauna purba. Panjangnya bisa mencapai 3 meter dengan berat lebih dari 70 kg. Mereka berburu dengan strategi penyergapan, mengandalkan indra penciuman tajam untuk mendeteksi bangkai atau mangsa dari jarak jauh. Air liur komodo mengandung racun antikoagulan yang mencegah pembekuan darah mangsa, mempercepat kematian akibat syok dan kehabisan darah.",
               key: "Satu-satunya kadal modern yang menduduki posisi predator puncak (apex predator) di ekosistemnya.",
             },
+            details: {
+              diet: "Karnivora",
+              lifespan: "30 - 50 Tahun",
+              weight: "70 - 90 kg",
+              size: "Panjang 2 - 3 m",
+              discoveryYear: "1910 (Ouwens)",
+              taxonomy: "Reptilia > Squamata",
+              stats: { completeness: 100, rarity: 80, value: 90 },
+            },
           },
           {
             name: "PTERANODON",
@@ -198,6 +315,15 @@ export const encyclopediaData = {
                 "Reptil terbang raksasa dari zaman Kapur dengan bentang sayap lebar dan jambul kepala yang khas, hidup di pesisir pantai dan memakan ikan.",
               full: "Pteranodon bukanlah dinosaurus, melainkan reptil terbang (Pterosaurus) yang hidup pada periode Kapur Akhir di Amerika Utara. Spesies jantan memiliki bentang sayap hingga 7 meter dan jambul tulang panjang di kepala yang kemungkinan berfungsi sebagai kemudi aerodinamis atau penarik pasangan. Mereka tidak memiliki gigi dan menangkap ikan dengan cara menyambar permukaan air (skimming) seperti burung pelikan modern.",
               key: "Salah satu hewan terbang terbesar yang pernah menghiasi langit bumi, menguasai udara di atas Laut Dalam Barat (Western Interior Seaway).",
+            },
+            details: {
+              diet: "Karnivora (Piscivora)",
+              lifespan: "20 - 30 Tahun",
+              weight: "20 - 90 kg",
+              size: "Bentang Sayap 7 m",
+              discoveryYear: "1876 (O.C. Marsh)",
+              taxonomy: "Pterosauria",
+              stats: { completeness: 50, rarity: 60, value: 85 },
             },
           },
           {
@@ -211,6 +337,15 @@ export const encyclopediaData = {
               full: "Spinosaurus aegyptiacus adalah predator raksasa yang lebih panjang dan berat dari T-Rex, diadaptasi khusus untuk gaya hidup semi-akuatik. Tulang-tulangnya padat untuk membantu menyelam, kaki belakangnya pendek, dan moncongnya panjang penuh gigi kerucut untuk menangkap ikan besar. Struktur layar di punggungnya dibentuk oleh duri tulang vertebra yang sangat panjang, kemungkinan berfungsi untuk termoregulasi atau intimidasi.",
               key: "Dinosaurus pertama yang diketahui secara pasti mampu berenang dan mendominasi ekosistem sungai purba Afrika Utara.",
             },
+            details: {
+              diet: "Karnivora (Semi-akuatik)",
+              lifespan: "30+ Tahun",
+              weight: "7 - 20 Ton",
+              size: "Panjang 14 - 15 m",
+              discoveryYear: "1912 (Ernst Stromer)",
+              taxonomy: "Dinosauria > Theropoda",
+              stats: { completeness: 40, rarity: 85, value: 95 },
+            },
           },
           {
             name: "TRICERATOPS",
@@ -222,6 +357,15 @@ export const encyclopediaData = {
                 "Dinosaurus herbivora berbadan besar dengan tiga tanduk di wajah dan tameng leher lebar, hidup berkelompok dan sering bertarung melawan T-Rex.",
               full: "Triceratops adalah salah satu dinosaurus ceratopsid (bertanduk) paling terkenal dari akhir periode Kapur. Kepalanya yang masif dihiasi dua tanduk panjang di atas mata, satu tanduk pendek di hidung, dan jumbai tulang (frill) lebar di bagian belakang leher. Struktur ini berfungsi sebagai pertahanan mematikan terhadap predator serta alat komunikasi visual antar spesies. Paruhnya yang kuat didesain untuk memotong vegetasi keras seperti sikas dan palem.",
               key: "Fosilnya sering ditemukan dengan bekas gigitan T-Rex, membuktikan pertarungan epik antara kedua raksasa ini benar-benar terjadi.",
+            },
+            details: {
+              diet: "Herbivora",
+              lifespan: "40 - 50 Tahun",
+              weight: "6 - 12 Ton",
+              size: "Panjang 8 - 9 m",
+              discoveryYear: "1889 (O.C. Marsh)",
+              taxonomy: "Dinosauria > Ceratopsia",
+              stats: { completeness: 75, rarity: 40, value: 90 },
             },
           },
         ],
@@ -245,34 +389,64 @@ export const encyclopediaData = {
           {
             name: "JEJAK T-REX",
             modelPath: "/models/fosil/fosil_jejak/dinosaur_Trex_footprint.glb",
-            image: "https://www.theprehistoricstore.com/cdn/shop/files/20250117-131441_683x700.jpg?v=1737288879",
+            image:
+              "https://www.theprehistoricstore.com/cdn/shop/files/20250117-131441_683x700.jpg?v=1737288879",
             description: {
               short:
                 "Cetakan kaki raksasa berjarak tiga dari Tyrannosaurus Rex yang membatu, menunjukkan ukuran masif dan tekanan langkah predator puncak ini.",
               full: "Fosil jejak (ichnofosil) berupa cetakan kaki T-Rex memberikan informasi berharga yang tidak bisa didapat dari tulang belulang saja, seperti kecepatan berjalan, postur tubuh, dan biomekanik pergerakan. Jejak ini menunjukkan kaki berjari tiga dengan bantalan tumit yang tebal dan luas untuk menopang berat tubuh yang mencapai 8 ton. Dalamnya cetakan pada batuan sedimen menunjukkan kekuatan impak langkah sang raja dinosaurus.",
               key: "Bukti fisik langsung interaksi T-Rex dengan lingkungannya saat masih hidup.",
             },
+            details: {
+              diet: "N/A (Jejak)",
+              lifespan: "N/A",
+              weight: "N/A",
+              size: "Panjang 80cm - 1m",
+              discoveryYear: "N/A",
+              taxonomy: "Ichnofossil",
+              stats: { completeness: 80, rarity: 60, value: 70 },
+            },
           },
           {
             name: "JEJAK Velociraptor",
             modelPath: "/models/fosil/fosil_jejak/footprint_raptor.glb",
-            image: "https://media.sciencephoto.com/c0/59/74/79/c0597479-800px-wm.jpg",
+            image:
+              "https://media.sciencephoto.com/c0/59/74/79/c0597479-800px-wm.jpg",
             description: {
               short:
                 "Jejak kaki unik dinosaurus raptor yang hanya menampakkan dua jari menapak tanah, karena satu jari bercakar besar diangkat ke atas.",
               full: "Jejak kaki ini mengkonfirmasi anatomi kaki dromaeosaurid (raptor) yang unik, yaitu kondisi 'didactyl' (dua jari). Raptor berjalan hanya menggunakan jari ketiga dan keempat, sementara jari kedua yang memiliki cakar sabit besar yang melengkung (killing claw) diangkat tinggi agar tetap tajam dan siap digunakan untuk menyerang. Pola jejak ini sangat berbeda dengan dinosaurus theropoda lain yang umumnya menapak dengan tiga jari.",
               key: "Memberikan bukti perilaku bahwa raptor menjaga ketajaman senjata utamanya dengan tidak menapakkannya ke tanah.",
             },
+            details: {
+              diet: "N/A (Jejak)",
+              lifespan: "N/A",
+              weight: "N/A",
+              size: "Panjang 10 - 15 cm",
+              discoveryYear: "N/A",
+              taxonomy: "Ichnofossil",
+              stats: { completeness: 70, rarity: 75, value: 80 },
+            },
           },
           {
             name: "JEJAK SAUROPODA",
             modelPath: "/models/fosil/fosil_jejak/sauropod_footprint.glb",
-            image: "https://cdn.mos.cms.futurecdn.net/G7CKGktH2mtEQbdo7qDsGE-1200-80.jpg",
+            image:
+              "https://cdn.mos.cms.futurecdn.net/G7CKGktH2mtEQbdo7qDsGE-1200-80.jpg",
             description: {
               short:
                 "Jejak kaki bulat berukuran sangat besar yang ditinggalkan kawanan dinosaurus leher panjang saat bermigrasi melintasi dataran lumpur purba.",
               full: "Trackway (jalur jejak) sauropoda sering ditemukan membentang panjang, menunjukkan perilaku sosial hidup berkelompok. Jejak kaki depan biasanya berbentuk bulan sabit yang lebih kecil, sedangkan kaki belakang berbentuk bulat lonjong yang sangat besar. Kedalaman dan jarak antar jejak membantu ilmuwan memperkirakan kecepatan berjalan dan ukuran tubuh dinosaurus tersebut. Lubang jejak yang dalam ini terkadang menjadi perangkap mematikan bagi hewan kecil lainnya.",
               key: "Merekam momen migrasi hewan darat terbesar yang pernah berjalan di muka bumi.",
+            },
+            details: {
+              diet: "N/A (Jejak)",
+              lifespan: "N/A",
+              weight: "N/A",
+              size: "Diameter hingga 1 m",
+              discoveryYear: "N/A",
+              taxonomy: "Ichnofossil",
+              stats: { completeness: 90, rarity: 50, value: 75 },
             },
           },
         ],
@@ -294,16 +468,36 @@ export const encyclopediaData = {
               full: "Fosil daun pakis (fern) ini terbentuk melalui proses karbonisasi, di mana tumbuhan tertimbun sedimen dalam kondisi tanpa oksigen, menyisakan lapisan karbon tipis yang mencetak detail bentuk daun pada batuan. Tumbuhan ini mendominasi hutan rawa lembap pada Periode Karbon (300 juta tahun lalu). Penumpukan biomassa tanaman ini selama jutaan tahun adalah asal mula sebagian besar cadangan batu bara yang kita gunakan sebagai energi saat ini.",
               key: "Saksi bisu era di mana kadar oksigen bumi sangat tinggi, memungkinkan serangga tumbuh raksasa.",
             },
+            details: {
+              diet: "Fotosintesis",
+              lifespan: "Musiman",
+              weight: "N/A",
+              size: "10 - 50 cm",
+              discoveryYear: "N/A",
+              taxonomy: "Plantae > Pteridophyta",
+              stats: { completeness: 85, rarity: 20, value: 60 },
+            },
           },
           {
             name: "KAYU MEMBATU",
-            modelPath: "/models/fosil/fosil_terawetkan/eduf407_petrified_wood.glb",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTatFnYn9XFV7fWOKtr62uj5FpKpRF3nXvU9A&s",
+            modelPath:
+              "/models/fosil/fosil_terawetkan/eduf407_petrified_wood.glb",
+            image:
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTatFnYn9XFV7fWOKtr62uj5FpKpRF3nXvU9A&s",
             description: {
               short:
                 "Batang pohon purba yang materi organiknya telah tergantikan sepenuhnya oleh mineral batu namun tetap mempertahankan struktur serat kayunya.",
               full: "Kayu membatu (Petrified Wood) terbentuk melalui proses permineralisasi. Ketika pohon purba tertimbun abu vulkanik atau sedimen basah, air tanah yang kaya mineral (seperti silika) meresap ke dalam pori-pori sel kayu. Seiring waktu, materi organik membusuk dan digantikan molekul demi molekul oleh mineral batu, mengawetkan bentuk asli pohon hingga ke tingkat sel mikroskopis. Hasilnya adalah fosil yang sekeras batu namun terlihat persis seperti kayu.",
               key: "Contoh sempurna transformasi materi organik menjadi anorganik tanpa mengubah bentuk fisik aslinya.",
+            },
+            details: {
+              diet: "N/A",
+              lifespan: "Ratusan tahun (Saat Hidup)",
+              weight: "Bervariasi (Berat Batu)",
+              size: "Bervariasi",
+              discoveryYear: "N/A",
+              taxonomy: "Plantae (Fosil)",
+              stats: { completeness: 95, rarity: 40, value: 70 },
             },
           },
           {
@@ -318,6 +512,15 @@ export const encyclopediaData = {
               full: "Lyuba adalah spesimen bayi Mammoth berbulu (Mammuthus primigenius) betina yang meninggal sekitar usia 1 bulan akibat tenggelam di lumpur, yang kemudian membeku menjadi permafrost. Kondisi pengawetannya sangat luar biasa; kulit, daging, belalai, organ dalam, bahkan sisa susu ibu di dalam perutnya masih utuh. Penemuan ini memberikan data biologis yang tak ternilai mengenai anatomi dan fisiologi hewan zaman es yang tidak bisa didapat dari fosil tulang.",
               key: "Jendela waktu yang nyata ke masa lalu, menampilkan rupa asli hewan punah dengan detail sempurna.",
             },
+            details: {
+              diet: "Herbivora (Susu)",
+              lifespan: "1 Bulan (Saat mati)",
+              weight: "50 kg",
+              size: "Tinggi 85 cm",
+              discoveryYear: "2007 (Yuri Khudi)",
+              taxonomy: "Mammalia",
+              stats: { completeness: 100, rarity: 100, value: 100 },
+            },
           },
           {
             name: "NYAMUK AMBER",
@@ -330,6 +533,15 @@ export const encyclopediaData = {
                 "Serangga kecil yang terperangkap dan mati di dalam getah pohon yang mengeras, tubuhnya terawetkan utuh dalam 'peti mati' emas transparan.",
               full: "Amber adalah getah pohon purba (resin) yang telah memfosil. Seringkali, serangga atau hewan kecil terjebak di dalam getah lengket ini saat masih cair. Ketika getah mengeras dan mengalami proses polimerisasi selama jutaan tahun, tubuh hewan di dalamnya terisolasi dari udara dan bakteri pembusuk, sehingga terawetkan dengan detail tiga dimensi yang sempurna. Amber menjadi kapsul waktu yang menyimpan ekosistem hutan purba.",
               key: "Meskipun populer di film fiksi ilmiah, mengekstraksi DNA yang masih layak dari amber jutaan tahun sangatlah sulit dan belum terbukti berhasil.",
+            },
+            details: {
+              diet: "Darah/Nektar",
+              lifespan: "Beberapa minggu",
+              weight: "Mikroskopis",
+              size: "< 1 cm",
+              discoveryYear: "N/A",
+              taxonomy: "Insecta",
+              stats: { completeness: 100, rarity: 80, value: 90 },
             },
           },
         ],
@@ -352,28 +564,58 @@ export const encyclopediaData = {
               full: "Ini adalah fosil 'Terrible Claw' atau cakar pembunuh yang menjadi ciri khas dinosaurus Dromaeosaurid seperti Velociraptor dan Deinonychus. Cakar ini terletak di jari kaki kedua dan memiliki persendian khusus yang memungkinkannya ditarik ke atas (retractable) saat berjalan dan diayunkan ke bawah dengan kekuatan besar saat menyerang. Bentuknya yang melengkung dan tajam dirancang untuk menembus kulit tebal mangsa atau memanjat tubuh dinosaurus yang lebih besar.",
               key: "Adaptasi evolusioner yang mengubah kaki menjadi senjata ofensif yang mematikan.",
             },
+            details: {
+              diet: "N/A (Bagian Tubuh)",
+              lifespan: "N/A",
+              weight: "N/A",
+              size: "Panjang 6 - 10 cm",
+              discoveryYear: "N/A",
+              taxonomy: "Theropoda (Bagian Tubuh)",
+              stats: { completeness: 80, rarity: 70, value: 75 },
+            },
           },
           {
             name: "BELEMNITE",
-            modelPath: "/models/fosil/fosil_tubuh/eduf32_belemnite_phragmacone.glb",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT578NeCt-YGMQs3s-wKKmemcjs75ZXxMLM6g&s",
+            modelPath:
+              "/models/fosil/fosil_tubuh/eduf32_belemnite_phragmacone.glb",
+            image:
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT578NeCt-YGMQs3s-wKKmemcjs75ZXxMLM6g&s",
             description: {
               short:
                 "Bagian dalam cangkang keras berbentuk peluru dari hewan laut purba mirip cumi-cumi, sering ditemukan melimpah di batuan sedimen.",
               full: "Belemnite adalah ordo cephalopoda punah yang hidup pada era Mesozoikum. Fosil yang umum ditemukan adalah bagian 'rostrum' atau 'guard', yaitu struktur internal keras berbentuk seperti peluru yang berfungsi sebagai penyeimbang berat tubuh agar hewan ini bisa berenang lurus secara horizontal. Bagian tubuh lunaknya mirip cumi-cumi modern dengan tentakel berkait (bukan pengisap) dan kantung tinta.",
               key: "Fosil ini sangat umum di batuan Jura dan Kapur, sering dijadikan fosil indeks dan indikator suhu laut purba.",
             },
+            details: {
+              diet: "Karnivora",
+              lifespan: "2 - 4 Tahun",
+              weight: "< 1 kg",
+              size: "Panjang 10 - 50 cm",
+              discoveryYear: "Zaman Kuno",
+              taxonomy: "Mollusca > Cephalopoda",
+              stats: { completeness: 90, rarity: 30, value: 65 },
+            },
           },
           {
             name: "GIGI RUSA RAKSASA",
             modelPath:
               "/models/fosil/fosil_tubuh/giant_deer_teeth_115000_years_old.glb",
-            image: "https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/32/2024/09/25/News-20240919-Czech-Republic-Reindeer-Teeth-565674170.jpg",
+            image:
+              "https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/32/2024/09/25/News-20240919-Czech-Republic-Reindeer-Teeth-565674170.jpg",
             description: {
               short:
                 "Fosil gigi geraham besar dengan permukaan kasar dari Megaloceros, digunakan untuk mengunyah rumput dan vegetasi keras di padang es.",
               full: "Gigi ini milik Megaloceros giganteus (Rusa Raksasa Irlandia), rusa terbesar yang pernah hidup. Struktur giginya yang tinggi dan bergelombang (hypsodont) menunjukkan adaptasi khusus untuk memakan rumput yang keras dan abrasif di lingkungan stepa terbuka Zaman Es. Gigi ini harus sangat kuat untuk memproses volume makanan yang besar guna menopang tubuh raksasa dan pertumbuhan tanduk masif mereka setiap tahunnya.",
               key: "Memberikan petunjuk tentang pola makan dan lingkungan hidup megafauna Pleistosen.",
+            },
+            details: {
+              diet: "Herbivora",
+              lifespan: "20 Tahun",
+              weight: "N/A",
+              size: "5 cm",
+              discoveryYear: "N/A",
+              taxonomy: "Mammalia (Bagian Tubuh)",
+              stats: { completeness: 90, rarity: 60, value: 70 },
             },
           },
           {
@@ -386,6 +628,15 @@ export const encyclopediaData = {
                 "Gigi fosil berukuran raksasa, berbentuk segitiga dan bergerigi tajam, satu-satunya sisa yang tertinggal dari hiu terbesar sepanjang masa.",
               full: "Megalodon (Otodus megalodon) adalah hiu terbesar yang pernah meneror lautan. Karena kerangka hiu terbuat dari tulang rawan yang mudah hancur, gigi adalah satu-satunya bagian tubuh yang umum memfosil. Gigi ini bisa mencapai ukuran diagonal lebih dari 18 cm, dengan tepi bergerigi halus seperti gergaji untuk memotong daging paus dan mamalia laut besar lainnya. Ukuran gigi ini mengindikasikan kekuatan gigitan yang mencapai 180.000 Newton.",
               key: "Gigi terbesar di dunia hewan, simbol kekuatan predator puncak lautan purba.",
+            },
+            details: {
+              diet: "Karnivora",
+              lifespan: "N/A",
+              weight: "N/A",
+              size: "15 - 18 cm (Gigi)",
+              discoveryYear: "N/A",
+              taxonomy: "Chondrichthyes (Bagian Tubuh)",
+              stats: { completeness: 95, rarity: 70, value: 90 },
             },
           },
           {
@@ -400,16 +651,35 @@ export const encyclopediaData = {
               full: "Tengkorak Smilodon fatalis memperlihatkan adaptasi predator yang sangat spesifik. Taring 'saber' (pedang) yang panjangnya bisa mencapai 28 cm ini sebenarnya cukup rapuh terhadap tekanan samping. Oleh karena itu, Smilodon memiliki struktur rahang yang bisa membuka hingga 120 derajat dan otot leher yang sangat kuat untuk menancapkan taringnya ke leher mangsa yang sudah dilumpuhkan, memutus pembuluh darah utama dengan presisi bedah.",
               key: "Ikon predator Zaman Es yang menunjukkan spesialisasi evolusi berburu yang ekstrem.",
             },
+            details: {
+              diet: "Karnivora",
+              lifespan: "N/A",
+              weight: "N/A",
+              size: "30 - 40 cm",
+              discoveryYear: "N/A",
+              taxonomy: "Mammalia",
+              stats: { completeness: 80, rarity: 50, value: 70 },
+            },
           },
           {
             name: "TENGKORAK TRICERATOPS",
             modelPath: "/models/fosil/fosil_tubuh/triceratops_skull.glb",
-            image: "https://media.istockphoto.com/id/501154807/id/foto/tengkorak-fosil-triceratops-di-atas-latar-belakang-terisolasi-putih.jpg?s=612x612&w=0&k=20&c=QsPjw2eXUU3bWdahhpITi7TY6dSpYgv7c0ZywCCZLaI=",
+            image:
+              "https://media.istockphoto.com/id/501154807/id/foto/tengkorak-fosil-triceratops-di-atas-latar-belakang-terisolasi-putih.jpg?s=612x612&w=0&k=20&c=QsPjw2eXUU3bWdahhpITi7TY6dSpYgv7c0ZywCCZLaI=",
             description: {
               short:
                 "Salah satu tengkorak terbesar hewan darat, dilengkapi paruh keras, tiga tanduk tajam, dan tameng leher tulang yang kokoh.",
               full: "Tengkorak Triceratops adalah mahakarya pertahanan alam. Panjangnya bisa mencapai 2,5 meter, hampir sepertiga panjang tubuhnya. Paruh di bagian depan sangat kuat untuk mematahkan dahan tanaman keras. Tiga tanduknya digunakan untuk bertarung sesama pejantan atau melawan predator. Tameng leher (frill) yang terbuat dari tulang padat berfungsi melindungi leher dari gigitan dan tempat melekatnya otot rahang yang kuat.",
               key: "Sering ditemukan memfosil secara utuh karena struktur tulangnya yang sangat tebal dan keras.",
+            },
+            details: {
+              diet: "Herbivora",
+              lifespan: "N/A",
+              weight: "N/A",
+              size: "2.5 Meter",
+              discoveryYear: "N/A",
+              taxonomy: "Ceratopsia",
+              stats: { completeness: 85, rarity: 60, value: 80 },
             },
           },
           {
@@ -423,6 +693,15 @@ export const encyclopediaData = {
                 "Tengkorak kokoh dengan rahang yang sangat kuat dan gigi berbentuk pisang yang tebal, didesain untuk meremukkan tulang mangsa.",
               full: "Tengkorak Tyrannosaurus rex berbeda dari theropoda lain karena bentuknya yang lebar di bagian belakang, memberikan penglihatan binokular (kedalaman visual) yang sangat baik. Tulang tengkoraknya menyatu dan sangat tebal untuk menahan gaya gigitan yang ekstrem. Giginya tidak pipih dan tajam untuk mengiris, melainkan tebal dan bulat seperti pasak besi, dirancang untuk menusuk dan menghancurkan tulang (osteophagy) mangsanya hingga hancur.",
               key: "Struktur kepala pemangsa paling mematikan dengan kekuatan gigitan terkuat di antara hewan darat yang pernah ada.",
+            },
+            details: {
+              diet: "Karnivora",
+              lifespan: "N/A",
+              weight: "N/A",
+              size: "1.5 Meter",
+              discoveryYear: "N/A",
+              taxonomy: "Theropoda",
+              stats: { completeness: 70, rarity: 80, value: 95 },
             },
           },
         ],
@@ -455,16 +734,35 @@ export const encyclopediaData = {
               full: "Anomalocaris ('Udang Aneh') adalah penguasa lautan Kambrium sekitar 500 juta tahun lalu. Dengan panjang mencapai 1 meter, ia adalah raksasa di zamannya. Hewan ini memiliki tubuh bersegmen dengan sirip samping untuk berenang, mulut berbentuk cincin yang unik untuk meremukkan mangsa bercangkang lunak, dan sepasang lengan berduri untuk menyambar trilobita. Mata majemuknya sangat canggih, memberinya penglihatan tajam sebagai pemburu visual.",
               key: "Merupakan predator puncak (apex predator) pertama yang diketahui dalam sejarah evolusi hewan.",
             },
+            details: {
+              diet: "Karnivora",
+              lifespan: "2 - 5 Tahun",
+              weight: "< 5 kg",
+              size: "60 cm - 1 m",
+              discoveryYear: "1892 (Whiteaves)",
+              taxonomy: "Radiodonta",
+              stats: { completeness: 40, rarity: 90, value: 100 },
+            },
           },
           {
             name: "DIMETRODON",
             modelPath: "/models/geologi/era_paleozoikum/dimetrodon.glb",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Om1KbpIjtaEVrAfucbh-LepeHUcPK6i_Ng&s",
+            image:
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Om1KbpIjtaEVrAfucbh-LepeHUcPK6i_Ng&s",
             description: {
               short:
                 "Reptil purba berkaki empat dengan layar besar di punggungnya, hidup jauh sebelum dinosaurus dan sebenarnya lebih berkerabat dekat dengan mamalia.",
               full: "Dimetrodon sering dikira dinosaurus, padahal ia adalah Pelycosaur (Synapsida) yang hidup pada periode Permian, jutaan tahun sebelum dinosaurus pertama muncul. Ciri khasnya adalah layar punggung tinggi yang dibentuk oleh perpanjangan tulang belakang. Layar ini kaya akan pembuluh darah dan berfungsi sebagai alat termoregulasi canggih—menyerap panas matahari di pagi hari agar ia bisa aktif berburu lebih cepat daripada mangsanya.",
               key: "Nenek moyang jauh dari garis evolusi yang akhirnya melahirkan mamalia.",
+            },
+            details: {
+              diet: "Karnivora",
+              lifespan: "20 - 30 Tahun",
+              weight: "250 kg",
+              size: "3 - 4.6 m",
+              discoveryYear: "1878 (E.D. Cope)",
+              taxonomy: "Synapsida",
+              stats: { completeness: 85, rarity: 40, value: 85 },
             },
           },
           {
@@ -479,6 +777,15 @@ export const encyclopediaData = {
               full: "Arthropleura adalah artropoda raksasa yang hidup sekitar 300 juta tahun lalu. Panjang tubuhnya bisa mencapai 2,5 meter. Ukuran fantastis ini dimungkinkan karena tingginya kadar oksigen di atmosfer pada periode Karbon dan belum adanya predator vertebrata darat yang besar. Meskipun berpenampilan menyeramkan, penelitian fosil isi perut menunjukkan bahwa kemungkinan besar mereka adalah herbivora yang memakan tumbuhan paku dan sisa tanaman busuk.",
               key: "Simbol gigantisme serangga akibat kondisi atmosfer bumi purba yang kaya oksigen.",
             },
+            details: {
+              diet: "Herbivora",
+              lifespan: "5 - 10 Tahun",
+              weight: "50 kg",
+              size: "Panjang 2.5 m",
+              discoveryYear: "1854",
+              taxonomy: "Arthropoda",
+              stats: { completeness: 50, rarity: 85, value: 90 },
+            },
           },
           {
             name: "DUNKLEOSTEUS",
@@ -492,39 +799,79 @@ export const encyclopediaData = {
               full: "Dunkleosteus terrelli adalah ikan Placoderm (ikan berahang perisai) terbesar yang hidup di periode Devon. Panjangnya mencapai 6 meter dan berat 1 ton. Ia tidak memiliki gigi, melainkan lempengan tulang rahang yang menajam sendiri seperti gunting raksasa. Kekuatan gigitannya setara dengan T-Rex, memungkinkannya membelah mangsa bercangkang keras atau ikan hiu purba sekalipun. Ikan ini punah tanpa meninggalkan keturunan langsung.",
               key: "Tank baja hidup di lautan purba dengan salah satu gigitan terkuat dalam sejarah hewan air.",
             },
+            details: {
+              diet: "Karnivora",
+              lifespan: "20 - 30 Tahun",
+              weight: "1 - 4 Ton",
+              size: "Panjang 6 m",
+              discoveryYear: "1873 (Newberry)",
+              taxonomy: "Placodermi",
+              stats: { completeness: 70, rarity: 60, value: 90 },
+            },
           },
           {
             name: "MEGANEURA",
             modelPath: "/models/geologi/era_paleozoikum/meganeura.glb",
-            image: "https://cdn.rri.co.id/berita/Bengkulu/o/1761752463317-01/4wfu9532zwn2g8u.jpeg",
+            image:
+              "https://cdn.rri.co.id/berita/Bengkulu/o/1761752463317-01/4wfu9532zwn2g8u.jpeg",
             description: {
               short:
                 "Serangga terbang mirip capung dengan bentang sayap selebar tangan manusia dewasa, predator udara yang menguasai langit zaman Karbon.",
               full: "Meganeura monyi adalah serangga mirip capung (Griffinfly) yang hidup di hutan rawa periode Karbon. Dengan bentang sayap mencapai 70 cm, ia adalah serangga terbesar yang pernah diketahui. Seperti capung modern, Meganeura adalah predator udara yang gesit, memangsa serangga lain dan mungkin amfibi kecil. Ukurannya yang besar didukung oleh sistem pernapasan trakea yang efisien di atmosfer berkadar oksigen tinggi.",
               key: "Raja langit prasejarah sebelum evolusi reptil terbang dan burung.",
             },
+            details: {
+              diet: "Karnivora (Serangga)",
+              lifespan: "1 - 2 Tahun",
+              weight: "< 1 kg",
+              size: "Bentang sayap 70 cm",
+              discoveryYear: "1880 (Brongniart)",
+              taxonomy: "Insecta",
+              stats: { completeness: 30, rarity: 90, value: 80 },
+            },
           },
           {
             name: "TRILOBITE",
-            modelPath: "/models/geologi/era_paleozoikum/model_of_a_trilobite.glb",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRstc9xAVu7a6fljWVLAqaDeOHWyE2U6R88Gg&s",
+            modelPath:
+              "/models/geologi/era_paleozoikum/model_of_a_trilobite.glb",
+            image:
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRstc9xAVu7a6fljWVLAqaDeOHWyE2U6R88Gg&s",
             description: {
               short:
                 "Hewan laut purba yang sangat sukses dan beragam, memiliki tubuh bersegmen tiga lobus dan mata majemuk kristal, mendominasi lautan selama ratusan juta tahun.",
               full: "Trilobita adalah kelas artropoda laut yang punah, menjadi salah satu kelompok hewan paling sukses dalam sejarah bumi. Mereka muncul di Kambrium Awal dan bertahan selama hampir 300 juta tahun. Tubuhnya terbagi menjadi tiga lobus (sehingga namanya Trilobita). Mereka memiliki beragam bentuk dan ukuran, serta mata majemuk dari mineral kalsit yang canggih. Sebagian besar hidup merayap di dasar laut, berenang, atau menggali lumpur.",
               key: "Fosil indeks yang sangat penting karena evolusinya yang cepat dan penyebarannya yang luas di seluruh dunia.",
             },
+            details: {
+              diet: "Detritivora",
+              lifespan: "3 - 5 Tahun",
+              weight: "< 1 kg",
+              size: "3 - 70 cm",
+              discoveryYear: "1771",
+              taxonomy: "Arthropoda",
+              stats: { completeness: 98, rarity: 10, value: 95 },
+            },
           },
           {
             name: "GORGONOPSID",
             modelPath:
               "/models/geologi/era_paleozoikum/primeval_-_gorgonopsid.glb",
-            image: "https://images.steamusercontent.com/ugc/2057631029505964028/84558350C0569A59A53F5D4189B367D6199A0AC6/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+            image:
+              "https://images.steamusercontent.com/ugc/2057631029505964028/84558350C0569A59A53F5D4189B367D6199A0AC6/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
             description: {
               short:
                 "Predator darat utama pada akhir masa Paleozoikum, reptil mirip mamalia yang gesit dengan gigi taring besar untuk merobek mangsa.",
               full: "Gorgonopsid adalah kelompok Therapsida (reptil mirip mamalia) yang menjadi predator puncak pada periode Permian Akhir. Mereka menggabungkan ciri reptil dan mamalia; memiliki kaki yang tegak di bawah tubuh (bukan merayap samping) yang memungkinkan gerakan cepat. Ciri utamanya adalah gigi taring 'saber' yang besar, yang kemudian berevolusi konvergen pada macan gigi pedang. Mereka punah dalam kepunahan massal Permian-Trias.",
               key: "Monster darat pertama yang mengembangkan gigi taring khusus (heterodont) seperti mamalia.",
+            },
+            details: {
+              diet: "Karnivora",
+              lifespan: "15 - 20 Tahun",
+              weight: "150 - 300 kg",
+              size: "Panjang 1.5 - 3 m",
+              discoveryYear: "1876 (Owen)",
+              taxonomy: "Therapsida",
+              stats: { completeness: 60, rarity: 75, value: 85 },
             },
           },
         ],
@@ -538,12 +885,22 @@ export const encyclopediaData = {
           {
             name: "ALLOSAURUS",
             modelPath: "/models/geologi/era_mesozoikum/allosaurus.glb",
-            image: "https://www.extinctanimals.org/wp-content/uploads/2015/12/Allosaurus-Images.jpg",
+            image:
+              "https://www.extinctanimals.org/wp-content/uploads/2015/12/Allosaurus-Images.jpg",
             description: {
               short:
                 "Predator puncak zaman Jura yang berburu mangsa besar dengan gigi tajam dan cakar tangan kuat, teror bagi dinosaurus herbivora.",
               full: "Allosaurus adalah dinosaurus theropoda karnivora paling umum dan berbahaya di Amerika Utara selama periode Jura Akhir. Berbeda dengan T-Rex yang mengandalkan kekuatan gigitan penghancur tulang, Allosaurus menggunakan rahangnya seperti kapak (hatchet attack)—membuka mulut lebar dan mengayunkan gigi atasnya ke mangsa untuk menyebabkan pendarahan hebat. Ia memiliki lengan yang kuat dengan tiga cakar tajam untuk mencengkeram.",
               key: "Predator dominan yang fosilnya melimpah, memberikan banyak informasi tentang ekosistem masa Jura.",
+            },
+            details: {
+              diet: "Karnivora",
+              lifespan: "25 - 30 Tahun",
+              weight: "1.5 - 2 Ton",
+              size: "Panjang 8.5 Meter",
+              discoveryYear: "1877 (O.C. Marsh)",
+              taxonomy: "Dinosauria > Theropoda",
+              stats: { completeness: 85, rarity: 30, value: 90 },
             },
           },
           {
@@ -558,74 +915,143 @@ export const encyclopediaData = {
               full: "Brachiosaurus adalah sauropoda kolosal yang memiliki postur tubuh unik seperti jerapah, dengan kaki depan lebih panjang daripada kaki belakang. Struktur ini memungkinkannya menjangkau dedaunan di pohon conifer yang sangat tinggi tanpa perlu mengangkat lehernya secara aktif. Lubang hidungnya terletak di puncak kepala yang menonjol. Tidak seperti sauropoda lain, Brachiosaurus kemungkinan tidak bisa berdiri dengan dua kaki belakang.",
               key: "Salah satu dinosaurus terbesar dan tertinggi yang pernah berjalan di bumi.",
             },
+            details: {
+              diet: "Herbivora",
+              lifespan: "100 Tahun",
+              weight: "30 - 50 Ton",
+              size: "Panjang 25 Meter",
+              discoveryYear: "1903 (Elmer Riggs)",
+              taxonomy: "Dinosauria > Sauropoda",
+              stats: { completeness: 70, rarity: 60, value: 95 },
+            },
           },
           {
             name: "DILOPHOSAURUS",
             modelPath:
               "/models/geologi/era_mesozoikum/dilophosaurus_wetherilli.glb",
-            image: "https://images.dinosaurpictures.org/127544_Dilophosaurus_Pose_2_000.jpg0c59dae3-f8e3-48a4-a5d4-da8ff572cef3Original_eb0a.jpg",
+            image:
+              "https://images.dinosaurpictures.org/127544_Dilophosaurus_Pose_2_000.jpg0c59dae3-f8e3-48a4-a5d4-da8ff572cef3Original_eb0a.jpg",
             description: {
               short:
                 "Dinosaurus karnivora lincah dari awal zaman Jura, memiliki ciri khas sepasang jambul tulang berbentuk setengah lingkaran di atas kepalanya.",
               full: "Dilophosaurus wetherilli adalah theropoda besar pertama yang muncul pada Awal Jura. Ciri paling mencolok adalah dua jambul (crest) tipis di kepalanya yang kemungkinan digunakan untuk pamer (display) antar spesies, bukan senjata. Rahang atasnya memiliki celah khas (subnarial gap) yang membuat gigitannya tidak terlalu kuat, menunjukkan ia mungkin pemakan ikan atau bangkai selain pemburu hewan kecil. Catatan: Ia tidak memiliki jumbai leher atau racun seperti di film.",
               key: "Theropoda besar pertama yang sukses mendominasi daratan setelah kepunahan Trias.",
             },
+            details: {
+              diet: "Karnivora",
+              lifespan: "15 - 20 Tahun",
+              weight: "400 kg",
+              size: "Panjang 6 - 7 Meter",
+              discoveryYear: "1954 (Sam Welles)",
+              taxonomy: "Dinosauria > Theropoda",
+              stats: { completeness: 65, rarity: 70, value: 85 },
+            },
           },
           {
             name: "ANKYLOSAURUS",
             modelPath: "/models/geologi/era_mesozoikum/dino_-_ankylosaurus.glb",
-            image: "https://images.dinosaurpictures.org/Ankylosaurus/Ankylosaurus_775883a1.jpg",
+            image:
+              "https://images.dinosaurpictures.org/Ankylosaurus/Ankylosaurus_775883a1.jpg",
             description: {
               short:
                 "Dinosaurus herbivora yang tubuhnya dilindungi baju zirah tulang anti peluru dan memiliki gada berat di ujung ekornya untuk pertahanan.",
               full: "Ankylosaurus adalah tank hidup dari periode Kapur Akhir. Seluruh tubuh bagian atasnya tertutup osteoderm (lempeng tulang) yang menyatu dengan kulit, bahkan kelopak matanya pun bertulang. Ia memiliki tubuh lebar dan rendah sehingga sulit dibalikkan oleh predator. Senjata utamanya adalah gada tulang padat di ujung ekor yang dapat diayunkan dengan kecepatan tinggi, cukup kuat untuk mematahkan kaki T-Rex.",
               key: "Puncak evolusi pertahanan pasif dan aktif pada dinosaurus herbivora.",
             },
+            details: {
+              diet: "Herbivora",
+              lifespan: "30 Tahun",
+              weight: "4 - 8 Ton",
+              size: "Panjang 6 - 8 Meter",
+              discoveryYear: "1908 (Barnum Brown)",
+              taxonomy: "Dinosauria > Ankylosauria",
+              stats: { completeness: 80, rarity: 50, value: 85 },
+            },
           },
           {
             name: "HERRERASAURUS",
             modelPath:
               "/models/geologi/era_mesozoikum/dinorauls_herrerasaurus.glb",
-            image: "https://image-service.zaonce.net/eyJidWNrZXQiOiJmcm9udGllci1jbXMiLCJrZXkiOiIyMDIxLTExL2hlcnJlcmFzYXVydXNfMjI2MDA0LnBuZyIsImVkaXRzIjp7IndlYnAiOnsicXVhbGl0eSI6ODV9LCJ0b0Zvcm1hdCI6IndlYnAiLCJyZXNpemUiOnsiZml0IjoiY29udGFpbiJ9fX0=",
+            image:
+              "https://image-service.zaonce.net/eyJidWNrZXQiOiJmcm9udGllci1jbXMiLCJrZXkiOiIyMDIxLTExL2hlcnJlcmFzYXVydXNfMjI2MDA0LnBuZyIsImVkaXRzIjp7IndlYnAiOnsicXVhbGl0eSI6ODV9LCJ0b0Zvcm1hdCI6IndlYnAiLCJyZXNpemUiOnsiZml0IjoiY29udGFpbiJ9fX0=",
             description: {
               short:
                 "Salah satu dinosaurus paling awal yang pernah ditemukan, predator lincah berkaki dua yang hidup pada zaman Trias.",
               full: "Herrerasaurus ischigualastensis adalah salah satu dinosaurus primitif yang hidup di Argentina sekitar 230 juta tahun lalu (Trias Akhir). Ia memiliki campuran ciri-ciri dinosaurus modern dan nenek moyang reptil archosauria, membuat klasifikasinya sempat membingungkan ilmuwan. Sebagai predator bipedal (berjalan dua kaki) yang cepat, ia memiliki rahang fleksibel yang bisa menahan mangsa yang meronta.",
               key: "Kunci penting untuk memahami asal-usul dan evolusi awal kelompok dinosaurus.",
             },
+            details: {
+              diet: "Karnivora",
+              lifespan: "10 - 15 Tahun",
+              weight: "350 kg",
+              size: "Panjang 3 - 6 Meter",
+              discoveryYear: "1963 (Osvaldo Reig)",
+              taxonomy: "Dinosauria > Herrerasauridae",
+              stats: { completeness: 50, rarity: 80, value: 95 },
+            },
           },
           {
             name: "ICHTHYOSAURUS",
             modelPath: "/models/geologi/era_mesozoikum/ichthyosaurus.glb",
-            image: "https://www.harapanrakyat.com/wp-content/uploads/2022/03/Fosil-Reptil-Laut-Ichthyosaurus-Berusia-160-Tahun-Direknostruksi.jpg",
+            image:
+              "https://www.harapanrakyat.com/wp-content/uploads/2022/03/Fosil-Reptil-Laut-Ichthyosaurus-Berusia-160-Tahun-Direknostruksi.jpg",
             description: {
               short:
                 "Reptil laut yang berevolusi memiliki bentuk tubuh menyerupai lumba-lumba modern, perenang cepat yang melahirkan anak di dalam air.",
               full: "Ichthyosaurus adalah contoh sempurna evolusi konvergen, di mana reptil purba mengembangkan bentuk tubuh 'streamline' yang sangat mirip dengan ikan atau lumba-lumba untuk berenang cepat di laut. Mereka memiliki sirip punggung, sirip ekor vertikal, dan paru-paru untuk bernapas di permukaan. Mata mereka sangat besar, dilindungi cincin tulang sklerotik, untuk melihat mangsa (cumi-cumi dan ikan) di kedalaman laut yang gelap.",
               key: "Reptil laut yang sepenuhnya teradaptasi dengan kehidupan akuatik dan tidak pernah naik ke darat.",
             },
+            details: {
+              diet: "Piscivora (Ikan/Cumi)",
+              lifespan: "20 - 30 Tahun",
+              weight: "80 - 100 kg",
+              size: "Panjang 2 - 3 Meter",
+              discoveryYear: "1821 (De la Beche)",
+              taxonomy: "Ichthyosauria",
+              stats: { completeness: 90, rarity: 40, value: 80 },
+            },
           },
           {
             name: "QUETZALCOATLUS",
             modelPath:
               "/models/geologi/era_mesozoikum/jurassic_world_dominion_quetzalcoatlus.glb",
-            image: "https://t3.ftcdn.net/jpg/16/05/05/46/360_F_1605054644_xdiTwD4wqv0SmPRmmJnenIj8xdYKhqEe.jpg",
+            image:
+              "https://t3.ftcdn.net/jpg/16/05/05/46/360_F_1605054644_xdiTwD4wqv0SmPRmmJnenIj8xdYKhqEe.jpg",
             description: {
               short:
                 "Hewan terbang terbesar sepanjang sejarah bumi, reptil pterosaurus raksasa dengan tinggi setara jerapah saat berdiri di tanah.",
               full: "Quetzalcoatlus northropi adalah pterosaurus azhdarchid dari periode Kapur Akhir yang ukurannya menentang imajinasi. Dengan bentang sayap 10-11 meter dan leher yang sangat panjang, ia menguasai langit Amerika Utara. Saat di darat, ia berjalan dengan empat kaki dan berburu hewan kecil seperti dinosaurus bayi dengan mematuknya menggunakan paruh raksasa yang tajam, mirip perilaku bangau raksasa.",
               key: "Batas biomekanik maksimal ukuran makhluk hidup untuk bisa terbang dengan kekuatan sendiri.",
             },
+            details: {
+              diet: "Karnivora/Piscivora",
+              lifespan: "20 - 30 Tahun",
+              weight: "200 - 250 kg",
+              size: "Bentang Sayap 10 - 11 m",
+              discoveryYear: "1971 (Douglas Lawson)",
+              taxonomy: "Pterosauria",
+              stats: { completeness: 40, rarity: 95, value: 100 },
+            },
           },
           {
             name: "COELOPHYSIS",
             modelPath: "/models/geologi/era_mesozoikum/jwe2_coelophysis.glb",
-            image: "https://www.extinctanimals.org/wp-content/uploads/2018/11/Coelophysis-Images.jpg",
+            image:
+              "https://www.extinctanimals.org/wp-content/uploads/2018/11/Coelophysis-Images.jpg",
             description: {
               short:
                 "Dinosaurus karnivora kecil, ramping, dan lincah dari zaman Trias yang tulang-tulangnya berongga ringan, hidup dan berburu secara berkelompok.",
               full: "Coelophysis bauri adalah salah satu dinosaurus theropoda awal yang paling sukses. Tubuhnya ramping, berleher panjang, dan memiliki tulang berongga (seperti burung) yang membuatnya sangat ringan dan cepat. Penemuan ratusan kerangka Coelophysis di Ghost Ranch, New Mexico, menunjukkan bahwa mereka kemungkinan besar hidup atau mati bersama dalam kawanan besar. Gigi tajamnya menunjukkan ia pemangsa serangga dan reptil kecil.",
               key: "Bukti awal perilaku sosial (gregarious) pada dinosaurus karnivora.",
+            },
+            details: {
+              diet: "Karnivora",
+              lifespan: "10 - 15 Tahun",
+              weight: "20 - 30 kg",
+              size: "Panjang 3 Meter",
+              discoveryYear: "1889 (E.D. Cope)",
+              taxonomy: "Dinosauria > Theropoda",
+              stats: { completeness: 85, rarity: 60, value: 75 },
             },
           },
           {
@@ -639,50 +1065,99 @@ export const encyclopediaData = {
               full: "Mosasaurus bukanlah dinosaurus, melainkan kadal laut raksasa (kerabat biawak dan ular) yang sepenuhnya beradaptasi di laut. Panjangnya mencapai 17 meter. Ia memiliki tubuh kekar, sirip dayung, dan ekor kuat untuk berenang cepat. Rahangnya yang mengerikan memiliki sendi ganda yang memungkinkannya menelan mangsa besar, serta barisan gigi tambahan di langit-langit mulut (gigi pterygoid) untuk menahan mangsa agar tidak lolos.",
               key: "Monster laut sesungguhnya yang menggantikan Ichthyosaurus dan Plesiosaurus sebagai penguasa lautan di akhir Mesozoikum.",
             },
+            details: {
+              diet: "Karnivora",
+              lifespan: "30 - 50 Tahun",
+              weight: "15 Ton",
+              size: "Panjang 17 - 18 Meter",
+              discoveryYear: "1764",
+              taxonomy: "Squamata",
+              stats: { completeness: 70, rarity: 50, value: 85 },
+            },
           },
           {
             name: "PARASAUROLOPHUS",
             modelPath:
               "/models/geologi/era_mesozoikum/parasaurolophus_walkeri.glb",
-            image: "https://www.extinctanimals.org/wp-content/uploads/2015/09/Parasaurolophus-Photos.jpg",
+            image:
+              "https://www.extinctanimals.org/wp-content/uploads/2015/09/Parasaurolophus-Photos.jpg",
             description: {
               short:
                 "Dinosaurus pemakan tumbuhan dengan jambul tabung panjang di belakang kepala yang berfungsi seperti terompet untuk berkomunikasi.",
               full: "Parasaurolophus adalah dinosaurus hadrosaurida (berparuh bebek) yang ikonik. Jambul tabung di kepalanya bukan sekadar hiasan, melainkan rongga resonansi yang terhubung dengan saluran napas. Ilmuwan meyakini jambul ini digunakan untuk menghasilkan suara frekuensi rendah yang keras untuk komunikasi jarak jauh antar anggota kawanan atau peringatan bahaya. Ia berjalan dengan empat kaki tetapi bisa berlari dengan dua kaki.",
               key: "Contoh evolusi struktur tubuh unik untuk tujuan komunikasi suara (akustik) pada dinosaurus.",
             },
+            details: {
+              diet: "Herbivora",
+              lifespan: "30 - 40 Tahun",
+              weight: "2.5 - 4 Ton",
+              size: "Panjang 9 - 10 Meter",
+              discoveryYear: "1922 (William Parks)",
+              taxonomy: "Dinosauria > Hadrosauridae",
+              stats: { completeness: 80, rarity: 40, value: 75 },
+            },
           },
           {
             name: "PTERANODON",
             modelPath: "/models/geologi/era_mesozoikum/pteranodon.glb",
-            image: "https://cdn.mos.cms.futurecdn.net/6vA8wWskCkUgffN9dbQhvh-1200-80.jpg",
+            image:
+              "https://cdn.mos.cms.futurecdn.net/6vA8wWskCkUgffN9dbQhvh-1200-80.jpg",
             description: {
               short:
                 "Reptil terbang terkenal yang memiliki paruh panjang tanpa gigi dan jambul kepala menonjol, ahli meluncur di atas samudra purba.",
               full: "Pteranodon adalah pterosaurus besar yang sangat spesialis dalam terbang layang (soaring) di atas lautan, mirip burung albatros modern. Sayapnya yang panjang memungkinkannya terbang jarak jauh hemat energi. Jambul di kepalanya bervariasi bentuk dan ukurannya tergantung jenis kelamin dan usia, berfungsi sebagai display sosial atau kemudi aerodinamis. Ia menangkap ikan dengan paruh panjangnya saat terbang rendah di permukaan air.",
               key: "Reptil terbang yang paling banyak dipelajari dan sering disalahartikan sebagai dinosaurus.",
             },
+            details: {
+              diet: "Karnivora (Piscivora)",
+              lifespan: "20 - 30 Tahun",
+              weight: "20 - 90 kg",
+              size: "Bentang Sayap 7 Meter",
+              discoveryYear: "1876 (O.C. Marsh)",
+              taxonomy: "Pterosauria",
+              stats: { completeness: 60, rarity: 30, value: 80 },
+            },
           },
           {
             name: "SPINOSAURUS",
             modelPath: "/models/geologi/era_mesozoikum/spinosaurus.glb",
-            image: "https://www.superherotoystore.com/cdn/shop/articles/Blog_Banners_11_e325b223-a705-4062-a83a-66a2548fde70_1600x.jpg?v=1746545950",
+            image:
+              "https://www.superherotoystore.com/cdn/shop/articles/Blog_Banners_11_e325b223-a705-4062-a83a-66a2548fde70_1600x.jpg?v=1746545950",
             description: {
               short:
                 "Karnivora terbesar di bumi yang beradaptasi untuk hidup di air dan darat, memiliki layar punggung raksasa dan moncong panjang pemakan ikan.",
               full: "Spinosaurus mengubah pandangan kita tentang dinosaurus theropoda. Ia adalah satu-satunya dinosaurus yang diketahui beradaptasi baik untuk gaya hidup semi-akuatik. Kaki belakangnya pendek, tulang-tulangnya padat untuk kontrol daya apung, dan ekornya berbentuk seperti dayung untuk berenang. Moncongnya yang panjang dan gigi kerucut sangat efisien untuk menangkap ikan purba raksasa seperti Onchopristis di sungai delta Afrika Utara.",
               key: "Raja sungai yang meruntuhkan dominasi T-Rex dalam hal ukuran tubuh predator.",
             },
+            details: {
+              diet: "Karnivora (Semi-akuatik)",
+              lifespan: "30+ Tahun",
+              weight: "7 - 20 Ton",
+              size: "Panjang 14 - 15 Meter",
+              discoveryYear: "1912 (Ernst Stromer)",
+              taxonomy: "Dinosauria > Theropoda",
+              stats: { completeness: 45, rarity: 85, value: 95 },
+            },
           },
           {
             name: "STEGOSAURUS",
             modelPath: "/models/geologi/era_mesozoikum/stegosaurus_armatus.glb",
-            image: "https://dinosaurlady.com/wp-content/uploads/2024/08/4802592-311672367.jpg?w=1200",
+            image:
+              "https://dinosaurlady.com/wp-content/uploads/2024/08/4802592-311672367.jpg?w=1200",
             description: {
               short:
                 "Dinosaurus herbivora dengan barisan lempeng tulang di punggung dan empat duri tajam di ekor, namun memiliki otak yang sangat kecil.",
               full: "Stegosaurus adalah dinosaurus yang mudah dikenali berkat barisan pelat (plates) berbentuk layang-layang di punggungnya dan duri tajam (thagomizer) di ujung ekornya. Pelat ini kemungkinan berfungsi untuk pamer (display), identifikasi spesies, atau termoregulasi, bukan sebagai perisai pelindung. Duri ekornya adalah senjata pertahanan mematikan yang bisa diayunkan ke predator seperti Allosaurus. Uniknya, walau bertubuh besar, otaknya hanya sebesar buah kenari.",
               key: "Dinosaurus dengan rasio otak-ke-tubuh terkecil, namun sukses bertahan hidup dengan pertahanan fisik yang tangguh.",
+            },
+            details: {
+              diet: "Herbivora",
+              lifespan: "30 - 50 Tahun",
+              weight: "5 - 7 Ton",
+              size: "Panjang 9 Meter",
+              discoveryYear: "1877 (O.C. Marsh)",
+              taxonomy: "Dinosauria > Stegosauria",
+              stats: { completeness: 80, rarity: 40, value: 85 },
             },
           },
           {
@@ -696,6 +1171,15 @@ export const encyclopediaData = {
               full: "T-Rex adalah predator puncak definitif di akhir zaman Kapur. Tubuhnya yang masif, kaki yang kuat, dan tengkorak besar menjadikannya mesin pembunuh yang efisien. Gigitannya mampu menghasilkan tekanan ribuan kilogram, cukup untuk menghancurkan tulang mangsanya. Penelitian terbaru menunjukkan T-Rex memiliki penglihatan binokular yang lebih baik dari elang dan indra penciuman yang luar biasa sensitif, menjadikannya pemburu aktif sekaligus pemakan bangkai yang oportunis.",
               key: "Ikon budaya pop dan dinosaurus yang paling banyak dipelajari secara ilmiah di dunia.",
             },
+            details: {
+              diet: "Karnivora",
+              lifespan: "28 - 30 Tahun",
+              weight: "8 - 14 Ton",
+              size: "Panjang 12 - 13 Meter",
+              discoveryYear: "1902 (Barnum Brown)",
+              taxonomy: "Dinosauria > Theropoda",
+              stats: { completeness: 65, rarity: 95, value: 100 },
+            },
           },
           {
             name: "TRICERATOPS",
@@ -708,6 +1192,15 @@ export const encyclopediaData = {
               full: "Triceratops horridus adalah salah satu dinosaurus non-unggas terakhir yang berevolusi sebelum kepunahan massal. Tiga tanduknya (dua di dahi, satu di hidung) dan jumbai lehernya yang solid (tanpa lubang) menjadikannya lawan yang sulit bagi predator manapun. Tidak seperti ceratopsid lain, jumbai Triceratops murni tulang tebal yang berfungsi sebagai perisai leher yang efektif dalam pertarungan. Mereka hidup di dataran banjir Amerika Utara purba.",
               key: "Sering digambarkan sebagai musuh bebuyutan T-Rex, sebuah rivalitas yang didukung oleh bukti fosil.",
             },
+            details: {
+              diet: "Herbivora",
+              lifespan: "40 - 50 Tahun",
+              weight: "6 - 12 Ton",
+              size: "Panjang 8 - 9 Meter",
+              discoveryYear: "1889 (O.C. Marsh)",
+              taxonomy: "Dinosauria > Ceratopsia",
+              stats: { completeness: 75, rarity: 40, value: 90 },
+            },
           },
           {
             name: "VELOCIRAPTOR",
@@ -719,6 +1212,15 @@ export const encyclopediaData = {
                 "Dinosaurus pemangsa berukuran kecil, lincah, cerdas, dan tertutup bulu, terkenal dengan cakar sabit besar di kakinya.",
               full: "Velociraptor mongoliensis aslinya jauh lebih kecil daripada yang digambarkan di film, hanya seukuran kalkun besar. Fosilnya membuktikan bahwa mereka memiliki 'quill knobs' (benjolan tempat melekatnya bulu) di lengan, menegaskan bahwa mereka berbulu lebat seperti burung. Mereka adalah predator gurun yang ganas, menggunakan cakar sabit di kaki kedua untuk menusuk mangsa seperti Protoceratops. Mereka mungkin berburu sendiri atau dalam kelompok kecil.",
               key: "Menjembatani hubungan evolusi yang erat antara dinosaurus theropoda dan burung modern.",
+            },
+            details: {
+              diet: "Karnivora",
+              lifespan: "10 - 15 Tahun",
+              weight: "15 - 20 kg",
+              size: "Panjang 2 Meter",
+              discoveryYear: "1924 (H.F. Osborn)",
+              taxonomy: "Dinosauria > Dromaeosauridae",
+              stats: { completeness: 80, rarity: 60, value: 85 },
             },
           },
         ],
@@ -741,6 +1243,15 @@ export const encyclopediaData = {
               full: "Paraceratherium (dulu dikenal sebagai Indricotherium) adalah raksasa sejati zaman Oligosen. Tingginya mencapai 4,8 meter di bahu dan berat hingga 20 ton. Meskipun berkerabat dengan badak modern, ia tidak memiliki cula dan memiliki leher serta kaki panjang, mengisi relung ekologi yang mirip jerapah untuk memakan dedaunan pohon tinggi. Ukurannya yang masif membuatnya hampir kebal terhadap serangan predator manapun di zamannya.",
               key: "Batas maksimal ukuran tubuh yang bisa dicapai oleh mamalia darat dalam sejarah evolusi.",
             },
+            details: {
+              diet: "Herbivora",
+              lifespan: "60 - 80 Tahun",
+              weight: "15 - 20 Ton",
+              size: "Tinggi 4.8 m, Panjang 7.4 m",
+              discoveryYear: "1911 (Forster-Cooper)",
+              taxonomy: "Mammalia",
+              stats: { completeness: 50, rarity: 90, value: 95 },
+            },
           },
           {
             name: "MAMMOTH",
@@ -752,6 +1263,15 @@ export const encyclopediaData = {
                 "Gajah purba ikonik Zaman Es yang tubuhnya tertutup rambut tebal dan memiliki gading melengkung besar, hidup berdampingan dengan manusia purba.",
               full: "Mammoth Berbulu (Mammuthus primigenius) adalah spesies gajah yang beradaptasi sempurna dengan iklim dingin Pleistosen. Tubuhnya dilindungi lapisan lemak tebal dan dua lapisan rambut. Gadingnya yang sangat panjang dan melengkung digunakan untuk menyingkirkan salju demi mencari rumput kering di bawahnya. Mereka hidup di padang rumput stepa raksasa yang membentang dari Eropa hingga Amerika Utara dan sering menjadi buruan manusia purba.",
               key: "Simbol megafauna Zaman Es yang punah akibat perubahan iklim dan perburuan manusia.",
+            },
+            details: {
+              diet: "Herbivora",
+              lifespan: "60 Tahun",
+              weight: "6 - 8 Ton",
+              size: "Tinggi 3.4 Meter",
+              discoveryYear: "1799 (Blumenbach)",
+              taxonomy: "Mammalia",
+              stats: { completeness: 85, rarity: 40, value: 95 },
             },
           },
           {
@@ -766,16 +1286,35 @@ export const encyclopediaData = {
               full: "Phorusrhacidae, atau 'Burung Teror', adalah kelompok burung karnivora yang berevolusi menjadi predator puncak setelah dinosaurus punah, terutama di Amerika Selatan yang saat itu terisolasi. Phorusrhacos tingginya mencapai 2,5 meter dan tidak bisa terbang, namun berlari sangat cepat. Paruhnya yang besar dan melengkung seperti kapak digunakan untuk mematuk mangsa dengan gerakan vertikal yang kuat, menghancurkan tulang belakang korbannya.",
               key: "Contoh evolusi di mana burung mengambil alih peran dinosaurus theropoda sebagai predator darat dominan.",
             },
+            details: {
+              diet: "Karnivora",
+              lifespan: "15 - 20 Tahun",
+              weight: "130 kg",
+              size: "Tinggi 2.5 Meter",
+              discoveryYear: "1887 (Ameghino)",
+              taxonomy: "Aves > Phorusrhacidae",
+              stats: { completeness: 60, rarity: 70, value: 85 },
+            },
           },
           {
             name: "SMILODON",
             modelPath: "/models/geologi/era_kenozoikum/smilodon.glb",
-            image: "https://www.extinctanimals.org/wp-content/uploads/2018/09/Smilodon-Size.jpg",
+            image:
+              "https://www.extinctanimals.org/wp-content/uploads/2018/09/Smilodon-Size.jpg",
             description: {
               short:
                 "Kucing besar prasejarah yang terkenal dengan dua gigi taring atas yang sangat panjang seperti pedang, pemburu hewan besar di Zaman Es.",
               full: "Smilodon fatalis, atau macan gigi pedang, bukanlah leluhur harimau/singa modern, melainkan cabang terpisah dari keluarga kucing (Felidae). Tubuhnya kekar dan berotot, dirancang untuk bergulat menjatuhkan mangsa besar seperti bison atau unta purba, bukan untuk mengejar jarak jauh. Sepasang taringnya yang ikonik digunakan untuk memberikan gigitan presisi yang mematikan pada leher mangsa yang sudah tak berdaya.",
               key: "Predator Pleistosen paling terkenal yang fosilnya ribuan jumlahnya ditemukan di lubang aspal La Brea Tar Pits.",
+            },
+            details: {
+              diet: "Karnivora",
+              lifespan: "20 - 30 Tahun",
+              weight: "160 - 280 kg",
+              size: "Panjang 2 m",
+              discoveryYear: "1842 (Peter Lund)",
+              taxonomy: "Mammalia",
+              stats: { completeness: 80, rarity: 50, value: 70 },
             },
           },
         ],

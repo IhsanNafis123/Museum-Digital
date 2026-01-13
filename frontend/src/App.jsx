@@ -14,8 +14,8 @@ import GalleryMain from "./components/GalleryMain";
 import Visual3DHub from "./components/Visual3DHub";
 import ModelViewer from "./components/ModelViewer";
 // IMPORT HALAMAN BARU
-import IntroPage from "./components/IntroPage"; // <--- BARU
-import TimelineVideo from "./components/TimelineVideo"; // <--- BARU
+import IntroPage from "./components/IntroPage";
+import TimelineVideo from "./components/TimelineVideo";
 
 function App() {
   return (
@@ -28,8 +28,8 @@ function App() {
           {/* Rute 2: Halaman Intro (Selamat Datang) */}
           <Route path="/intro" element={<IntroPage />} />
 
-          {/* Rute 3: Halaman Video Timeline */}
-          <Route path="/timeline-watch" element={<TimelineVideo />} />
+          {/* PERBAIKAN DI SINI: Ubah path menjadi "/timeline" */}
+          <Route path="/timeline" element={<TimelineVideo />} />
 
           {/* Rute Lainnya... */}
           <Route path="/era-geologi" element={<EraGeologi />} />
@@ -42,7 +42,7 @@ function App() {
   );
 }
 
-// Update HomeWrapper agar tombol di LandingPage mengarah ke tempat yang benar
+// Update HomeWrapper agar konsisten
 const HomeWrapper = () => {
   const navigate = useNavigate();
 
@@ -50,8 +50,8 @@ const HomeWrapper = () => {
     <LandingPage
       // Saat klik "Mulai Ekskavasi", arahkan ke /intro
       onStart={() => navigate("/intro")}
-      // Saat klik "Lihat Timeline", arahkan ke /timeline-watch
-      onTimeline={() => navigate("/timeline-watch")}
+      // PERBAIKAN DI SINI JUGA:
+      onTimeline={() => navigate("/timeline")}
     />
   );
 };

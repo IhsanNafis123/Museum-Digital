@@ -88,73 +88,56 @@ const ModelViewer = () => {
     if (!data) return null;
 
     const dbDesc = data.description || {};
-    const name = data.name.toUpperCase();
+    // Ambil data 'details' jika ada di encyclopediaData.js
+    const customInfo = data.details || {};
 
-    // Default Values (Bisa Anda ganti default-nya di sini)
     let info = {
       // TAB 1: RINGKASAN
       scientificName:
+        customInfo.scientificName ||
         data.name.charAt(0) + data.name.slice(1).toLowerCase() + " sp.",
       category: data.category || "Unknown Class",
-      taxonomy: "Kingdom Animalia",
-      location: "Global / Tersebar Luas",
+      taxonomy: customInfo.taxonomy || "Kingdom Animalia",
+      location: customInfo.location || "Global / Tersebar Luas",
       status: "PUNAH",
 
       // TAB 2: DATA FISIK
-      diet: "Tidak Diketahui",
-      size: "Bervariasi",
-      weight: "Tidak Diketahui",
-      lifespan: "Tidak Diketahui", // Tambahan baru yang simpel
-      sizeCompare: 50, // 0-100% relative to human
+      diet: customInfo.diet || "Tidak Diketahui",
+      size: customInfo.size || "Bervariasi",
+      weight: customInfo.weight || "Tidak Diketahui",
+      lifespan: customInfo.lifespan || "Tidak Diketahui",
+      sizeCompare: 50,
 
       // TAB 3: EDUKASI
-      period: "Zaman Prasejarah",
+      period: customInfo.period || "Zaman Prasejarah",
       funFact:
         dbDesc.key || "Spesies ini memiliki peran unik dalam ekosistem purba.",
-      discoveryYear: "Abad ke-19", // Tambahan baru
+      discoveryYear: customInfo.discoveryYear || "Abad ke-19",
+
+      // --- UPDATE PENTING: Ambil stats dari database ---
+      stats: customInfo.stats || { completeness: 50, rarity: 50, value: 50 },
     };
 
-    // --- LOGIKA KUSTOMISASI DATA BERDASARKAN NAMA ---
-    // Anda bisa menambahkan 'else if' baru untuk model lain di sini.
+    // --- LOGIKA TAMBAHAN UNTUK VISUALISASI STATS ---
+    // (Opsional: Tetap pertahankan ini untuk grafik bar yang dinamis)
+    const name = data.name.toUpperCase();
 
     if (name.includes("REX")) {
-      info.scientificName = "Tyrannosaurus rex";
-      info.category = "Theropoda";
-      info.taxonomy = "Dinosauria > Saurischia";
-      info.location = "Amerika Utara";
-      info.diet = "Karnivora (Daging)";
-      info.size = "Panjang: 12-13 Meter";
-      info.weight = "8.000 - 14.000 kg";
-      info.lifespan = "~30 Tahun";
-      info.sizeCompare = 100; // Sangat Besar
-      info.period = "Kapur Akhir (68-66 Juta thn)";
-      info.discoveryYear = "1902 (Barnum Brown)";
+      info.sizeCompare = 100;
+      info.stats = { completeness: 65, rarity: 95, value: 100 };
     } else if (name.includes("TRILOBITE")) {
-      info.scientificName = "Trilobita classis";
-      info.category = "Arthropoda";
-      info.taxonomy = "Arthropoda > Trilobita";
-      info.location = "Lautan Seluruh Dunia";
-      info.diet = "Detritivora (Sisa Organik)";
-      info.size = "3 - 70 cm";
-      info.weight = "< 1 kg";
-      info.lifespan = "3 - 5 Tahun";
-      info.sizeCompare = 10; // Kecil
-      info.period = "Kambrium - Permian";
-      info.discoveryYear = "Sejak Awal Paleontologi";
-    } else if (name.includes("AMMONITE")) {
-      info.scientificName = "Ammonoidea";
-      info.category = "Cephalopoda";
-      info.taxonomy = "Mollusca > Cephalopoda";
-      info.location = "Lautan Terbuka";
-      info.diet = "Karnivora (Plankton/Krustasea)";
-      info.size = "Diameter: 20cm - 2m";
-      info.weight = "1 - 100 kg";
-      info.lifespan = "Singkat (Reproduksi Cepat)";
+      info.sizeCompare = 10;
+      info.stats = { completeness: 98, rarity: 20, value: 85 };
+    } else if (name.includes("VELOCIRAPTOR")) {
       info.sizeCompare = 25;
-      info.period = "Devon - Kapur Akhir";
-      info.discoveryYear = "Zaman Kuno (Disebut 'Ular Batu')";
+      info.stats = { completeness: 45, rarity: 80, value: 90 };
+    } else if (name.includes("AMMONITE")) {
+      info.sizeCompare = 20;
+      info.stats = { completeness: 95, rarity: 30, value: 80 };
+    } else if (name.includes("BRACHIOSAURUS")) {
+      info.sizeCompare = 100;
+      info.stats = { completeness: 70, rarity: 60, value: 95 };
     }
-    // ... Tambahkan else if lain untuk model Anda ...
 
     return info;
   }, [data]);
@@ -303,7 +286,7 @@ const ModelViewer = () => {
         </div>
 
         <div className="panel-content">
-          {/* === TAB 1: RINGKASAN (Simple & Informatif) === */}
+          {/* === TAB 1: RINGKASAN === */}
           {activeTab === "OVERVIEW" && (
             <>
               <h3 className="panel-heading">KLASIFIKASI & ASAL</h3>
@@ -323,8 +306,10 @@ const ModelViewer = () => {
                   </span>
                 </div>
                 <div className="info-item">
-                  <label style={{ color: themeColor }}>HABITAT</label>
-                  <span>{extendedData.location}</span>
+                  <label style={{ color: themeColor }}>LOKASI TEMUAN</label>
+                  <span style={{ fontSize: "0.9rem" }}>
+                    {extendedData.location}
+                  </span>
                 </div>
                 <div className="info-item">
                   <label style={{ color: themeColor }}>STATUS</label>
@@ -336,7 +321,7 @@ const ModelViewer = () => {
             </>
           )}
 
-          {/* === TAB 2: DATA FISIK (Simple & To-The-Point) === */}
+          {/* === TAB 2: DATA FISIK === */}
           {activeTab === "ANATOMY" && (
             <>
               <h3 className="panel-heading">KARAKTERISTIK FISIK</h3>
@@ -352,7 +337,9 @@ const ModelViewer = () => {
                 </div>
                 <div className="info-item">
                   <label style={{ color: themeColor }}>UKURAN TUBUH</label>
-                  <span>{extendedData.size}</span>
+                  <span style={{ fontSize: "0.9rem" }}>
+                    {extendedData.size}
+                  </span>
                 </div>
                 <div className="info-item">
                   <label style={{ color: themeColor }}>BERAT (PERKIRAAN)</label>
@@ -360,10 +347,10 @@ const ModelViewer = () => {
                 </div>
               </div>
 
-              {/* Visualisasi Size Bar Sederhana */}
+              {/* FITUR: DATA KOLEKSI MUSEUM (PENGGANTI BAR KEKUATAN) */}
               <div
                 style={{
-                  marginTop: "30px",
+                  marginTop: "25px",
                   borderTop: "1px solid rgba(255,255,255,0.1)",
                   paddingTop: "20px",
                 }}
@@ -373,80 +360,90 @@ const ModelViewer = () => {
                     fontSize: "0.8rem",
                     color: themeColor,
                     fontWeight: "bold",
-                    marginBottom: "10px",
+                    marginBottom: "15px",
                     letterSpacing: "1px",
                   }}
                 >
-                  SKALA UKURAN (VS MANUSIA)
+                  DATA KOLEKSI (SPECIMEN STATS)
                 </div>
 
-                {/* Bar Manusia (Fixed) */}
                 <div
                   style={{
                     display: "flex",
-                    alignItems: "center",
-                    marginBottom: "8px",
+                    flexDirection: "column",
+                    gap: "12px",
                   }}
                 >
-                  <div
-                    style={{ width: "80px", fontSize: "0.7rem", color: "#888" }}
-                  >
-                    MANUSIA (1.7m)
-                  </div>
-                  <div
-                    style={{
-                      flex: 1,
-                      background: "#333",
-                      height: "6px",
-                      borderRadius: "3px",
-                    }}
-                  >
+                  {[
+                    { label: "KEUTUHAN", val: extendedData.stats.completeness },
+                    { label: "KELANGKAAN", val: extendedData.stats.rarity },
+                    { label: "NILAI SAINS", val: extendedData.stats.value },
+                  ].map((stat, idx) => (
                     <div
+                      key={idx}
                       style={{
-                        width: "30%",
-                        height: "100%",
-                        background: "#fff",
-                        borderRadius: "3px",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "10px",
                       }}
-                    ></div>
-                  </div>
+                    >
+                      <div
+                        style={{
+                          width: "80px",
+                          fontSize: "0.7rem",
+                          color: "#888",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        {stat.label}
+                      </div>
+                      <div
+                        style={{
+                          flex: 1,
+                          height: "6px",
+                          background: "#333",
+                          borderRadius: "3px",
+                          overflow: "hidden",
+                        }}
+                      >
+                        <div
+                          style={{
+                            width: `${stat.val}%`,
+                            height: "100%",
+                            background: themeColor,
+                            boxShadow: `0 0 10px ${themeColor}`,
+                            transition: "width 1s ease-out",
+                          }}
+                        ></div>
+                      </div>
+                      <div
+                        style={{
+                          width: "35px",
+                          fontSize: "0.8rem",
+                          color: "#fff",
+                          textAlign: "right",
+                        }}
+                      >
+                        {stat.val}%
+                      </div>
+                    </div>
+                  ))}
                 </div>
-
-                {/* Bar Spesimen (Dynamic) */}
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  <div
-                    style={{
-                      width: "80px",
-                      fontSize: "0.7rem",
-                      color: themeColor,
-                    }}
-                  >
-                    SPESIMEN
-                  </div>
-                  <div
-                    style={{
-                      flex: 1,
-                      background: "#333",
-                      height: "6px",
-                      borderRadius: "3px",
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: `${extendedData.sizeCompare}%`,
-                        height: "100%",
-                        background: themeColor,
-                        borderRadius: "3px",
-                        boxShadow: `0 0 10px ${themeColor}`,
-                      }}
-                    ></div>
-                  </div>
+                <div
+                  style={{
+                    fontSize: "0.7rem",
+                    color: "#666",
+                    marginTop: "10px",
+                    fontStyle: "italic",
+                  }}
+                >
+                  *Berdasarkan analisis data geologis global.
                 </div>
               </div>
             </>
           )}
 
-          {/* === TAB 3: EDUKASI (Fakta & Sejarah) === */}
+          {/* === TAB 3: EDUKASI === */}
           {activeTab === "FUNFACT" && (
             <>
               <h3 className="panel-heading">WAWASAN & SEJARAH</h3>
@@ -485,7 +482,7 @@ const ModelViewer = () => {
                   </div>
                 </div>
 
-                {/* Tahun Penemuan (Info Baru) */}
+                {/* Tahun Penemuan */}
                 <div>
                   <div
                     style={{
@@ -506,7 +503,7 @@ const ModelViewer = () => {
                   </div>
                 </div>
 
-                {/* Fakta Unik (Key Description) */}
+                {/* Fakta Unik */}
                 <div
                   style={{
                     background: "rgba(255,255,255,0.05)",
