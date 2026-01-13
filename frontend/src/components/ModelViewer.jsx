@@ -101,8 +101,10 @@ const ModelViewer = () => {
       size: customInfo.size || "Bervariasi",
       weight: customInfo.weight || "Tidak Diketahui",
       lifespan: customInfo.lifespan || "Tidak Diketahui",
-      sizeCompare: 50, // Default size compare
-      period: customInfo.period || "Zaman Prasejarah",
+      sizeCompare: 50,
+      // PERUBAHAN DISINI: Membaca data.period (sejajar name/modelPath)
+      // atau customInfo.period jika ada di dalam details
+      period: data.period || customInfo.period || "Zaman Prasejarah",
       funFact:
         dbDesc.key || "Spesies ini memiliki peran unik dalam ekosistem purba.",
       discoveryYear: customInfo.discoveryYear || "Abad ke-19",
@@ -231,7 +233,7 @@ const ModelViewer = () => {
 
       <div className="ui-bottom-left">
         <div className="item-id" style={{ color: themeColor }}>
-          /// ID: {data.name.substring(0, 3)}-{Math.floor(Math.random() * 9999)}
+          ID: {data.name.substring(0, 3)}-{Math.floor(Math.random() * 9999)}
         </div>
         <h1
           className="main-title"
