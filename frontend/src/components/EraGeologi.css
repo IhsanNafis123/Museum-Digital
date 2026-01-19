@@ -374,12 +374,16 @@
   }
 
   .timeline-btn {
-    padding: 0.5rem 1rem;
-    flex-shrink: 0;
-    font-size: 1rem;
-    background: rgba(255,255,255,0.05);
-    border-radius: 20px;
-    margin-right: 10px;
+    flex: 1;                 /* PENTING: Memaksa 3 tombol berbagi ukuran sama */
+    width: auto;             /* Reset lebar */
+    font-size: 0.7rem;       /* PENTING: Kecilkan font agar "PALEOZOIKUM" muat */
+    padding: 1rem 0;         /* Padding atas bawah saja */
+    justify-content: center; /* Teks di tengah */
+    gap: 5px;                /* Rapatkan jarak titik ke tulisan */
+    
+    /* Reset style desktop yang mungkin mengganggu */
+    margin-right: 0;
+    border-radius: 0;
   }
 
   .timeline-btn.active {

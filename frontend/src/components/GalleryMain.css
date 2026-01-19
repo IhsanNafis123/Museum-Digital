@@ -481,119 +481,137 @@
 }
 
 /* =========================================
-   MOBILE RESPONSIVE FIX (FINAL)
+   MOBILE RESPONSIVE FIX (REVISED)
+   Copy bagian ini dan timpa bagian paling bawah CSS Anda
    ========================================= */
 @media screen and (max-width: 768px) {
-  /* 1. Global: Izinkan Scroll */
+  
+  /* --- 1. GLOBAL CONTAINER FIX --- */
   .gallery-container {
-    height: auto;
-    min-height: 100vh;
-    overflow-y: auto;
+    height: auto;           /* Biarkan tinggi mengikuti konten */
+    min-height: 100vh;      /* Minimal setinggi layar */
+    overflow-y: auto;       /* Izinkan scroll vertikal */
+    overflow-x: hidden;     /* Cegah scroll samping */
   }
 
   .gallery-content {
-    height: auto;
-    overflow: visible;
+    height: auto;           /* Reset tinggi agar tidak dipotong */
+    overflow: visible;      /* Konten boleh melebihi container */
     padding: 1rem;
+    padding-bottom: 80px;   /* Jarak aman di bawah */
   }
 
-  /* 2. Navbar: Tumpuk Vertikal */
+  /* --- 2. NAVBAR (VERTIKAL) --- */
   .gallery-nav {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
     padding: 1rem;
     text-align: center;
   }
 
-  /* 3. View 1 (Kategori): Kartu Full Width */
+  /* --- 3. VIEW 1: KATEGORI (GRID) --- */
   .cards-wrapper {
-    gap: 1.5rem;
+    gap: 2rem;
   }
   
   .compact-card {
-    width: 100%;
-    max-width: 350px;
+    width: 100%;            /* Kartu memenuhi lebar HP */
+    max-width: 100%;
     height: 350px;
   }
 
   .main-heading {
-    font-size: 2rem;
+    font-size: 2rem;        /* Kecilkan font judul */
     letter-spacing: 5px;
     margin-bottom: 2rem;
   }
 
-  /* 4. View 2 (Sub-Kategori): Layout Kolom */
+  /* --- 4. VIEW 2: SUB-KATEGORI (LIST VISUAL) --- */
   .sub-header {
-    flex-direction: column-reverse;
+    flex-direction: column-reverse; /* Tombol back di atas judul */
     gap: 1rem;
     align-items: flex-start;
   }
 
   .sub-card-visual {
-    flex-direction: column;
+    flex-direction: column; /* Gambar di atas, teks di bawah */
     height: auto;
     border-left: none;
-    border-top: 4px solid var(--item-color);
+    border-top: 4px solid var(--item-color); /* Pindah warna ke atas */
   }
 
   .sub-visual-box {
     width: 100%;
     height: 200px;
-    clip-path: none;
+    clip-path: none;        /* Hapus potongan miring */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .sub-content-box {
     width: 100%;
     padding: 1.5rem;
-    box-sizing: border-box;
   }
 
-  .sub-content-box h3 {
-    font-size: 1.5rem;
-  }
-
-  /* 5. View 3 (Detail): Stack View (List di atas, Detail di bawah) */
+  /* --- 5. VIEW 3: SPLIT VIEW (INI YANG ANDA MINTA) --- */
+  
+  /* Container Utama: Ubah jadi kolom (Atas ke Bawah) */
   .split-view-container {
     display: flex;
     flex-direction: column;
     height: auto;
-    min-height: 0;
-    gap: 1.5rem;
+    gap: 0; 
+    margin-bottom: 50px;
   }
 
-  /* Panel Kiri (List Items) - Fixed Height */
+  /* PANEL ATAS: LIST FOSIL (DIPERBESAR) */
   .left-panel-list {
     width: 100%;
-    height: 250px; /* Batasi tinggi agar tidak memakan layar */
+    /* KUNCI PERBAIKAN: */
+    height: 40vh;           /* Mengambil 40% tinggi layar HP */
+    min-height: 350px;      /* Minimal 350px agar muat 3-4 item */
+    
     border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3); /* Batas tegas */
+    background: rgba(10, 10, 10, 0.9); /* Latar lebih gelap */
+    padding: 1rem;
     box-sizing: border-box;
   }
 
-  /* Panel Kanan (Detail) */
+  /* Agar user lebih sadar ini list */
+  .list-heading {
+    text-align: center;
+    color: #fff;
+    border-bottom: 1px solid var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  /* PANEL BAWAH: DETAIL & FOTO (TERDORONG KE BAWAH) */
   .right-panel-detail {
     width: 100%;
     height: auto;
     overflow: visible;
     border: none;
+    background: transparent;
   }
 
+  /* Foto Preview */
   .detail-image-wrapper {
-    min-height: 250px;
-    max-height: 350px;
+    width: 100%;
+    height: 300px;          /* Tinggi tetap untuk foto */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
+  /* Teks Detail */
   .detail-info-box {
     padding: 1.5rem;
   }
 
   .detail-info-box h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .data-metrics {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.8rem;
   }
 }
