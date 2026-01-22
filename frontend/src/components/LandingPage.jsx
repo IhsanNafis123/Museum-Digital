@@ -464,7 +464,7 @@ const CyberChatbot = ({ dataFosil }) => {
   // KONFIGURASI API GEMINI
   // Ganti string di bawah dengan API Key Anda yang asli
   // Atau gunakan: import.meta.env.VITE_GEMINI_API_KEY
-  const API_KEY = "-";
+  const API_KEY = "AIzaSyD70DrCF7BY_BMdFAcurm3BXsCkKLHWhSw";
 
   // Inisialisasi Model
   const genAI = new GoogleGenerativeAI(API_KEY);
