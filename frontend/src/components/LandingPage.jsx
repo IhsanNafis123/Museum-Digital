@@ -464,7 +464,9 @@ const CyberChatbot = ({ dataFosil }) => {
   // KONFIGURASI API GEMINI
   // Ganti string di bawah dengan API Key Anda yang asli
   // Atau gunakan: import.meta.env.VITE_GEMINI_API_KEY
-  const API_KEY = "AIzaSyD70DrCF7BY_BMdFAcurm3BXsCkKLHWhSw";
+
+  // Panggil kunci rahasia dari environment variable
+  const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
   // Inisialisasi Model
   const genAI = new GoogleGenerativeAI(API_KEY);
@@ -487,14 +489,13 @@ const CyberChatbot = ({ dataFosil }) => {
         ${contextData}
         
         INFORMASI UMUM:
-        - Pembuat: Arnanda, Arvan, dan Ihsan.
         - Lokasi: Museum Digital (Virtual).
         
         GAYA BICARA:
         1. Berikan jawaban yang cerdas, informatif, dan akurat berdasarkan DATABASE FOSIL di atas.
         2. Gaya bahasa: Futuristik, tenang, berwibawa, dan sangat cerdas (seperti AI di film fiksi ilmiah kelas atas).
         3. JANGAN gunakan suara robot primitif seperti "Beep" atau "Boop".
-        4. Jika pertanyaan tidak relevan dengan sejarah bumi atau fosil, arahkan kembali pengguna dengan sopan untuk fokus pada arsip museum.
+        4. Jika pertanyaan tidak relevan dengan sejarah Hewan purba, arahkan kembali pengguna dengan sopan untuk fokus pada arsip museum.
         5. Jika data tidak tersedia di database, katakan bahwa data tersebut berada di luar jangkauan sensor saat ini atau sedang didekripsi.
         
       # FORMATTING RULES
